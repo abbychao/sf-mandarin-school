@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends of the SF Mandarin School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: #BE3144;
+      --red-dark: #9A2636;
+      --red-light: #FDF2F2;
+      --gold: #D4A853;
+      --gold-light: #FBF7EE;
+      --cream: #FFFBF5;
+      --warm-gray: #F5F1EC;
+      --text: #2D2A26;
+      --text-secondary: #6B635A;
+      --border: #E8E2D9;
+      --radius: 12px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 2rem;
+      transition: all 0.35s;
+    }
+
+    nav.scrolled {
+      background: rgba(255, 251, 245, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    nav .wordmark {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    nav .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--text);
+      background: var(--warm-gray);
+    }
+
+    nav .nav-cta {
+      background: var(--red) !important;
+      color: #fff !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: 8px !important;
+    }
+
+    nav .nav-cta:hover {
+      background: var(--red-dark) !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ---- LAYOUT ---- */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(175deg, #2D2A26 0%, #3D3530 40%, #4A3F38 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    @keyframes drift1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(40px, -30px) scale(1.05); }
+    }
+
+    @keyframes drift2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-30px, 20px) scale(0.95); }
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .hero-orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(190, 49, 68, 0.2), transparent 70%);
+      top: -10%;
+      right: -5%;
+      animation: drift1 12s ease-in-out infinite;
+    }
+
+    .hero-orb-2 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(212, 168, 83, 0.15), transparent 70%);
+      bottom: 5%;
+      left: -8%;
+      animation: drift2 14s ease-in-out infinite;
+    }
+
+    .hero-orb-3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(190, 49, 68, 0.1), transparent 70%);
+      top: 40%;
+      left: 30%;
+      animation: drift1 10s ease-in-out infinite 3s;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      padding: 10rem 0 12rem;
+      text-align: center;
+    }
+
+    .hero .chinese-chars {
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.1s forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.75rem, 6.5vw, 4.25rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+
+    .hero h1 .highlight {
+      color: var(--gold);
+    }
+
+    .hero .subtitle {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.35s forwards;
+    }
+
+    .hero .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.5s forwards;
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-secondary);
+      transform: translateY(-1px);
+    }
+
+    /* ---- COMMUNITY BANNER ---- */
+    .community-banner {
+      background: var(--gold-light);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .community-banner .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .community-banner .stat {
+      text-align: center;
+    }
+
+    .community-banner .stat-number {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .community-banner .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* ---- INTEREST FORM ---- */
+    .interest-form {
+      background: #fff;
+    }
+
+    .interest-form .container {
+      max-width: 640px;
+    }
+
+    .interest-form .form-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-top: 0;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group label .optional {
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.925rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-card input:focus,
+    .form-card select:focus {
+      border-color: var(--red);
+    }
+
+    .form-card input::placeholder {
+      color: #B5AFA7;
+    }
+
+    .form-card select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B635A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .child-entry {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .child-entry .form-row {
+      margin-bottom: 0;
+    }
+
+    .child-entry .child-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .child-entry .remove-child {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      cursor: pointer;
+      float: right;
+      padding: 0;
+      font-family: inherit;
+    }
+
+    .child-entry .remove-child:hover {
+      color: var(--red);
+    }
+
+    .add-child-btn {
+      background: none;
+      border: 1.5px dashed var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      width: 100%;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+      margin-bottom: 1.25rem;
+    }
+
+    .add-child-btn:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--red);
+      cursor: pointer;
+    }
+
+    .checkbox-group label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    .form-submit-wrap {
+      text-align: center;
+    }
+
+    .form-submit {
+      padding: 0.9rem 3rem;
+      font-size: 1rem;
+    }
+
+    .form-success {
+      text-align: center;
+      padding: 2rem 0;
+      display: none;
+    }
+
+    .form-success .check-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1rem;
+    }
+
+    .form-success h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .form-success p {
+      color: var(--text-secondary);
+      font-size: 0.925rem;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .form-card {
+        padding: 1.75rem;
+      }
+    }
+
+    /* ---- OUR WORK ---- */
+    .our-work {
+      background: var(--cream);
+    }
+
+    .our-work .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .work-card {
+      padding: 2rem;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .work-card:hover {
+      box-shadow: 0 4px 20px rgba(45, 42, 38, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .work-card .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .work-card .card-icon.red { background: var(--red-light); }
+    .work-card .card-icon.gold { background: var(--gold-light); }
+
+    .work-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .work-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ---- DONATE ---- */
+    .donate {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      background: var(--red);
+      color: #fff;
+    }
+
+    .donate-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image:
+        radial-gradient(circle at 20% 50%, #fff 1px, transparent 1px),
+        radial-gradient(circle at 80% 50%, #fff 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .donate .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .donate .section-label {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .donate .section-title {
+      color: #fff;
+    }
+
+    .donate .section-desc {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0 auto 2rem;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .btn-white:hover {
+      background: var(--cream);
+      transform: translateY(-1px);
+    }
+
+    /* ---- SUBSCRIBE ---- */
+    .subscribe {
+      background: #fff;
+    }
+
+    .subscribe .container {
+      max-width: 540px;
+      text-align: center;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .subscribe-form input {
+      flex: 1;
+      padding: 0.875rem 1.25rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      background: var(--cream);
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+
+    .subscribe-form input:focus {
+      border-color: var(--red);
+    }
+
+    .subscribe-form input::placeholder {
+      color: var(--text-secondary);
+    }
+
+    /* ---- ABOUT ---- */
+    .about {
+      background: var(--cream);
+    }
+
+    .about .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .about-block {
+      padding: 2.25rem;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .about-block .about-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-block h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .about-block p {
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-size: 0.9rem;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--text);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    footer .wordmark {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    footer .chinese-footer {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      list-style: none;
+    }
+
+    footer .footer-links a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    footer .footer-links a:hover {
+      color: #fff;
+    }
+
+    footer .made-in {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      section {
+        padding: 4.5rem 1.5rem;
+      }
+
+      .hero .container {
+        padding: 8rem 0 10rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.25rem, 9vw, 3rem);
+      }
+
+      .our-work .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .community-banner .stats {
+        gap: 2rem;
+      }
+
+      .subscribe-form {
+        flex-direction: column;
+      }
+
+      nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 251, 245, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 1.25rem 2rem 1.5rem;
+        gap: 0.25rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      nav .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <div class="wordmark">Friends of the SF Mandarin School</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#interest">Join Us</a></li>
+        <li><a href="#our-work">Our Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#donate" class="nav-cta">Donate</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="container">
+      <div class="chinese-chars">&#26087;&#37329;&#23665;&#20013;&#25991;&#23398;&#26657;</div>
+      <h1>Friends of the<br><span class="highlight">SF Mandarin School</span></h1>
+      <p class="subtitle">SFUSD committed to launching a Mandarin immersion K&ndash;8 school for the 2027&ndash;2028 school year. We are the parents and community members making sure it happens.</p>
+      <div class="cta-group">
+        <a href="#interest" class="btn btn-primary">Join Us</a>
+        <a href="#our-work" class="btn btn-hero-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY BANNER -->
+  <div class="community-banner animate">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">K&ndash;8</div>
+        <div class="stat-label">Full Immersion Program</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">2027</div>
+        <div class="stat-label">Target Opening Year</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">SFUSD</div>
+        <div class="stat-label">District Partnership</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTEREST FORM -->
+  <section class="interest-form" id="interest">
+    <div class="container">
+      <div class="form-header animate">
+        <div class="section-label">Get Involved</div>
+        <h2 class="section-title">Join Our Community</h2>
+        <p class="section-desc" style="margin: 0 auto;">Tell us about your family so we can keep you in the loop as the school takes shape.</p>
+      </div>
+      <div class="form-card animate stagger-1">
+        <form id="interestForm" onsubmit="handleInterestForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="parentName">Parent / Guardian Name</label>
+              <input type="text" id="parentName" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone <span class="optional">(optional)</span></label>
+              <input type="tel" id="phone" placeholder="(415) 555-1234">
+            </div>
+            <div class="form-group">
+              <label for="neighborhood">Neighborhood</label>
+              <select id="neighborhood" required>
+                <option value="" disabled selected>Select your neighborhood</option>
+                <option>Sunset</option>
+                <option>Richmond</option>
+                <option>Chinatown</option>
+                <option>Noe Valley</option>
+                <option>Mission</option>
+                <option>SoMa</option>
+                <option>Pacific Heights</option>
+                <option>Marina</option>
+                <option>Potrero Hill</option>
+                <option>Bernal Heights</option>
+                <option>Excelsior</option>
+                <option>Bayview</option>
+                <option>Glen Park</option>
+                <option>Hayes Valley</option>
+                <option>Castro</option>
+                <option>Haight-Ashbury</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Children</label>
+            <div id="childrenList">
+              <div class="child-entry">
+                <div class="child-label">Child 1</div>
+                <div class="form-row">
+                  <div class="form-group" style="margin-bottom:0">
+                    <input type="text" placeholder="Child's first name" required>
+                  </div>
+                  <div class="form-group" style="margin-bottom:0">
+                    <input type="date" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="add-child-btn" onclick="addChild()">+ Add another child</button>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="volunteer">
+            <label for="volunteer">I'm interested in volunteering</label>
+          </div>
+
+          <div class="form-submit-wrap">
+            <button type="submit" class="btn btn-primary form-submit">Submit</button>
+          </div>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="check-circle">&#10003;</div>
+          <h3>Thank you!</h3>
+          <p>We'll be in touch as the school takes shape. Welcome to the community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR WORK -->
+  <section class="our-work" id="our-work">
+    <div class="container">
+      <div class="animate">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Building This School Together</h2>
+        <p class="section-desc">Parents and community members working across four areas to bring SF's Mandarin immersion school to life.</p>
+      </div>
+      <div class="grid">
+        <div class="work-card animate stagger-1">
+          <div class="card-icon red">&#128172;</div>
+          <h3>Communication</h3>
+          <p>Keeping families connected and informed about progress, timelines, and ways to get involved as the school takes shape.</p>
+        </div>
+        <div class="work-card animate stagger-2">
+          <div class="card-icon gold">&#127891;</div>
+          <h3>Teacher Recruiting</h3>
+          <p>Finding exceptional Mandarin immersion educators who share our vision for a world-class bilingual education.</p>
+        </div>
+        <div class="work-card animate stagger-3">
+          <div class="card-icon gold">&#129309;</div>
+          <h3>Fundraising</h3>
+          <p>Rallying community resources to ensure the school opens with the programs, materials, and support our children deserve.</p>
+        </div>
+        <div class="work-card animate stagger-4">
+          <div class="card-icon red">&#128293;</div>
+          <h3>Driving Urgency</h3>
+          <p>Holding SFUSD accountable to its commitment and making sure the 2027&ndash;2028 opening stays on track.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE -->
+  <section class="donate" id="donate">
+    <div class="donate-pattern"></div>
+    <div class="container">
+      <div class="animate">
+        <div class="section-label">Support Our Community</div>
+        <h2 class="section-title">Help Make It Happen</h2>
+        <p class="section-desc">Every contribution brings us closer to opening San Francisco's first dedicated Mandarin Immersion K&ndash;8 school.</p>
+        <a href="#" class="btn btn-white">Donate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="subscribe" id="subscribe">
+    <div class="container">
+      <div class="animate">
+        <div class="section-label">Stay Connected</div>
+        <h2 class="section-title">Subscribe for Updates</h2>
+        <p class="section-desc" style="margin: 0 auto;">Join our growing community of families. Get news on the school's progress, events, and ways to help.</p>
+        <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p id="subscribeMsg" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="animate">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Why This School Matters</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-block animate stagger-1">
+          <div class="about-icon">&#127759;</div>
+          <h3>Why Mandarin Immersion</h3>
+          <p>San Francisco families have demonstrated strong and growing demand for Mandarin immersion education within SFUSD. A dedicated K&ndash;8 school will provide the continuity, community, and curricular depth that scattered programs cannot. More details coming soon.</p>
+        </div>
+        <div class="about-block animate stagger-2">
+          <div class="about-icon">&#127969;</div>
+          <h3>Partnership with SFUSD</h3>
+          <p>Friends of the SF Mandarin School works closely with SFUSD leadership&mdash;including Chief Strategy Officer Liana Szeto and communications lead Hong Mei Pang&mdash;to ensure the school reflects both district standards and our community's vision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="wordmark">Friends of the SF Mandarin School</div>
+      <div class="chinese-footer">&#26087;&#37329;&#23665;&#20013;&#25991;&#23398;&#26657;&#20043;&#21451;</div>
+      <ul class="footer-links">
+        <li><a href="#interest">Join Us</a></li>
+        <li><a href="#our-work">Our Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#donate">Donate</a></li>
+      </ul>
+      <p>&copy; 2026 Friends of the SF Mandarin School</p>
+      <p class="made-in">Made with care in San Francisco</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered animations
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.animate').forEach(function (el) {
+      observer.observe(el);
+    });
+
+    // Nav background on scroll
+    window.addEventListener('scroll', function () {
+      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu toggle
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    document.querySelectorAll('#navLinks a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Interest form: add child
+    var childCount = 1;
+    function addChild() {
+      childCount++;
+      var entry = document.createElement('div');
+      entry.className = 'child-entry';
+      entry.innerHTML = '<button type="button" class="remove-child" onclick="this.parentElement.remove()">&times; Remove</button>' +
+        '<div class="child-label">Child ' + childCount + '</div>' +
+        '<div class="form-row">' +
+        '<div class="form-group" style="margin-bottom:0"><input type="text" placeholder="Child\'s first name" required></div>' +
+        '<div class="form-group" style="margin-bottom:0"><input type="date" required></div>' +
+        '</div>';
+      document.getElementById('childrenList').appendChild(entry);
+    }
+
+    // Interest form: submit
+    function handleInterestForm(e) {
+      e.preventDefault();
+      document.getElementById('interestForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+
+    // Subscribe placeholder
+    function handleSubscribe(e) {
+      e.preventDefault();
+      var msg = document.getElementById('subscribeMsg');
+      msg.textContent = 'Thanks! We\u2019ll be in touch.';
+      msg.style.display = 'block';
+      msg.style.color = 'var(--red)';
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
