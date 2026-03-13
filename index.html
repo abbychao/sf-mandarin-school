@@ -912,7 +912,7 @@
   <!-- NAV -->
   <nav id="mainNav">
     <div class="nav-inner">
-      <div class="wordmark">Friends of the SF Mandarin School</div>
+      <div class="wordmark">Friends of the SF Mandarin School <span style="font-weight:400; opacity:0.7;">旧金山中文学校之友</span></div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#our-work">Our Work</a></li>
         <li><a href="#about">About</a></li>
@@ -1078,23 +1078,6 @@
     </div>
   </section>
 
-  <!-- SUBSCRIBE -->
-  <section class="subscribe" id="subscribe">
-    <div class="container">
-      <div class="animate">
-        <div class="section-label">Stay Connected</div>
-        <h2 class="section-title">Subscribe for Updates</h2>
-        <p class="section-desc" style="margin: 0 auto;">Join our growing community of families. Get news on the school's progress, events, and ways to help.</p>
-        <form class="subscribe-form" onsubmit="handleSubscribe(event)">
-          <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
-          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
-        <p id="subscribeMsg" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
-      </div>
-    </div>
-  </section>
-
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
@@ -1113,6 +1096,23 @@
           <h3>Partnership with SFUSD</h3>
           <p>Friends of the SF Mandarin School works closely with SFUSD leadership&mdash;including Chief Strategy Officer Liana Szeto and communications lead Hong Mei Pang&mdash;to ensure the school reflects both district standards and our community's vision.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="subscribe" id="subscribe">
+    <div class="container">
+      <div class="animate">
+        <div class="section-label">Stay Connected</div>
+        <h2 class="section-title">Subscribe for Updates</h2>
+        <p class="section-desc" style="margin: 0 auto;">Join our growing community of families. Get news on the school's progress, events, and ways to help.</p>
+        <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+          <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
+          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p id="subscribeMsg" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
       </div>
     </div>
   </section>
@@ -1163,17 +1163,24 @@
       });
     });
 
-    // Interest form: add child
+    // Interest form: add child (max 4)
     var childCount = 1;
     function addChild() {
+      if (childCount >= 4) return;
       childCount++;
       var wrapper = document.createElement('div');
       wrapper.className = 'form-row';
       wrapper.style.position = 'relative';
       wrapper.innerHTML =
         '<div class="form-group"><label>Child\'s Name</label><input type="text" placeholder="First name" required></div>' +
-        '<div class="form-group"><label>Date of Birth <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;" onclick="this.closest(\'.form-row\').remove()">&times; Remove</button></label><input type="date" required></div>';
+        '<div class="form-group"><label>Date of Birth <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;" onclick="removeChildRow(this)">&times; Remove</button></label><input type="date" required></div>';
       document.getElementById('childrenList').appendChild(wrapper);
+      if (childCount >= 4) document.querySelector('.add-child-btn').style.display = 'none';
+    }
+    function removeChildRow(btn) {
+      btn.closest('.form-row').remove();
+      childCount--;
+      document.querySelector('.add-child-btn').style.display = '';
     }
 
     // Interest form: submit
