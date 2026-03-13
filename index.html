@@ -970,7 +970,7 @@
               <div class="form-group">
                 <label for="address">Home Address</label>
                 <div style="position:relative;">
-                  <input type="text" id="address" placeholder="Start typing your address..." autocomplete="off">
+                  <input type="text" id="address" placeholder="Start typing your address..." autocomplete="off" required>
                   <ul id="addressSuggestions" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 8px 8px;list-style:none;margin:0;padding:0;z-index:100;max-height:200px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,0.1);"></ul>
                 </div>
               </div>
@@ -987,7 +987,7 @@
                 </div>
                 <div class="form-group">
                   <label for="childDob1">Date of Birth</label>
-                  <input type="date" id="childDob1" required>
+                  <input type="date" id="childDob1" min="2000-01-01" max="2050-12-31" required>
                 </div>
               </div>
             </div>
@@ -1000,6 +1000,7 @@
               <input type="checkbox" id="donate-interest">
               <label for="donate-interest">I'm interested in donating</label>
             </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
             <button type="submit" class="btn btn-primary form-submit" style="display: block; margin: 0 auto; width: auto;">Submit</button>
           </form>
           <div class="form-success" id="formSuccess">
@@ -1179,7 +1180,7 @@
       wrapper.style.position = 'relative';
       wrapper.innerHTML =
         '<div class="form-group"><label>Child\'s Name</label><input type="text" placeholder="First name" required></div>' +
-        '<div class="form-group"><label>Date of Birth <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;" onclick="removeChildRow(this)">&times; Remove</button></label><input type="date" required></div>';
+        '<div class="form-group"><label>Date of Birth <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;" onclick="removeChildRow(this)">&times; Remove</button></label><input type="date" min="2000-01-01" max="2050-12-31" required></div>';
       document.getElementById('childrenList').appendChild(wrapper);
       if (childCount >= 4) document.querySelector('.add-child-btn').style.display = 'none';
     }
@@ -1192,8 +1193,77 @@
     // Interest form: submit
     function handleInterestForm(e) {
       e.preventDefault();
-      document.getElementById('interestForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      var form = e.target;
+
+      // Honeypot check
+      var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
+      if (honeypot) return;
+
+      var parentName = document.getElementById('parentName').value;
+      var email = document.getElementById('email').value;
+      var address = document.getElementById('address').value;
+      var phone = document.getElementById('phone').value;
+      var volunteer = document.getElementById('volunteer').checked ? 'Yes' : '';
+      var donate = document.getElementById('donate-interest').checked ? 'Yes' : '';
+
+      // Collect children
+      var childRows = document.getElementById('childrenList').querySelectorAll('.form-row');
+      var children = [];
+      childRows.forEach(function(row) {
+        var nameInput = row.querySelector('input[type="text"]');
+        var dobInput = row.querySelector('input[type="date"]');
+        if (nameInput && dobInput) {
+          children.push({ name: nameInput.value, dob: dobInput.value });
+        }
+      });
+
+      // Build URL
+      var baseUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0';
+      var params = '&FNAME=' + encodeURIComponent(parentName) +
+        '&EMAIL=' + encodeURIComponent(email) +
+        '&ADDRESS=' + encodeURIComponent(address) +
+        '&PHONE=' + encodeURIComponent(phone) +
+        '&VOLUNTEER=' + encodeURIComponent(volunteer) +
+        '&DONATE=' + encodeURIComponent(donate);
+
+      // Add children (up to 4)
+      for (var i = 0; i < children.length && i < 4; i++) {
+        var num = i + 1;
+        params += '&CHILD' + num + '=' + encodeURIComponent(children[i].name);
+        params += '&CHILD' + num + 'DOB=' + encodeURIComponent(children[i].dob);
+      }
+
+      var url = baseUrl + params + '&c=handleInterestResponse';
+
+      // Show loading state
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      window.handleInterestResponse = function(data) {
+        if (data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit';
+          var msg = document.getElementById('formError');
+          if (!msg) {
+            msg = document.createElement('p');
+            msg.id = 'formError';
+            msg.style.cssText = 'color:#c00;text-align:center;margin-top:0.5rem;font-size:0.85rem;';
+            submitBtn.parentNode.insertBefore(msg, submitBtn.nextSibling);
+          }
+          msg.textContent = 'Something went wrong. Please try again.';
+        }
+        var s = document.getElementById('mcInterestScript');
+        if (s) s.parentNode.removeChild(s);
+      };
+
+      var script = document.createElement('script');
+      script.id = 'mcInterestScript';
+      script.src = url;
+      document.body.appendChild(script);
     }
 
     // Subscribe → Mailchimp
