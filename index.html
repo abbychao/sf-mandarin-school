@@ -1086,7 +1086,8 @@
         <h2 class="section-title">Subscribe for Updates</h2>
         <p class="section-desc" style="margin: 0 auto;">Join our growing community of families. Get news on the school's progress, events, and ways to help.</p>
         <form class="subscribe-form" onsubmit="handleSubscribe(event)">
-          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
+          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
         <p id="subscribeMsg" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
@@ -1182,14 +1183,37 @@
       document.getElementById('formSuccess').style.display = 'block';
     }
 
-    // Subscribe placeholder
+    // Subscribe → Mailchimp
     function handleSubscribe(e) {
       e.preventDefault();
-      var msg = document.getElementById('subscribeMsg');
-      msg.textContent = 'Thanks! We\u2019ll be in touch.';
-      msg.style.display = 'block';
-      msg.style.color = 'var(--red)';
-      e.target.reset();
+      var form = e.target;
+      var email = form.querySelector('input[name="EMAIL"]').value;
+      var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
+      if (honeypot) return;
+
+      var url = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0072abe6f0&EMAIL=' + encodeURIComponent(email) + '&c=handleSubscribeResponse';
+
+      window.handleSubscribeResponse = function(data) {
+        var msg = document.getElementById('subscribeMsg');
+        if (data.result === 'success') {
+          msg.textContent = 'Thanks! You\u2019re subscribed.';
+          msg.style.color = 'var(--red)';
+          form.reset();
+        } else if (data.msg && data.msg.indexOf('already subscribed') > -1) {
+          msg.textContent = 'You\u2019re already subscribed!';
+          msg.style.color = 'var(--red)';
+        } else {
+          msg.textContent = 'Something went wrong. Please try again.';
+          msg.style.color = '#c00';
+        }
+        msg.style.display = 'block';
+        document.body.removeChild(document.getElementById('mcSubscribeScript'));
+      };
+
+      var script = document.createElement('script');
+      script.id = 'mcSubscribeScript';
+      script.src = url;
+      document.body.appendChild(script);
     }
   </script>
 </body>
