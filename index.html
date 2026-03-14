@@ -42,6 +42,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 80px;
     }
 
     body {
@@ -1031,11 +1032,11 @@
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
       }
 
-      nav .nav-links a {
+      nav .nav-links a:not(.nav-cta) {
         color: var(--text-secondary) !important;
       }
 
-      nav .nav-links a:hover {
+      nav .nav-links a:not(.nav-cta):hover {
         color: var(--text) !important;
         background: var(--warm-gray) !important;
       }
@@ -1120,9 +1121,9 @@
                   <label for="childDob1">Date of Birth</label>
                   <input type="date" id="childDob1" min="2000-01-01" max="2050-12-31" required class="dob-native">
                   <div class="dob-dropdowns">
-                    <select class="dob-month" required><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
-                    <select class="dob-day" required><option value="" disabled selected>Day</option></select>
-                    <select class="dob-year" required><option value="" disabled selected>Year</option></select>
+                    <select class="dob-month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
+                    <select class="dob-day"><option value="" disabled selected>Day</option></select>
+                    <select class="dob-year"><option value="" disabled selected>Year</option></select>
                   </div>
                 </div>
               </div>
@@ -1364,6 +1365,21 @@
     // Init first child's dropdowns
     document.querySelectorAll('.dob-dropdowns').forEach(populateDobDropdowns);
 
+    // Toggle required/disabled on DOB fields based on which is visible (mobile vs desktop)
+    function syncDobRequired() {
+      var isMobile = window.matchMedia('(max-width: 768px)').matches;
+      document.querySelectorAll('.dob-native').forEach(function(el) {
+        el.required = !isMobile;
+        el.disabled = isMobile;
+      });
+      document.querySelectorAll('.dob-dropdowns select').forEach(function(el) {
+        el.required = isMobile;
+        el.disabled = !isMobile;
+      });
+    }
+    syncDobRequired();
+    window.addEventListener('resize', syncDobRequired);
+
     // Get DOB value from either native input or dropdowns
     function getDobValue(formGroup) {
       var native = formGroup.querySelector('.dob-native');
@@ -1388,9 +1404,10 @@
       wrapper.style.position = 'relative';
       wrapper.innerHTML =
         '<div class="form-group"><label>Child\'s Name <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;float:right;" onclick="removeChildRow(this)">&times; Remove</button></label><input type="text" placeholder="First name" required></div>' +
-        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required class="dob-native"><div class="dob-dropdowns"><select class="dob-month" required><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="dob-day" required><option value="" disabled selected>Day</option></select><select class="dob-year" required><option value="" disabled selected>Year</option></select></div></div>';
+        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required class="dob-native"><div class="dob-dropdowns"><select class="dob-month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="dob-day"><option value="" disabled selected>Day</option></select><select class="dob-year"><option value="" disabled selected>Year</option></select></div></div>';
       document.getElementById('childrenList').appendChild(wrapper);
       populateDobDropdowns(wrapper.querySelector('.dob-dropdowns'));
+      syncDobRequired();
       if (childCount >= 4) document.querySelector('.add-child-btn').style.display = 'none';
     }
     function removeChildRow(btn) {
