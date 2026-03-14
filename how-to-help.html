@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Help — Friends of the SF Mandarin School</title>
+  <meta name="description" content="Concrete ways to help launch San Francisco's Mandarin Immersion K-8 school. Spread the word, make connections, and share your expertise.">
+  <meta property="og:title" content="How to Help — Friends of the SF Mandarin School">
+  <meta property="og:description" content="Concrete ways to help launch San Francisco's Mandarin Immersion K-8 school.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sfmandarinschool.org/how-to-help.html">
+  <meta property="og:image" content="https://www.sfmandarinschool.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Help — Friends of the SF Mandarin School">
+  <meta name="twitter:description" content="Concrete ways to help launch San Francisco's Mandarin Immersion K-8 school.">
+  <meta name="twitter:image" content="https://www.sfmandarinschool.org/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: #BE3144;
+      --red-dark: #9A2636;
+      --red-light: #FDF2F2;
+      --gold: #D4A853;
+      --gold-light: #FBF7EE;
+      --cream: #FFFBF5;
+      --warm-gray: #F5F1EC;
+      --text: #2D2A26;
+      --text-secondary: #6B635A;
+      --border: #E8E2D9;
+      --radius: 12px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    /* ---- ANIMATIONS ---- */
+    .animate {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.16s; }
+    .stagger-3 { transition-delay: 0.24s; }
+    .stagger-4 { transition-delay: 0.32s; }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    nav .wordmark {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--text);
+      background: var(--warm-gray);
+    }
+
+    nav .nav-links a.active {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    nav .nav-cta {
+      background: var(--red) !important;
+      color: #fff !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: 8px !important;
+    }
+
+    nav .nav-cta:hover {
+      background: var(--red-dark) !important;
+    }
+
+    /* ---- MENU TOGGLE ---- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .menu-toggle span {
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ---- PAGE HEADER ---- */
+    .page-header {
+      background: var(--red);
+      color: #fff;
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .page-header .section-label {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ---- CONTENT ---- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .help-content {
+      background: var(--cream);
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .help-card {
+      background: #fff;
+      color: var(--text);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all 0.3s;
+      border: 1px solid var(--border);
+    }
+
+    .help-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .help-card h3 {
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--red);
+    }
+
+    .help-card ul {
+      list-style: none;
+    }
+
+    .help-card li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .help-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .help-card li strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: var(--text);
+    }
+
+    .help-card li span {
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    .help-email-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .help-email-cta a {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .help-email-cta a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--text);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    footer .footer-subscribe {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer .subscribe-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.75rem;
+    }
+
+    footer form {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    footer input[type="email"] {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+
+    footer input[type="email"]::placeholder {
+      color: rgba(255,255,255,0.4);
+    }
+
+    footer button {
+      padding: 0.6rem 1.25rem;
+      background: var(--gold);
+      color: var(--text);
+      border: none;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+
+    footer button:hover {
+      background: #c49a42;
+    }
+
+    footer .wordmark {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    footer .chinese-footer {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      list-style: none;
+    }
+
+    footer .footer-links a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    footer .footer-links a:hover {
+      color: #fff;
+    }
+
+    footer .made-in {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      section {
+        padding: 4.5rem 1.5rem;
+      }
+
+      .page-header {
+        padding: 7rem 1.5rem 3rem;
+      }
+
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav .nav-links {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.25rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+      }
+
+      nav .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      nav .nav-links a {
+        color: var(--text-secondary);
+        padding: 0.75rem 1rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      footer form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="wordmark">Friends of the SF Mandarin School</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#why-it-matters">Why This Matters</a></li>
+        <li><a href="how-to-help.html" class="active">How to Help</a></li>
+        <li><a href="index.html#our-work">Our Work</a></li>
+        <li><a href="index.html#interest" class="nav-cta">Join Us</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="section-label">Get Involved</div>
+      <h1>How You Can Help</h1>
+      <p>Submitted the interest form and ready for more? Here are concrete ways to help right now.</p>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <section class="help-content">
+    <div class="container">
+      <div class="help-grid">
+        <div class="help-card animate stagger-1">
+          <h3>Spread the Word</h3>
+          <ul>
+            <li>
+              <strong>Tell your preschool or daycare</strong>
+              <span>Share the site with families at your child's school, especially Mandarin immersion programs</span>
+            </li>
+            <li>
+              <strong>Post in your groups</strong>
+              <span>Share in Facebook groups, WhatsApp chats, WeChat, or community listservs</span>
+            </li>
+            <li>
+              <strong>Distribute flyers</strong>
+              <span>Help us get flyers with QR codes into local shops, libraries, and community centers</span>
+            </li>
+          </ul>
+        </div>
+        <div class="help-card animate stagger-2">
+          <h3>Make Connections</h3>
+          <ul>
+            <li>
+              <strong>Introduce us to leaders</strong>
+              <span>Connect us with political leaders, community leaders, or democratic clubs</span>
+            </li>
+            <li>
+              <strong>Connect with PTAs</strong>
+              <span>Help us reach your school's PTA or site council</span>
+            </li>
+            <li>
+              <strong>Identify donors or sponsors</strong>
+              <span>Know someone who might support the school financially? Let us know</span>
+            </li>
+          </ul>
+        </div>
+        <div class="help-card animate stagger-3">
+          <h3>Share Your Expertise</h3>
+          <ul>
+            <li>
+              <strong>Legal, finance, or nonprofit</strong>
+              <span>Help us navigate nonprofit setup, fiscal sponsorship, or governance</span>
+            </li>
+            <li>
+              <strong>Media, PR, or social media</strong>
+              <span>Lend your skills to help us tell this story more broadly</span>
+            </li>
+            <li>
+              <strong>Education or school admin</strong>
+              <span>Share your knowledge of how schools launch and what makes them succeed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="help-email-cta animate">Have ideas or want to discuss? <a href="mailto:info@sfmandarinschool.org">Email us at info@sfmandarinschool.org</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-subscribe">
+        <div class="subscribe-label">Subscribe for updates</div>
+        <form onsubmit="handleSubscribe(event)">
+          <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
+          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p id="subscribeMsg" style="margin-top: 0.5rem; font-size: 0.8rem; display: none;"></p>
+      </div>
+      <div class="wordmark">Friends of the SF Mandarin School</div>
+      <div class="chinese-footer">&#26087;&#37329;&#23665;&#20013;&#25991;&#23398;&#26657;&#20043;&#21451;</div>
+      <ul class="footer-links">
+        <li><a href="index.html#interest">Join Us</a></li>
+        <li><a href="index.html#why-it-matters">Why This Matters</a></li>
+        <li><a href="how-to-help.html">How to Help</a></li>
+        <li><a href="index.html#our-work">Our Work</a></li>
+      </ul>
+      <p>&copy; 2026 Friends of the SF Mandarin School</p>
+      <p class="made-in">Made with care in San Francisco</p>
+      <p style="font-size: 0.7rem; color: rgba(255,255,255,0.25); margin-top: 0.75rem; line-height: 1.5;">We collect your information to advocate for the school and keep you updated. We never sell your data. Contact us to be removed.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered animations
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.animate').forEach(function (el) {
+      observer.observe(el);
+    });
+
+    // Mobile menu toggle
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    document.querySelectorAll('#navLinks a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Subscribe form
+    function handleSubscribe(e) {
+      e.preventDefault();
+      var form = e.target;
+      var email = form.querySelector('input[name="EMAIL"]').value;
+      var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
+      if (honeypot) return;
+
+      var url = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0072abe6f0' +
+        '&EMAIL=' + encodeURIComponent(email) +
+        '&c=subCallback';
+
+      window.subCallback = function(resp) {
+        var msg = document.getElementById('subscribeMsg');
+        msg.style.display = 'block';
+        if (resp.result === 'success') {
+          msg.style.color = '#4CAF50';
+          msg.textContent = 'Thanks for subscribing!';
+          form.querySelector('input[name="EMAIL"]').value = '';
+        } else {
+          var m = resp.msg || '';
+          if (m.indexOf('already subscribed') > -1) {
+            msg.style.color = '#4CAF50';
+            msg.textContent = "You're already subscribed!";
+          } else {
+            msg.style.color = '#ff6b6b';
+            msg.textContent = m.replace(/<a[^>]*>[^<]*<\/a>/g, '').replace(/0 -/, '').trim() || 'Something went wrong. Please try again.';
+          }
+        }
+        var s = document.getElementById('mcSubScript');
+        if (s) s.remove();
+      };
+
+      var s = document.createElement('script');
+      s.id = 'mcSubScript';
+      s.src = url;
+      document.body.appendChild(s);
+    }
+  </script>
+</body>
+</html>

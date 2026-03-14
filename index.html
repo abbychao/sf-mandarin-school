@@ -697,104 +697,44 @@
       }
     }
 
-    /* ---- HOW TO HELP ---- */
-    .how-to-help {
+    /* ---- HOW TO HELP TEASER ---- */
+    .help-teaser {
       background: var(--red);
       color: #fff;
+      text-align: center;
     }
 
-    .how-to-help .section-label {
+    .help-teaser .section-label {
       color: rgba(255,255,255,0.7);
       border-color: rgba(255,255,255,0.3);
     }
 
-    .how-to-help .section-title {
+    .help-teaser .section-title {
       color: #fff;
     }
 
-    .how-to-help .section-desc {
+    .help-teaser .section-desc {
       color: rgba(255,255,255,0.85);
+      max-width: 540px;
+      margin: 0 auto;
     }
 
-    .help-email-cta {
-      text-align: center;
-      margin-top: 2.5rem;
+    .help-teaser .btn-outline {
+      display: inline-block;
+      margin-top: 1.75rem;
+      padding: 0.75rem 2rem;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
       font-size: 0.95rem;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .help-email-cta a {
-      color: var(--gold);
       text-decoration: none;
-      font-weight: 600;
+      transition: all 0.2s;
     }
 
-    .help-email-cta a:hover {
-      text-decoration: underline;
-    }
-
-    .help-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-
-    .help-card {
+    .help-teaser .btn-outline:hover {
       background: #fff;
-      color: var(--text);
-      border-radius: var(--radius);
-      padding: 2rem;
-      transition: all 0.3s;
-    }
-
-    .help-card:hover {
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-      transform: translateY(-2px);
-    }
-
-    .help-card h3 {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      color: var(--text);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--red);
-    }
-
-    .help-card ul {
-      list-style: none;
-    }
-
-    .help-card li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    .help-card li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .help-card li strong {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      color: var(--text);
-    }
-
-    .help-card li span {
-      color: #666;
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 768px) {
-      .help-grid {
-        grid-template-columns: 1fr;
-      }
+      color: var(--red);
     }
 
     /* ---- OUR WORK ---- */
@@ -1159,7 +1099,7 @@
       <div class="wordmark">Friends of the SF Mandarin School</div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#why-it-matters">Why This Matters</a></li>
-        <li><a href="#how-to-help">How to Help</a></li>
+        <li><a href="how-to-help.html">How to Help</a></li>
         <li><a href="#our-work">Our Work</a></li>
         <li><a href="#interest" class="nav-cta">Join Us</a></li>
       </ul>
@@ -1278,7 +1218,7 @@
               </form>
               <div id="followupSuccess" style="display: none; text-align: center; padding: 0.75rem 0 0;">
                 <p style="color: var(--red); font-size: 0.9rem; font-weight: 500;">Got it &mdash; thanks for sharing!</p>
-                <a href="#how-to-help" style="display: inline-block; margin-top: 0.75rem; font-size: 0.85rem; font-weight: 600; color: var(--red); text-decoration: none;">See how you can help &rarr;</a>
+                <a href="how-to-help.html" style="display: inline-block; margin-top: 0.75rem; font-size: 0.85rem; font-weight: 600; color: var(--red); text-decoration: none;">See how you can help &rarr;</a>
               </div>
             </div>
           </div>
@@ -1334,68 +1274,15 @@
     </div>
   </section>
 
-  <!-- HOW TO HELP -->
-  <section class="how-to-help section" id="how-to-help">
+  <!-- HOW TO HELP TEASER -->
+  <section class="help-teaser section" id="how-to-help">
     <div class="container">
       <div class="animate">
         <div class="section-label">Get Involved</div>
-        <h2 class="section-title">How You Can Help</h2>
-        <p class="section-desc">Submitted the interest form and ready for more? Here are concrete ways to help right now.</p>
+        <h2 class="section-title">Ready to Help?</h2>
+        <p class="section-desc">Submitted the interest form and ready for more? There are concrete ways to make a difference right now.</p>
+        <a href="how-to-help.html" class="btn-outline">See how you can help &rarr;</a>
       </div>
-      <div class="help-grid">
-        <div class="help-card animate stagger-1">
-          <h3>Spread the Word</h3>
-          <ul>
-            <li>
-              <strong>Tell your preschool or daycare</strong>
-              <span>Share the site with families at your child's school, especially Mandarin immersion programs</span>
-            </li>
-            <li>
-              <strong>Post in your groups</strong>
-              <span>Share in Facebook groups, WhatsApp chats, WeChat, or community listservs</span>
-            </li>
-            <li>
-              <strong>Distribute flyers</strong>
-              <span>Help us get flyers with QR codes into local shops, libraries, and community centers</span>
-            </li>
-          </ul>
-        </div>
-        <div class="help-card animate stagger-2">
-          <h3>Make Connections</h3>
-          <ul>
-            <li>
-              <strong>Introduce us to leaders</strong>
-              <span>Connect us with political leaders, community leaders, or democratic clubs</span>
-            </li>
-            <li>
-              <strong>Connect with PTAs</strong>
-              <span>Help us reach your school's PTA or site council</span>
-            </li>
-            <li>
-              <strong>Identify donors or sponsors</strong>
-              <span>Know someone who might support the school financially? Let us know</span>
-            </li>
-          </ul>
-        </div>
-        <div class="help-card animate stagger-3">
-          <h3>Share Your Expertise</h3>
-          <ul>
-            <li>
-              <strong>Legal, finance, or nonprofit</strong>
-              <span>Help us navigate nonprofit setup, fiscal sponsorship, or governance</span>
-            </li>
-            <li>
-              <strong>Media, PR, or social media</strong>
-              <span>Lend your skills to help us tell this story more broadly</span>
-            </li>
-            <li>
-              <strong>Education or school admin</strong>
-              <span>Share your knowledge of how schools launch and what makes them succeed</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <p class="help-email-cta animate">Have ideas or want to discuss? <a href="mailto:info@sfmandarinschool.org">Email us at info@sfmandarinschool.org</a></p>
     </div>
   </section>
 
@@ -1449,7 +1336,7 @@
       <ul class="footer-links">
         <li><a href="#interest">Join Us</a></li>
         <li><a href="#why-it-matters">Why This Matters</a></li>
-        <li><a href="#how-to-help">How to Help</a></li>
+        <li><a href="how-to-help.html">How to Help</a></li>
         <li><a href="#our-work">Our Work</a></li>
       </ul>
       <p>&copy; 2026 Friends of the SF Mandarin School</p>
