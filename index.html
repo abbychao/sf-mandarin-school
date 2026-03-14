@@ -386,6 +386,11 @@
       background: var(--cream);
     }
 
+    .hero-form-card input[type="date"] {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
     .hero-form-card input:focus,
     .hero-form-card select:focus {
       border-color: var(--red);
@@ -959,6 +964,13 @@
       .hero-form-card select {
         padding: 0.75rem 0.875rem;
         font-size: 1rem;
+      }
+
+      .hero-form-card input[type="date"] {
+        min-height: 0;
+        height: auto;
+        -webkit-appearance: none;
+        appearance: none;
       }
 
       .hero-form-card .checkbox-group label {
