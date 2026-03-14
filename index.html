@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Friends of the SF Mandarin School</title>
+  <meta name="description" content="SFUSD committed to launching a Mandarin immersion K-8 school for 2027-2028. Join 400+ families making sure it happens.">
+  <meta property="og:title" content="Friends of the SF Mandarin School">
+  <meta property="og:description" content="SFUSD committed to launching a Mandarin immersion K-8 school for 2027-2028. Join 400+ families making sure it happens.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sfmandarinschool.org">
+  <meta property="og:image" content="https://www.sfmandarinschool.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Friends of the SF Mandarin School">
+  <meta name="twitter:description" content="SFUSD committed to launching a Mandarin immersion K-8 school for 2027-2028. Join 400+ families making sure it happens.">
+  <meta name="twitter:image" content="https://www.sfmandarinschool.org/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -79,7 +91,7 @@
     }
 
     nav.scrolled {
-      background: rgba(255, 251, 245, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       box-shadow: 0 1px 0 var(--border);
@@ -98,6 +110,11 @@
       font-family: 'Lora', Georgia, serif;
       font-weight: 700;
       font-size: 1.05rem;
+      color: #fff;
+      transition: color 0.35s;
+    }
+
+    nav.scrolled .wordmark {
       color: var(--text);
     }
 
@@ -111,7 +128,7 @@
     nav .nav-links a {
       font-size: 0.875rem;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
       padding: 0.5rem 1rem;
       border-radius: 8px;
@@ -119,6 +136,15 @@
     }
 
     nav .nav-links a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    nav.scrolled .nav-links a {
+      color: var(--text-secondary);
+    }
+
+    nav.scrolled .nav-links a:hover {
       color: var(--text);
       background: var(--warm-gray);
     }
@@ -146,10 +172,14 @@
       display: block;
       width: 22px;
       height: 2px;
-      background: var(--text);
+      background: #fff;
       margin: 5px 0;
       border-radius: 2px;
       transition: 0.3s;
+    }
+
+    nav.scrolled .menu-toggle span {
+      background: var(--text);
     }
 
     /* ---- LAYOUT ---- */
@@ -575,41 +605,72 @@
       transform: translateY(-1px);
     }
 
-    /* ---- COMMUNITY BANNER ---- */
-    .community-banner {
-      background: var(--gold-light);
-      border-bottom: 1px solid var(--border);
+    /* ---- STATS BANNER ---- */
+    .stats-banner {
+      background: var(--text);
       padding: 3rem 2rem;
       text-align: center;
     }
 
-    .community-banner .stats {
+    .stats-banner .stats {
       display: flex;
       justify-content: center;
       gap: 3rem;
       flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .community-banner .stat {
+    .stats-banner .stat {
       text-align: center;
+      flex: 1;
+      min-width: 140px;
     }
 
-    .community-banner .stat-number {
+    .stats-banner .stat-number {
       font-family: 'Lora', Georgia, serif;
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: var(--red);
+      color: var(--gold);
+      line-height: 1;
     }
 
-    .community-banner .stat-label {
+    .stats-banner .stat-number.countdown {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stats-banner .stat-label {
       font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-top: 0.25rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    .stats-banner .stat-divider {
+      width: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      align-self: stretch;
+    }
+
+    @media (max-width: 768px) {
+      .stats-banner .stats {
+        gap: 2rem;
+      }
+
+      .stats-banner .stat-number {
+        font-size: 2.25rem;
+      }
+
+      .stats-banner .stat-divider {
+        display: none;
+      }
     }
 
     /* ---- OUR WORK ---- */
     .our-work {
-      background: var(--cream);
+      background: #fff;
     }
 
     .our-work .grid {
@@ -633,19 +694,15 @@
       transform: translateY(-2px);
     }
 
-    .work-card .card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
+    .work-card .card-accent {
+      height: 3px;
+      width: 40px;
+      border-radius: 2px;
       margin-bottom: 1.25rem;
     }
 
-    .work-card .card-icon.red { background: var(--red-light); }
-    .work-card .card-icon.gold { background: var(--gold-light); }
+    .work-card .card-accent.red { background: var(--red); }
+    .work-card .card-accent.gold { background: var(--gold); }
 
     .work-card h3 {
       font-size: 1.1rem;
@@ -659,89 +716,83 @@
       line-height: 1.65;
     }
 
-    /* ---- DONATE ---- */
-    .donate {
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      background: var(--red);
-      color: #fff;
-    }
-
-    .donate-pattern {
-      position: absolute;
-      inset: 0;
-      opacity: 0.06;
-      background-image:
-        radial-gradient(circle at 20% 50%, #fff 1px, transparent 1px),
-        radial-gradient(circle at 80% 50%, #fff 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    .donate .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .donate .section-label {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .donate .section-title {
-      color: #fff;
-    }
-
-    .donate .section-desc {
-      color: rgba(255, 255, 255, 0.8);
+    /* ---- FOOTER SUBSCRIBE ---- */
+    .footer-subscribe {
       margin: 0 auto 2rem;
+      max-width: 400px;
     }
 
-    .btn-white {
-      background: #fff;
-      color: var(--red);
-      font-weight: 700;
+    .footer-subscribe .subscribe-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 0.5rem;
     }
 
-    .btn-white:hover {
-      background: var(--cream);
-      transform: translateY(-1px);
-    }
-
-    /* ---- SUBSCRIBE ---- */
-    .subscribe {
-      background: #fff;
-    }
-
-    .subscribe .container {
-      max-width: 540px;
-      text-align: center;
-    }
-
-    .subscribe-form {
+    .footer-subscribe form {
       display: flex;
-      gap: 0.75rem;
-      margin-top: 2rem;
+      gap: 0.5rem;
     }
 
-    .subscribe-form input {
+    .footer-subscribe input {
       flex: 1;
-      padding: 0.875rem 1.25rem;
-      border: 1.5px solid var(--border);
+      padding: 0.6rem 0.875rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-family: inherit;
       outline: none;
-      background: var(--cream);
-      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
       transition: border-color 0.2s;
     }
 
-    .subscribe-form input:focus {
-      border-color: var(--red);
+    .footer-subscribe input::placeholder {
+      color: rgba(255, 255, 255, 0.35);
     }
 
-    .subscribe-form input::placeholder {
-      color: var(--text-secondary);
+    .footer-subscribe input:focus {
+      border-color: var(--gold);
+    }
+
+    .footer-subscribe button {
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .footer-subscribe button:hover {
+      background: var(--red-dark);
+    }
+
+    /* ---- FOLLOWUP FORM ---- */
+    .followup-section {
+      text-align: left;
+    }
+
+    .followup-section textarea {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      resize: vertical;
+      min-height: 60px;
+      transition: border-color 0.2s;
+    }
+
+    .followup-section textarea:focus {
+      border-color: var(--red);
     }
 
     /* ---- ABOUT ---- */
@@ -749,35 +800,68 @@
       background: var(--cream);
     }
 
-    .about .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+    .about .timeline {
+      position: relative;
+      padding-left: 4rem;
       margin-top: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .about-block {
-      padding: 2.25rem;
-      border-radius: var(--radius);
-      background: #fff;
-      border: 1px solid var(--border);
+    .about .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--red));
     }
-
-    .about-block .about-icon {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3.5rem;
     }
-
-    .about-block h3 {
-      font-size: 1.15rem;
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-4rem + 10px);
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 3px solid var(--gold);
+    }
+    .timeline-item:last-child::before {
+      border-color: var(--red);
+      background: var(--red);
+      box-shadow: 0 0 0 4px rgba(190, 49, 68, 0.15);
+    }
+    .timeline-era {
+      font-family: 'Lora', serif;
+      font-size: 0.85rem;
       font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item:last-child .timeline-era {
+      color: var(--red);
+    }
+    .timeline-item h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
       margin-bottom: 0.75rem;
     }
-
-    .about-block p {
+    .timeline-item p {
       color: var(--text-secondary);
-      line-height: 1.75;
-      font-size: 0.9rem;
+      line-height: 1.8;
+      font-size: 0.95rem;
     }
 
     /* ---- FOOTER ---- */
@@ -844,7 +928,7 @@
       }
 
       .hero .container {
-        padding: 5.5rem 0 3rem;
+        padding: 5.5rem 0.5rem 3rem;
       }
 
       .hero h1 {
@@ -853,6 +937,7 @@
 
       .hero .subtitle {
         font-size: 0.95rem;
+        padding: 0 1rem;
       }
 
       .hero-form-card {
@@ -884,15 +969,14 @@
         grid-template-columns: 1fr;
       }
 
-      .about .about-grid {
-        grid-template-columns: 1fr;
+      .about .timeline {
+        padding-left: 3rem;
+      }
+      .timeline-item::before {
+        left: calc(-3rem + 10px) !important;
       }
 
-      .community-banner .stats {
-        gap: 2rem;
-      }
-
-      .subscribe-form {
+      .footer-subscribe form {
         flex-direction: column;
       }
 
@@ -902,13 +986,22 @@
         top: 68px;
         left: 0;
         right: 0;
-        background: rgba(255, 251, 245, 0.98);
+        background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(16px);
         flex-direction: column;
         padding: 1.25rem 2rem 1.5rem;
         gap: 0.25rem;
         border-bottom: 1px solid var(--border);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      nav .nav-links a {
+        color: var(--text-secondary) !important;
+      }
+
+      nav .nav-links a:hover {
+        color: var(--text) !important;
+        background: var(--warm-gray) !important;
       }
 
       nav .nav-links.open {
@@ -928,8 +1021,8 @@
     <div class="nav-inner">
       <div class="wordmark">Friends of the SF Mandarin School</div>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#why-it-matters">Why This Matters</a></li>
         <li><a href="#our-work">Our Work</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="#interest" class="nav-cta">Join Us</a></li>
       </ul>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -953,8 +1046,10 @@
           <p class="subtitle">SFUSD committed to launching a Mandarin immersion K&ndash;8 school for the 2027&ndash;2028 school year. We are the parents and community members making sure it happens.</p>
         </div>
         <div class="hero-form-card" id="interest">
-          <h2>Show Your Interest</h2>
-          <p class="form-subtitle">Your response will directly shape the size, grades, and location of our future school. We'll keep you updated on our progress.</p>
+          <div id="formHeader">
+            <h2>Show Your Interest</h2>
+            <p class="form-subtitle">Your response will directly shape the size, grades, and location of our future school. We'll keep you updated on our progress.</p>
+          </div>
           <form id="interestForm" onsubmit="handleInterestForm(event)">
             <div class="form-row">
               <div class="form-group">
@@ -1007,56 +1102,120 @@
             <div class="check-circle">&#10003;</div>
             <h3>Thank you!</h3>
             <p>We'll be in touch as the school takes shape. Welcome to the community.</p>
+            <div class="followup-section" id="followupSection">
+              <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+              <h3 style="font-size: 1.05rem; margin-bottom: 0.35rem;">One more thing</h3>
+              <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.25rem; line-height: 1.5;">Do any of these describe you? Check any that apply.</p>
+              <form id="followupForm" onsubmit="handleFollowup(event)">
+                <div class="checkbox-group">
+                  <input type="checkbox" id="fu-legal" name="skill_legal" value="Yes">
+                  <label for="fu-legal">I work in law, finance, or nonprofit management</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="fu-networks" name="skill_community" value="Yes">
+                  <label for="fu-networks">I'm active in parent groups, listservs, or community orgs</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="fu-donors" name="skill_donors" value="Yes">
+                  <label for="fu-donors">I know potential donors or sponsors</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="fu-media" name="skill_media" value="Yes">
+                  <label for="fu-media">I have media, PR, or communications experience</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="fu-education" name="skill_education" value="Yes">
+                  <label for="fu-education">I work in education or school administration</label>
+                </div>
+                <div class="form-group" style="margin-top: 0.5rem;">
+                  <label for="fu-other" style="font-size: 0.8rem; font-weight: 600;">Anything else we should know? <span class="optional">(optional)</span></label>
+                  <textarea id="fu-other" placeholder="E.g., I run a tutoring company, I know someone on the school board..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="display: block; margin: 0.75rem auto 0; width: auto; padding: 0.65rem 1.75rem; font-size: 0.875rem;">Send</button>
+              </form>
+              <div id="followupSuccess" style="display: none; text-align: center; padding: 0.75rem 0 0;">
+                <p style="color: var(--red); font-size: 0.9rem; font-weight: 500;">Got it &mdash; thanks for sharing!</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMMUNITY BANNER -->
-  <div class="community-banner animate">
+  <!-- STATS BANNER -->
+  <div class="stats-banner animate">
     <div class="stats">
       <div class="stat">
-        <div class="stat-number">K&ndash;8</div>
-        <div class="stat-label">Full Immersion Program</div>
+        <div class="stat-number">66</div>
+        <div class="stat-label">MI K seats today</div>
       </div>
+      <div class="stat-divider"></div>
       <div class="stat">
-        <div class="stat-number">2027</div>
-        <div class="stat-label">Target Opening Year</div>
+        <div class="stat-number">400+</div>
+        <div class="stat-label">Families interested</div>
       </div>
+      <div class="stat-divider"></div>
       <div class="stat">
-        <div class="stat-number">SFUSD</div>
-        <div class="stat-label">District Partnership</div>
+        <div class="stat-number countdown" id="countdownDays"></div>
+        <div class="stat-label">Days to secure our school</div>
       </div>
     </div>
   </div>
+
+  <!-- WHY THIS SCHOOL MATTERS -->
+  <section class="about" id="why-it-matters">
+    <div class="container">
+      <div class="animate">
+        <div class="section-label">The Demand Is Real</div>
+        <h2 class="section-title">Why This School Matters</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item animate stagger-1">
+          <div class="timeline-era">The Legacy</div>
+          <h3>San Francisco Led the Way</h3>
+          <p>Our city has a proud legacy of language immersion education. Alice Fong Yu was the <strong>first public Chinese immersion school in the country</strong> and Chinese American International School was the <strong>first Mandarin immersion school of any kind in the nation</strong>.</p>
+        </div>
+        <div class="timeline-item animate stagger-2">
+          <div class="timeline-era">The Crisis</div>
+          <h3>Tremendous Demand, Too Few Seats</h3>
+          <p>Every year, roughly <strong>400 families</strong> apply for just <strong>66 seats</strong> for Mandarin Immersion Kindergarten at Starr King and Jose Ortega elementary schools. The demand far outpaces supply, and families are turned away every year.</p>
+        </div>
+        <div class="timeline-item animate stagger-3">
+          <div class="timeline-era">Now &rarr; September 2026</div>
+          <h3>Making It Real</h3>
+          <p>SFUSD has committed to opening a dedicated Mandarin Immersion K&ndash;8 school in fall 2027. <strong>400+ families</strong> have already expressed interest. Liana Szeto, founding principal of Alice Fong Yu, is leading the charge. The board must formally approve the school by September 2026. <strong>This is our window.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- OUR WORK -->
   <section class="our-work" id="our-work">
     <div class="container">
       <div class="animate">
-        <div class="section-label">What We Do</div>
+        <div class="section-label">Our Work</div>
         <h2 class="section-title">Building This School Together</h2>
         <p class="section-desc">Parents and community members working across four areas to bring SF's Mandarin immersion school to life.</p>
       </div>
       <div class="grid">
         <div class="work-card animate stagger-1">
-          <div class="card-icon red">&#128172;</div>
+          <div class="card-accent red"></div>
           <h3>Communication</h3>
           <p>Keeping families connected and informed about progress, timelines, and ways to get involved as the school takes shape.</p>
         </div>
         <div class="work-card animate stagger-2">
-          <div class="card-icon gold">&#127891;</div>
+          <div class="card-accent gold"></div>
           <h3>Teacher Recruiting</h3>
           <p>Finding exceptional Mandarin immersion educators who share our vision for a world-class bilingual education.</p>
         </div>
         <div class="work-card animate stagger-3">
-          <div class="card-icon gold">&#129309;</div>
+          <div class="card-accent gold"></div>
           <h3>Fundraising</h3>
           <p>Rallying community resources to ensure the school opens with the programs, materials, and support our children deserve.</p>
         </div>
         <div class="work-card animate stagger-4">
-          <div class="card-icon red">&#128293;</div>
+          <div class="card-accent red"></div>
           <h3>Driving Urgency</h3>
           <p>Holding SFUSD accountable to its commitment and making sure the 2027&ndash;2028 opening stays on track.</p>
         </div>
@@ -1064,71 +1223,28 @@
     </div>
   </section>
 
-  <!-- DONATE -->
-  <section class="donate" id="donate">
-    <div class="donate-pattern"></div>
-    <div class="container">
-      <div class="animate">
-        <div class="section-label">Support Our Community</div>
-        <h2 class="section-title">Help Make It Happen</h2>
-        <p class="section-desc">Every contribution brings us closer to opening San Francisco's first dedicated Mandarin Immersion K&ndash;8 school.</p>
-        <a href="#" class="btn btn-white">Donate</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="animate">
-        <div class="section-label">About</div>
-        <h2 class="section-title">Why This School Matters</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-block animate stagger-1">
-          <div class="about-icon">&#127759;</div>
-          <h3>Why Mandarin Immersion</h3>
-          <p>San Francisco families have demonstrated strong and growing demand for Mandarin immersion education within SFUSD. A dedicated K&ndash;8 school will provide the continuity, community, and curricular depth that scattered programs cannot. More details coming soon.</p>
-        </div>
-        <div class="about-block animate stagger-2">
-          <div class="about-icon">&#127969;</div>
-          <h3>Partnership with SFUSD</h3>
-          <p>Friends of the SF Mandarin School works closely with SFUSD leadership&mdash;including Chief Strategy Officer Liana Szeto and communications lead Hong Mei Pang&mdash;to ensure the school reflects both district standards and our community's vision.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUBSCRIBE -->
-  <section class="subscribe" id="subscribe">
-    <div class="container">
-      <div class="animate">
-        <div class="section-label">Stay Connected</div>
-        <h2 class="section-title">Subscribe for Updates</h2>
-        <p class="section-desc" style="margin: 0 auto;">Join our growing community of families. Get news on the school's progress, events, and ways to help.</p>
-        <form class="subscribe-form" onsubmit="handleSubscribe(event)">
-          <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
-          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
-        <p id="subscribeMsg" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
+      <div class="footer-subscribe">
+        <div class="subscribe-label">Subscribe for updates</div>
+        <form onsubmit="handleSubscribe(event)">
+          <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
+          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p id="subscribeMsg" style="margin-top: 0.5rem; font-size: 0.8rem; display: none;"></p>
+      </div>
       <div class="wordmark">Friends of the SF Mandarin School</div>
       <div class="chinese-footer">&#26087;&#37329;&#23665;&#20013;&#25991;&#23398;&#26657;&#20043;&#21451;</div>
       <ul class="footer-links">
         <li><a href="#interest">Join Us</a></li>
+        <li><a href="#why-it-matters">Why This Matters</a></li>
         <li><a href="#our-work">Our Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#donate">Donate</a></li>
       </ul>
       <p>&copy; 2026 Friends of the SF Mandarin School</p>
       <p class="made-in">Made with care in San Francisco</p>
+      <p style="font-size: 0.7rem; color: rgba(255,255,255,0.25); margin-top: 0.75rem; line-height: 1.5;">We collect your information to advocate for the school and keep you updated. We never sell your data. Contact us to be removed.</p>
     </div>
   </footer>
 
@@ -1145,6 +1261,19 @@
     document.querySelectorAll('.animate').forEach(function (el) {
       observer.observe(el);
     });
+
+    // Countdown ticker
+    (function() {
+      var targetDate = new Date('2026-09-15T00:00:00');
+      var now = new Date();
+      var diff = Math.ceil((targetDate - now) / (1000 * 60 * 60 * 24));
+      var el = document.getElementById('countdownDays');
+      if (el && diff > 0) {
+        el.textContent = diff;
+      } else if (el) {
+        document.getElementById('countdownTicker').style.display = 'none';
+      }
+    })();
 
     // Nav background on scroll
     window.addEventListener('scroll', function () {
@@ -1179,8 +1308,8 @@
       wrapper.className = 'form-row';
       wrapper.style.position = 'relative';
       wrapper.innerHTML =
-        '<div class="form-group"><label>Child\'s Name</label><input type="text" placeholder="First name" required></div>' +
-        '<div class="form-group"><label>Date of Birth <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;" onclick="removeChildRow(this)">&times; Remove</button></label><input type="date" min="2000-01-01" max="2050-12-31" required></div>';
+        '<div class="form-group"><label>Child\'s Name <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;float:right;" onclick="removeChildRow(this)">&times; Remove</button></label><input type="text" placeholder="First name" required></div>' +
+        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required></div>';
       document.getElementById('childrenList').appendChild(wrapper);
       if (childCount >= 4) document.querySelector('.add-child-btn').style.display = 'none';
     }
@@ -1189,6 +1318,12 @@
       childCount--;
       document.querySelector('.add-child-btn').style.display = '';
     }
+
+    // Google Sheet endpoint
+    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxOBlhihUAjGi44Lc8q878fQqVlW8mdaYiRa3jj0C4RvoqPrMMdcWsTe4ormHuhQ49q/exec';
+
+    // Store email for followup form
+    var submittedEmail = '';
 
     // Interest form: submit
     function handleInterestForm(e) {
@@ -1206,6 +1341,9 @@
       var volunteer = document.getElementById('volunteer').checked ? 'Yes' : '';
       var donate = document.getElementById('donate-interest').checked ? 'Yes' : '';
 
+      // Store email for followup
+      submittedEmail = email;
+
       // Collect children
       var childRows = document.getElementById('childrenList').querySelectorAll('.form-row');
       var children = [];
@@ -1217,32 +1355,47 @@
         }
       });
 
-      // Build URL
-      var baseUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0';
-      var params = '&FNAME=' + encodeURIComponent(parentName) +
-        '&EMAIL=' + encodeURIComponent(email) +
-        '&ADDRESS=' + encodeURIComponent(address) +
-        '&PHONE=' + encodeURIComponent(phone) +
-        '&VOLUNTEER=' + encodeURIComponent(volunteer) +
-        '&DONATE=' + encodeURIComponent(donate);
-
-      // Add children (up to 4)
-      for (var i = 0; i < children.length && i < 4; i++) {
-        var num = i + 1;
-        params += '&CHILD' + num + '=' + encodeURIComponent(children[i].name);
-        params += '&CHILD' + num + 'DOB=' + encodeURIComponent(children[i].dob);
-      }
-
-      var url = baseUrl + params + '&c=handleInterestResponse';
-
       // Show loading state
       var submitBtn = form.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
 
+      // 1. Send ALL data to Google Sheet
+      var sheetData = {
+        name: parentName,
+        email: email,
+        address: address,
+        phone: phone,
+        child1_name: children[0] ? children[0].name : '',
+        child1_dob: children[0] ? children[0].dob : '',
+        child2_name: children[1] ? children[1].name : '',
+        child2_dob: children[1] ? children[1].dob : '',
+        child3_name: children[2] ? children[2].name : '',
+        child3_dob: children[2] ? children[2].dob : '',
+        child4_name: children[3] ? children[3].name : '',
+        child4_dob: children[3] ? children[3].dob : '',
+        volunteer: volunteer,
+        donate: donate,
+        source: 'interest-form'
+      };
+
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(sheetData)
+      }).catch(function(err) { console.error('Sheet error:', err); });
+
+      // 2. Send only email + name to Mailchimp (with interest-form tag)
+      var mcUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0' +
+        '&FNAME=' + encodeURIComponent(parentName) +
+        '&EMAIL=' + encodeURIComponent(email) +
+        '&c=handleInterestResponse';
+
       window.handleInterestResponse = function(data) {
         if (data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)) {
           form.style.display = 'none';
+          document.getElementById('formHeader').style.display = 'none';
           document.getElementById('formSuccess').style.display = 'block';
         } else {
           submitBtn.disabled = false;
@@ -1262,11 +1415,42 @@
 
       var script = document.createElement('script');
       script.id = 'mcInterestScript';
-      script.src = url;
+      script.src = mcUrl;
       document.body.appendChild(script);
     }
 
-    // Subscribe → Mailchimp
+    // Followup form (skills/resources) → Google Sheet
+    function handleFollowup(e) {
+      e.preventDefault();
+      var form = e.target;
+      var checks = form.querySelectorAll('input[type="checkbox"]:checked');
+      var skills = {};
+      checks.forEach(function(cb) { skills[cb.name] = 'Yes'; });
+      var notes = document.getElementById('fu-other').value;
+
+      var followupData = {
+        type: 'followup',
+        email: submittedEmail,
+        skill_legal: skills.skill_legal || '',
+        skill_community: skills.skill_community || '',
+        skill_donors: skills.skill_donors || '',
+        skill_media: skills.skill_media || '',
+        skill_education: skills.skill_education || '',
+        anything_else: notes
+      };
+
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(followupData)
+      }).catch(function(err) { console.error('Sheet followup error:', err); });
+
+      form.style.display = 'none';
+      document.getElementById('followupSuccess').style.display = 'block';
+    }
+
+    // Subscribe → Mailchimp + Google Sheet
     function handleSubscribe(e) {
       e.preventDefault();
       var form = e.target;
@@ -1274,6 +1458,15 @@
       var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
       if (honeypot) return;
 
+      // Send to Google Sheet
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: 'subscriber' })
+      }).catch(function(err) { console.error('Sheet subscribe error:', err); });
+
+      // Send to Mailchimp
       var url = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0072abe6f0&EMAIL=' + encodeURIComponent(email) + '&c=handleSubscribeResponse';
 
       window.handleSubscribeResponse = function(data) {
@@ -1290,7 +1483,8 @@
           msg.style.color = '#c00';
         }
         msg.style.display = 'block';
-        document.body.removeChild(document.getElementById('mcSubscribeScript'));
+        var mcScript = document.getElementById('mcSubscribeScript');
+        if (mcScript) mcScript.parentNode.removeChild(mcScript);
       };
 
       var script = document.createElement('script');
