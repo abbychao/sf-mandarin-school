@@ -16,6 +16,14 @@
   <meta name="twitter:title" content="Friends of the SF Mandarin School">
   <meta name="twitter:description" content="SFUSD committed to launching a Mandarin immersion K-8 school for 2027-2028. Join 200+ families making sure it happens.">
   <meta name="twitter:image" content="https://www.sfmandarinschool.org/og-image.jpg">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCR9CRJD65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FCR9CRJD65');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1559,6 +1567,7 @@
           form.style.display = 'none';
           document.getElementById('formHeader').style.display = 'none';
           document.getElementById('formSuccess').style.display = 'block';
+          gtag('event', 'interest_form_submit', { event_category: 'forms' });
         } else {
           submitBtn.disabled = false;
           submitBtn.textContent = 'Submit';
@@ -1610,6 +1619,7 @@
 
       form.style.display = 'none';
       document.getElementById('followupSuccess').style.display = 'block';
+      gtag('event', 'followup_form_submit', { event_category: 'forms' });
     }
 
     // Subscribe → Mailchimp + Google Sheet
@@ -1637,6 +1647,7 @@
           msg.textContent = 'Thanks! You\u2019re subscribed.';
           msg.style.color = 'var(--red)';
           form.reset();
+          gtag('event', 'subscribe_form_submit', { event_category: 'forms' });
         } else if (data.msg && data.msg.indexOf('already subscribed') > -1) {
           msg.textContent = 'You\u2019re already subscribed!';
           msg.style.color = 'var(--red)';
