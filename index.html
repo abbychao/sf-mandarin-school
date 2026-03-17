@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.sfmandarinschool.org">
   <meta property="og:image" content="https://www.sfmandarinschool.org/og-image.jpg">
-  <meta property="og:image:width" content="1536">
-  <meta property="og:image:height" content="1024">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Friends of the SF Mandarin School">
   <meta name="twitter:description" content="SFUSD committed to launching a Mandarin immersion K-8 school for 2027-2028. Join 200+ families making sure it happens.">
@@ -31,213 +31,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --red: #BE3144;
-      --red-dark: #9A2636;
-      --red-light: #FDF2F2;
-      --gold: #D4A853;
-      --gold-light: #FBF7EE;
-      --cream: #FFFBF5;
-      --warm-gray: #F5F1EC;
-      --text: #2D2A26;
-      --text-secondary: #6B635A;
-      --border: #E8E2D9;
-      --radius: 12px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Lora', Georgia, serif;
-    }
-
-    /* ---- ANIMATIONS ---- */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .animate {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .animate.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .stagger-1 { transition-delay: 0.1s; }
-    .stagger-2 { transition-delay: 0.2s; }
-    .stagger-3 { transition-delay: 0.3s; }
-    .stagger-4 { transition-delay: 0.4s; }
-
-    /* ---- NAV ---- */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 0 2rem;
-      transition: all 0.35s;
-      opacity: 0;
-      transform: translateY(-100%);
-      pointer-events: none;
-    }
-
-    nav.scrolled {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 var(--border);
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    nav .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-    }
-
-    nav .wordmark {
-      font-family: 'Lora', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.35s;
-    }
-
-    nav.scrolled .wordmark {
-      color: var(--text);
-    }
-
-    nav .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      list-style: none;
-    }
-
-    nav .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: all 0.2s;
-    }
-
-    nav .nav-links a:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    nav.scrolled .nav-links a {
-      color: var(--text-secondary);
-    }
-
-    nav.scrolled .nav-links a:hover {
-      color: var(--text);
-      background: var(--warm-gray);
-    }
-
-    nav .nav-cta {
-      background: var(--red) !important;
-      color: #fff !important;
-      padding: 0.5rem 1.25rem !important;
-      border-radius: 8px !important;
-    }
-
-    nav .nav-cta:hover {
-      background: var(--red-dark) !important;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    .menu-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-
-    nav.scrolled .menu-toggle span {
-      background: var(--text);
-    }
-
-    /* ---- LAYOUT ---- */
-    section {
-      padding: 6rem 2rem;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      max-width: 540px;
-    }
-
     /* ---- HERO ---- */
     .hero {
       position: relative;
@@ -576,55 +371,7 @@
       font-size: 0.875rem;
     }
 
-    @media (max-width: 768px) {
-      .hero-split {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      .hero-copy {
-        text-align: center;
-      }
-
-      .hero .subtitle {
-        margin: 0 auto 2rem;
-      }
-
-      .hero .cta-group {
-        justify-content: center;
-      }
-
-      .hero .container {
-        padding: 7rem 0 4rem;
-      }
-    }
-
-    /* ---- BUTTONS ---- */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 2rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s;
-      cursor: pointer;
-      border: none;
-      font-family: inherit;
-    }
-
-    .btn-primary {
-      background: var(--red);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--red-dark);
-      transform: translateY(-1px);
-    }
-
+    /* ---- HERO BUTTONS ---- */
     .btn-hero-secondary {
       background: rgba(255, 255, 255, 0.12);
       color: #fff;
@@ -696,188 +443,7 @@
       align-self: stretch;
     }
 
-    @media (max-width: 768px) {
-      .stats-banner .stats {
-        gap: 2rem;
-      }
-
-      .stats-banner .stat-number {
-        font-size: 2.25rem;
-      }
-
-      .stats-banner .stat-divider {
-        display: none;
-      }
-    }
-
-    /* ---- HOW TO HELP TEASER ---- */
-    .help-teaser {
-      background: var(--red);
-      color: #fff;
-      text-align: center;
-    }
-
-    .help-teaser .section-label {
-      color: rgba(255,255,255,0.7);
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    .help-teaser .section-title {
-      color: #fff;
-    }
-
-    .help-teaser .section-desc {
-      color: rgba(255,255,255,0.85);
-      max-width: 540px;
-      margin: 0 auto;
-    }
-
-    .help-teaser .btn-outline {
-      display: inline-block;
-      margin-top: 1.75rem;
-      padding: 0.75rem 2rem;
-      border: 2px solid #fff;
-      border-radius: 8px;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .help-teaser .btn-outline:hover {
-      background: #fff;
-      color: var(--red);
-    }
-
-    /* ---- OUR WORK ---- */
-    .our-work {
-      background: #fff;
-    }
-
-    .our-work .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      margin-top: 3rem;
-    }
-
-    .work-card {
-      padding: 2rem;
-      border-radius: var(--radius);
-      background: #fff;
-      border: 1px solid var(--border);
-      transition: all 0.3s;
-      position: relative;
-    }
-
-    .work-card:hover {
-      box-shadow: 0 4px 20px rgba(45, 42, 38, 0.06);
-      transform: translateY(-2px);
-    }
-
-    .work-card .card-accent {
-      height: 3px;
-      width: 40px;
-      border-radius: 2px;
-      margin-bottom: 1.25rem;
-    }
-
-    .work-card .card-accent.red { background: var(--red); }
-    .work-card .card-accent.gold { background: var(--gold); }
-
-    .work-card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-    }
-
-    .work-card p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-    }
-
-    /* ---- FOOTER SUBSCRIBE ---- */
-    .footer-subscribe {
-      margin: 0 auto 2rem;
-      max-width: 400px;
-    }
-
-    .footer-subscribe .subscribe-label {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-subscribe form {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .footer-subscribe input {
-      flex: 1;
-      padding: 0.6rem 0.875rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-family: inherit;
-      outline: none;
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      transition: border-color 0.2s;
-    }
-
-    .footer-subscribe input::placeholder {
-      color: rgba(255, 255, 255, 0.35);
-    }
-
-    .footer-subscribe input:focus {
-      border-color: var(--gold);
-    }
-
-    .footer-subscribe button {
-      padding: 0.6rem 1.25rem;
-      border-radius: 8px;
-      border: none;
-      background: var(--red);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .footer-subscribe button:hover {
-      background: var(--red-dark);
-    }
-
-    /* ---- FOLLOWUP FORM ---- */
-    .followup-section {
-      text-align: left;
-    }
-
-    .followup-section textarea {
-      width: 100%;
-      padding: 0.65rem 0.875rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.875rem;
-      font-family: inherit;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      resize: vertical;
-      min-height: 60px;
-      transition: border-color 0.2s;
-    }
-
-    .followup-section textarea:focus {
-      border-color: var(--red);
-    }
-
-    /* ---- ABOUT ---- */
+    /* ---- WHY THIS MATTERS (timeline) ---- */
     .about {
       background: var(--cream);
     }
@@ -946,65 +512,120 @@
       font-size: 0.95rem;
     }
 
-    /* ---- FOOTER ---- */
-    footer {
-      background: var(--text);
-      color: rgba(255, 255, 255, 0.6);
-      padding: 3rem 2rem;
-      text-align: center;
-      font-size: 0.85rem;
+    /* ---- OUR WORK ---- */
+    .our-work {
+      background: #fff;
     }
 
-    footer .footer-inner {
-      max-width: 1100px;
+    .our-work .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .work-card {
+      padding: 2rem;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .work-card:hover {
+      box-shadow: 0 4px 20px rgba(45, 42, 38, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .work-card .card-accent {
+      height: 3px;
+      width: 40px;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .work-card .card-accent.red { background: var(--red); }
+    .work-card .card-accent.gold { background: var(--gold); }
+
+    .work-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .work-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ---- HOW TO HELP TEASER ---- */
+    .help-teaser {
+      background: var(--red);
+      color: #fff;
+      text-align: center;
+    }
+
+    .help-teaser .section-label {
+      color: rgba(255,255,255,0.7);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .help-teaser .section-title {
+      color: #fff;
+    }
+
+    .help-teaser .section-desc {
+      color: rgba(255,255,255,0.85);
+      max-width: 540px;
       margin: 0 auto;
     }
 
-    footer .wordmark {
-      font-family: 'Lora', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.05rem;
+    .help-teaser .btn-outline {
+      display: inline-block;
+      margin-top: 1.75rem;
+      padding: 0.75rem 2rem;
+      border: 2px solid #fff;
+      border-radius: 8px;
       color: #fff;
-      margin-bottom: 0.25rem;
-    }
-
-    footer .chinese-footer {
-      color: var(--gold);
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-    }
-
-    footer .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-      list-style: none;
-    }
-
-    footer .footer-links a {
-      color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+      font-size: 0.95rem;
       text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s;
+      transition: all 0.2s;
     }
 
-    footer .footer-links a:hover {
-      color: #fff;
+    .help-teaser .btn-outline:hover {
+      background: #fff;
+      color: var(--red);
     }
 
-    footer .made-in {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.35);
+    /* ---- FOLLOWUP FORM ---- */
+    .followup-section {
+      text-align: left;
     }
 
-    /* ---- RESPONSIVE ---- */
+    .followup-section textarea {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      resize: vertical;
+      min-height: 60px;
+      transition: border-color 0.2s;
+    }
+
+    .followup-section textarea:focus {
+      border-color: var(--red);
+    }
+
+    /* ---- RESPONSIVE (page-specific) ---- */
     @media (max-width: 768px) {
-      section {
-        padding: 4.5rem 1.5rem;
-      }
-
       .hero {
         min-height: auto;
       }
@@ -1055,6 +676,27 @@
         font-size: 0.9rem;
       }
 
+      .hero-split {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero .subtitle {
+        margin: 0 auto 2rem;
+      }
+
+      .hero .cta-group {
+        justify-content: center;
+      }
+
+      .hero .container {
+        padding: 7rem 0 4rem;
+      }
+
       .our-work .grid {
         grid-template-columns: 1fr;
       }
@@ -1066,64 +708,24 @@
         left: calc(-3rem + 10px) !important;
       }
 
-      .footer-subscribe form {
-        flex-direction: column;
+      .stats-banner .stats {
+        gap: 2rem;
       }
 
-      nav .nav-links {
+      .stats-banner .stat-number {
+        font-size: 2.25rem;
+      }
+
+      .stats-banner .stat-divider {
         display: none;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(16px);
-        flex-direction: column;
-        padding: 1.25rem 2rem 1.5rem;
-        gap: 0.25rem;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      }
-
-      nav .nav-links a:not(.nav-cta) {
-        color: var(--text-secondary) !important;
-      }
-
-      nav .nav-links a:not(.nav-cta):hover {
-        color: var(--text) !important;
-        background: var(--warm-gray) !important;
-      }
-
-      nav .nav-links.open {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
       }
     }
   </style>
 </head>
-<body>
+<body class="homepage">
 
   <!-- NAV -->
-  <nav id="mainNav">
-    <div class="nav-inner">
-      <a href="#" class="wordmark" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Friends of the SF Mandarin School</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#why-it-matters">Why This Matters</a></li>
-        <li><a href="#our-work">Our Work</a></li>
-        <li><a href="how-to-help.html">How to Help</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#interest" class="nav-cta">Join Us</a></li>
-      </ul>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+  <div id="nav-placeholder"></div>
 
   <!-- HERO -->
   <section class="hero">
@@ -1176,9 +778,9 @@
                   <label for="childDob1">Date of Birth</label>
                   <input type="date" id="childDob1" min="2000-01-01" max="2050-12-31" required class="dob-native">
                   <div class="dob-dropdowns">
-                    <select class="dob-month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
-                    <select class="dob-day"><option value="" disabled selected>Day</option></select>
-                    <select class="dob-year"><option value="" disabled selected>Year</option></select>
+                    <select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
+                    <select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select>
+                    <select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select>
                   </div>
                 </div>
               </div>
@@ -1334,46 +936,10 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-subscribe">
-        <div class="subscribe-label">Subscribe for updates</div>
-        <form onsubmit="handleSubscribe(event)">
-          <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
-          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
-          <button type="submit">Subscribe</button>
-        </form>
-        <p id="subscribeMsg" style="margin-top: 0.5rem; font-size: 0.8rem; display: none;"></p>
-      </div>
-      <div class="wordmark">Friends of the SF Mandarin School</div>
-      <div class="chinese-footer">&#26087;&#37329;&#23665;&#20013;&#25991;&#27785;&#28024;&#23398;&#26657;&#20043;&#21451;</div>
-      <ul class="footer-links">
-        <li><a href="#interest">Join Us</a></li>
-        <li><a href="#why-it-matters">Why This Matters</a></li>
-        <li><a href="#our-work">Our Work</a></li>
-        <li><a href="how-to-help.html">How to Help</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-      <p>&copy; 2026 Friends of the SF Mandarin School</p>
-      <p class="made-in">Made with care in San Francisco</p>
-      <p style="font-size: 0.7rem; color: rgba(255,255,255,0.25); margin-top: 0.75rem; line-height: 1.5;">We collect your information to advocate for the school and keep you updated. We never sell your data. Contact us to be removed.</p>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
 
+  <script src="main.js"></script>
   <script>
-    // Scroll-triggered animations
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-    document.querySelectorAll('.animate').forEach(function (el) {
-      observer.observe(el);
-    });
-
     // Countdown ticker — updates live at midnight Pacific
     (function() {
       function updateCountdown() {
@@ -1394,23 +960,7 @@
       setInterval(updateCountdown, 60000);
     })();
 
-    // Nav background on scroll
-    window.addEventListener('scroll', function () {
-      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
-    });
-
-    // Mobile menu toggle
-    document.getElementById('menuToggle').addEventListener('click', function () {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
-
-    document.querySelectorAll('#navLinks a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        document.getElementById('navLinks').classList.remove('open');
-      });
-    });
-
-    // Interest form: add child (max 4)
+    // Interest form: phone formatting
     function formatPhone(input) {
       var digits = input.value.replace(/\D/g, '').substring(0, 10);
       if (digits.length === 0) { input.value = ''; return; }
@@ -1481,7 +1031,7 @@
       wrapper.style.position = 'relative';
       wrapper.innerHTML =
         '<div class="form-group"><label>Child\'s Name <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;float:right;" onclick="removeChildRow(this)">&times; Remove</button></label><input type="text" placeholder="First name" required></div>' +
-        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required class="dob-native"><div class="dob-dropdowns"><select class="dob-month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="dob-day"><option value="" disabled selected>Day</option></select><select class="dob-year"><option value="" disabled selected>Year</option></select></div></div>';
+        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required class="dob-native"><div class="dob-dropdowns"><select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select><select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select></div></div>';
       document.getElementById('childrenList').appendChild(wrapper);
       populateDobDropdowns(wrapper.querySelector('.dob-dropdowns'));
       syncDobRequired();
@@ -1492,9 +1042,6 @@
       childCount--;
       document.querySelector('.add-child-btn').style.display = '';
     }
-
-    // Google Sheet endpoint
-    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxOBlhihUAjGi44Lc8q878fQqVlW8mdaYiRa3jj0C4RvoqPrMMdcWsTe4ormHuhQ49q/exec';
 
     // Store email for followup form
     var submittedEmail = '';
@@ -1624,50 +1171,6 @@
       form.style.display = 'none';
       document.getElementById('followupSuccess').style.display = 'block';
       gtag('event', 'followup_form_submit', { event_category: 'forms' });
-    }
-
-    // Subscribe → Mailchimp + Google Sheet
-    function handleSubscribe(e) {
-      e.preventDefault();
-      var form = e.target;
-      var email = form.querySelector('input[name="EMAIL"]').value;
-      var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
-      if (honeypot) return;
-
-      // Send to Google Sheet
-      fetch(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, source: 'subscriber' })
-      }).catch(function(err) { console.error('Sheet subscribe error:', err); });
-
-      // Send to Mailchimp
-      var url = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0072abe6f0&EMAIL=' + encodeURIComponent(email) + '&c=handleSubscribeResponse';
-
-      window.handleSubscribeResponse = function(data) {
-        var msg = document.getElementById('subscribeMsg');
-        if (data.result === 'success') {
-          msg.textContent = 'Thanks! You\u2019re subscribed.';
-          msg.style.color = 'var(--red)';
-          form.reset();
-          gtag('event', 'subscribe_form_submit', { event_category: 'forms' });
-        } else if (data.msg && data.msg.indexOf('already subscribed') > -1) {
-          msg.textContent = 'You\u2019re already subscribed!';
-          msg.style.color = 'var(--red)';
-        } else {
-          msg.textContent = 'Something went wrong. Please try again.';
-          msg.style.color = '#c00';
-        }
-        msg.style.display = 'block';
-        var mcScript = document.getElementById('mcSubscribeScript');
-        if (mcScript) mcScript.parentNode.removeChild(mcScript);
-      };
-
-      var script = document.createElement('script');
-      script.id = 'mcSubscribeScript';
-      script.src = url;
-      document.body.appendChild(script);
     }
   </script>
   <script>
