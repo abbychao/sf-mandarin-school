@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supporters Preview — Friends of the SF Mandarin School</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Friends of the SF Mandarin School works in partnership with SFUSD to launch a Mandarin Immersion K-8 school for 2027-2028. 200 families and growing.">
+  <meta property="og:title" content="About Us — Friends of the SF Mandarin School">
+  <meta property="og:description" content="A parent-led partnership with SFUSD to launch San Francisco's Mandarin Immersion K-8 school.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sfmandarinschool.org/about.html">
+  <meta property="og:image" content="https://www.sfmandarinschool.org/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us — Friends of the SF Mandarin School">
+  <meta name="twitter:description" content="A parent-led partnership with SFUSD to launch San Francisco's Mandarin Immersion K-8 school.">
+  <meta name="twitter:image" content="https://www.sfmandarinschool.org/og-image.jpg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCR9CRJD65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FCR9CRJD65');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ---- ABOUT PAGE STYLES ---- */
+
+    /* Partnership section */
+    .partnership-section {
+      background: #fff;
+    }
+
+    .partnership-body p {
+      font-size: 0.975rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .partnership-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .workstream-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .workstream-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream);
+      border-radius: var(--radius);
+    }
+
+    .workstream-accent {
+      width: 3px;
+      height: 32px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .workstream-accent.red { background: var(--red); }
+    .workstream-accent.gold { background: var(--gold); }
+
+    .workstream-item strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .workstream-item span {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .partnership-link {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .partnership-link a {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .partnership-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Story section */
+    .story-content {
+      background: var(--cream);
+    }
+
+    .story-layout {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .story-intro {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 2.5rem;
+    }
+
+    .founders-row {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .founder-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--warm-gray);
+      border: 3px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .founder-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .founder-photo img.shift-left {
+      object-position: 40% center;
+    }
+
+    .founder-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .story-body p {
+      font-size: 0.975rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .story-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Supporters section */
+    .supporters-section {
+      background: #fff;
+    }
+
+    .supporters-list {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+    }
+
+    .supporter-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .supporter-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--border);
+      margin-bottom: 0.75rem;
+    }
+
+    .supporter-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .supporter-item strong {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .supporter-item span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.15rem;
+    }
+
+    .org-supporters {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .org-logo {
+      max-height: 140px;
+      max-width: 400px;
+      object-fit: contain;
+    }
+
+    /* About CTA */
+    .about-cta {
+      background: var(--red);
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .about-cta .section-title {
+      color: #fff;
+    }
+
+    .about-cta .section-desc {
+      color: rgba(255,255,255,0.85);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+    }
+
+    .about-cta .btn-primary {
+      background: #fff;
+      color: var(--red);
+    }
+
+    .about-cta .btn-primary:hover {
+      background: rgba(255,255,255,0.9);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .story-intro {
+        font-size: 1.1rem;
+      }
+
+      .founders-row {
+        gap: 1.5rem;
+      }
+
+      .founder-photo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .workstream-item {
+        padding: 0.875rem 1rem;
+      }
+
+      .about-cta {
+        padding: 4rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div id="nav-placeholder"></div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="section-label">About Us</div>
+      <h1>A Parent-Led Partnership<br>with SFUSD</h1>
+      <p>200 families and growing, working directly with district leadership to launch San Francisco&rsquo;s Mandarin Immersion K&ndash;8 school.</p>
+    </div>
+  </div>
+
+  <!-- PARTNERSHIP -->
+  <section class="partnership-section">
+    <div class="container">
+      <div class="story-layout">
+        <div class="animate">
+          <div class="section-label">The Partnership</div>
+          <h2 class="section-title">Working Hand-in-Hand with SFUSD</h2>
+        </div>
+
+        <div class="partnership-body animate stagger-1">
+          <p>Friends of the SF Mandarin School works in close, ongoing partnership with SFUSD. We hold <strong>monthly standing meetings</strong> with district leadership, coordinating on the planning, outreach, and logistics needed to bring this school to life. This isn&rsquo;t a wish list &mdash; it&rsquo;s an active collaboration with the people making decisions.</p>
+
+        </div>
+
+        <p class="partnership-link animate stagger-2">
+          Learn more about <a href="index.html#our-work">what we&rsquo;re working on</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="story-content">
+    <div class="container">
+      <div class="story-layout">
+
+        <div class="animate">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">How We Got Here</h2>
+        </div>
+
+        <div class="founders-row animate stagger-1">
+          <div>
+            <div class="founder-photo">
+              <img src="abby.jpg" alt="Abby Chao">
+            </div>
+            <div class="founder-name">Abby</div>
+          </div>
+          <div>
+            <div class="founder-photo">
+              <img src="justin.jpg" alt="Justin" class="shift-left">
+            </div>
+            <div class="founder-name">Justin</div>
+          </div>
+        </div>
+
+        <div class="story-body animate stagger-2">
+          <p>We&rsquo;re Abby and Justin &mdash; two SF parents with three kids under four and a shared belief that this city can do better for Mandarin immersion.</p>
+
+          <p>When we started looking at kindergarten for our oldest, we assumed San Francisco would have plenty of Mandarin immersion options. We were wrong. Across all of SFUSD, there are just <strong>66 kindergarten seats</strong>. Hundreds of families apply every year. Most are turned away.</p>
+
+          <p>For us, this is personal. Like many Chinese Americans in our generation, Abby grew up taking Saturday Chinese school and hated it. Now, we want something different for our kids. With immersion, kids don&rsquo;t just study the language &mdash; they <em>live</em> in it. We want our children connected to their heritage in a way that feels natural. We both grew up in public schools, and we believe public education can offer this.</p>
+
+          <p>So we started showing up &mdash; at board meetings, in community conversations, connecting with families who felt the same frustration. When SFUSD committed to opening a Mandarin Immersion K&ndash;8 school for 2027&ndash;2028, we stepped up to help make it real. Today, <strong>more than 200 families</strong> have expressed interest, and we&rsquo;re working directly with district leadership to get the school approved.</p>
+
+          <p><strong>This effort is open to everyone.</strong> Our story is about heritage &mdash; but yours might be the cognitive advantages of bilingual education, a globally connected future for your child, or simply a richer learning experience. Whatever brings you here, you belong.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTERS -->
+  <section class="supporters-section">
+    <div class="container">
+      <div class="story-layout">
+        <div class="animate">
+          <div class="section-label">Community Support</div>
+          <h2 class="section-title">We Are Not Alone</h2>
+          <p class="section-desc">Organizations and community leaders who support launching the SFUSD Mandarin Immersion K&ndash;8 for 2027&ndash;2028.</p>
+        </div>
+
+        <div class="supporters-list animate stagger-1">
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="phil-kim.jpg" alt="Phil Kim">
+            </div>
+            <strong>Phil Kim</strong>
+            <span>President, SFUSD Board of Education</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="supriya-ray.jpg" alt="Supriya Ray">
+            </div>
+            <strong>Supriya Ray</strong>
+            <span>Commissioner, SFUSD Board of Education</span>
+          </div>
+        </div>
+
+        <div class="org-supporters animate stagger-2">
+          <img src="wah-mei-logo.png" alt="Wah Mei Bilingual Education &amp; Advocacy" class="org-logo">
+          <span style="font-size: 1.1rem; font-weight: 600; color: var(--text);">Asian PAC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="container">
+      <div class="animate">
+        <h2 class="section-title">There&rsquo;s a Place for You in This</h2>
+        <p class="section-desc">Join 200+ families telling SFUSD that we need this school.</p>
+        <a href="index.html#interest" class="btn btn-primary">Show your interest &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
