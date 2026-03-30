@@ -98,6 +98,9 @@ document.querySelectorAll('.animate').forEach(function (el) {
   observer.observe(el);
 });
 
+// ---- UTM tracking ----
+var defined_utm_source = new URLSearchParams(window.location.search).get('utm_source') || '';
+
 // ---- Subscribe form handler (used by footer) ----
 // Google Sheet endpoint
 var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxOBlhihUAjGi44Lc8q878fQqVlW8mdaYiRa3jj0C4RvoqPrMMdcWsTe4ormHuhQ49q/exec';
@@ -114,7 +117,7 @@ function handleSubscribe(e) {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email, source: 'subscriber' })
+    body: JSON.stringify({ email: email, source: 'subscriber', utm_source: defined_utm_source })
   }).catch(function (err) { console.error('Sheet subscribe error:', err); });
 
   // Send to Mailchimp
