@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updates &mdash; Friends of the SF Mandarin School</title>
+  <meta name="description" content="Monthly updates from Friends of the SF Mandarin School on our progress working with SFUSD to launch a Mandarin Immersion K-8 school.">
+  <meta property="og:title" content="Updates — Friends of the SF Mandarin School">
+  <meta property="og:description" content="Monthly updates on our progress launching San Francisco's Mandarin Immersion K-8 school.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sfmandarinschool.org/updates.html">
+  <meta property="og:image" content="https://www.sfmandarinschool.org/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Updates — Friends of the SF Mandarin School">
+  <meta name="twitter:description" content="Monthly updates on our progress launching San Francisco's Mandarin Immersion K-8 school.">
+  <meta name="twitter:image" content="https://www.sfmandarinschool.org/images/og-image.jpg">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCR9CRJD65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FCR9CRJD65');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ---- UPDATES PAGE STYLES ---- */
+
+    /* Subscribe banner */
+    .updates-subscribe {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+    }
+
+    .updates-subscribe .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .updates-subscribe .subscribe-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .updates-subscribe form {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .updates-subscribe input[type="email"] {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      outline: none;
+      background: #fff;
+      color: var(--text);
+      width: 240px;
+      transition: border-color 0.2s;
+    }
+
+    .updates-subscribe input[type="email"]::placeholder {
+      color: #B0A99F;
+    }
+
+    .updates-subscribe input[type="email"]:focus {
+      border-color: var(--red);
+    }
+
+    .updates-subscribe button {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .updates-subscribe button:hover {
+      background: var(--red-dark);
+    }
+
+    /* Updates list */
+    .updates-section {
+      background: #fff;
+    }
+
+    .updates-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .update-item {
+      padding-bottom: 3.5rem;
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .update-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .update-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .update-body p {
+      font-size: 0.975rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .update-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .update-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .update-body ul {
+      margin: 0 0 1.5rem 1.25rem;
+      padding: 0;
+    }
+
+    .update-body li {
+      font-size: 0.975rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .update-body li:last-child {
+      margin-bottom: 0;
+    }
+
+    .update-body a {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .update-body a:hover {
+      text-decoration: underline;
+    }
+
+    .update-cta {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .update-cta p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .updates-subscribe .container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+
+      .updates-subscribe .subscribe-text {
+        text-align: center;
+      }
+
+      .updates-subscribe form {
+        flex-direction: column;
+      }
+
+      .updates-subscribe input[type="email"] {
+        width: 100%;
+      }
+
+      .update-title {
+        font-size: 1.25rem;
+      }
+
+      .update-item {
+        padding-bottom: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div id="nav-placeholder"></div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="section-label">Updates</div>
+      <h1>What We&rsquo;re Working On</h1>
+      <p>Monthly updates on our progress with SFUSD to launch the Mandarin Immersion K&ndash;8 school.</p>
+    </div>
+  </div>
+
+  <!-- SUBSCRIBE BANNER -->
+  <div class="updates-subscribe">
+    <div class="container">
+      <span class="subscribe-text">Get these updates in your inbox</span>
+      <form onsubmit="handleSubscribe(event)">
+        <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
+        <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="subscribeMsg" style="margin-top: 0.5rem; font-size: 0.8rem; display: none;"></p>
+    </div>
+  </div>
+
+  <!-- UPDATES -->
+  <section class="updates-section">
+    <div class="container">
+      <div class="updates-list">
+
+        <!-- UPDATE: March 10, 2026 -->
+        <article class="update-item animate">
+          <div class="update-date">March 10, 2026</div>
+          <h2 class="update-title">Our Inaugural Meeting with SFUSD</h2>
+          <div class="update-body">
+            <p>We held our first meeting with SFUSD leadership on March 10 in the Superintendent&rsquo;s conference room &mdash; and the energy in the room was real.</p>
+
+            <p>In attendance were <strong>Liana Szeto</strong>, Alice Fong Yu&rsquo;s founding principal and the leader of this effort; <strong>Hong Mei Pang</strong>, SFUSD&rsquo;s Head of Communications &amp; Governance; <strong>School Board Commissioner Supryia Ray</strong>; and <strong>School Board President Phil Kim</strong>.</p>
+
+            <p>We aligned on three areas of focus:</p>
+
+            <ul>
+              <li><strong>Parent engagement &amp; demand data.</strong> The district needs to see strong interest &mdash; especially from young families who would be future SFUSD families. This data will directly inform the school&rsquo;s size and location.</li>
+              <li><strong>Teacher recruitment.</strong> Mandarin-credentialed teachers are the biggest staffing challenge. The district is working on detailed job requirements so we can help recruit qualified candidates.</li>
+              <li><strong>Fundraising.</strong> SFUSD will be the primary funding source, but supplementary fundraising &mdash; especially for startup costs &mdash; will help ensure the school launches on time regardless of other budget pressures.</li>
+            </ul>
+
+            <p><strong>Key decisions and timeline:</strong></p>
+
+            <p>The School Board must approve the new school at its second meeting in September 2026, so that the school can be presented at the enrollment fair in October and families can receive information in time to apply.</p>
+
+            <p>The initial plan is for the school to be <strong>co-located with an underenrolled school</strong>, with the possibility of moving to a more permanent site as the school grows. The school could launch with as few as TK, K, and 1st grade &mdash; but ideally, demand will support <strong>three classrooms per grade</strong>, which is the size needed to sustain a full K&ndash;8 program over time. The interest data we&rsquo;re collecting will help determine that.</p>
+
+            <p><strong>What the district owes us:</strong></p>
+
+            <ul>
+              <li>Detailed job requirement documents for Mandarin-credentialed teaching positions, so we can begin recruiting</li>
+            </ul>
+
+            <p><strong>What we&rsquo;re working on:</strong></p>
+
+            <ul>
+              <li>Launched <a href="https://www.sfmandarinschool.org">sfmandarinschool.org</a> with an interest form and mailing list to capture demand data</li>
+              <li>Promoting the interest form &mdash; printing flyers, sharing across parent groups, school communities, and neighborhood networks</li>
+              <li>Setting up fiscal sponsorship so we can accept donations and begin more formal fundraising</li>
+            </ul>
+
+            <p><strong>Our next meeting with district leadership is April 21.</strong> We want to walk in with overwhelming demand data. If you haven&rsquo;t already, <a href="https://www.sfmandarinschool.org/?utm_source=website&amp;utm_medium=updates&amp;utm_campaign=march-2026-recap">fill out the interest form</a> &mdash; it takes two minutes and every submission counts.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
