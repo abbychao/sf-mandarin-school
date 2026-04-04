@@ -123,45 +123,20 @@
       margin-bottom: 2.5rem;
     }
 
-    .founders-row {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .founder-photo {
-      width: 120px;
-      height: 120px;
+    .founders-photo {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 3rem;
       border-radius: 50%;
-      background: var(--warm-gray);
-      border: 3px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
       overflow: hidden;
+      border: 3px solid var(--border);
     }
 
-    .founder-photo img {
+    .founders-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
-    }
-
-    .founder-photo img.shift-left {
-      object-position: 40% center;
-    }
-
-    .founder-name {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text);
-      text-align: center;
-      margin-top: 0.5rem;
+      display: block;
     }
 
     .story-body p {
@@ -303,7 +278,7 @@
         </div>
 
         <p class="partnership-link animate stagger-2">
-          Learn more about <a href="index.html#our-work">what we&rsquo;re working on</a>.
+          See the latest on <a href="updates.html">what we&rsquo;re working on</a>.
         </p>
       </div>
     </div>
@@ -319,19 +294,8 @@
           <h2 class="section-title">How We Got Here</h2>
         </div>
 
-        <div class="founders-row animate stagger-1">
-          <div>
-            <div class="founder-photo">
-              <img src="images/abby.jpg" alt="Abby Chao">
-            </div>
-            <div class="founder-name">Abby</div>
-          </div>
-          <div>
-            <div class="founder-photo">
-              <img src="images/justin.jpg" alt="Justin" class="shift-left">
-            </div>
-            <div class="founder-name">Justin</div>
-          </div>
+        <div class="founders-photo animate stagger-1">
+          <img src="images/abby-justin.jpg" alt="Abby and Justin at the Golden Gate Bridge">
         </div>
 
         <div class="story-body animate stagger-2">

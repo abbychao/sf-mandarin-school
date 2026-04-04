@@ -245,7 +245,7 @@ section {
 
 /* ---- PAGE HEADER (subpages) ---- */
 .page-header {
-  background: linear-gradient(to bottom, #2D2A26, #3D2A2A);
+  background: #3B3836;
   color: #fff;
   padding: 8rem 2rem 4rem;
   text-align: center;
