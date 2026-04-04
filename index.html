@@ -45,50 +45,6 @@
       align-items: center;
     }
 
-    @keyframes drift1 {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(40px, -30px) scale(1.05); }
-    }
-
-    @keyframes drift2 {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-30px, 20px) scale(0.95); }
-    }
-
-    .hero-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-    }
-
-    .hero-orb-1 {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(120, 120, 120, 0.2), transparent 70%);
-      top: -10%;
-      right: -5%;
-      animation: drift1 12s ease-in-out infinite;
-    }
-
-    .hero-orb-2 {
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(160, 155, 145, 0.15), transparent 70%);
-      bottom: 5%;
-      left: -8%;
-      animation: drift2 14s ease-in-out infinite;
-    }
-
-    .hero-orb-3 {
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(120, 120, 120, 0.1), transparent 70%);
-      top: 40%;
-      left: 30%;
-      animation: drift1 10s ease-in-out infinite 3s;
-    }
-
     .hero .container {
       position: relative;
       z-index: 2;
@@ -729,9 +685,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-orb hero-orb-3"></div>
     <div class="container">
       <div class="hero-split">
         <div class="hero-copy">
@@ -920,6 +873,9 @@
           <p>Pushing SFUSD to meet its September 2026 Board deadline &mdash; the vote that determines whether the school opens in 2027&ndash;2028.</p>
         </div>
       </div>
+      <p class="animate" style="text-align: center; margin-top: 2.5rem; font-size: 0.95rem; color: var(--text-secondary);">
+        <a href="updates.html" style="color: var(--red); text-decoration: none; font-weight: 600;">See the latest on what we&rsquo;re working on &rarr;</a>
+      </p>
     </div>
   </section>
 
@@ -1101,12 +1057,12 @@
         utm_source: defined_utm_source
       };
 
-      fetch(SHEET_URL, {
+      fetchWithRetry(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(sheetData)
-      }).catch(function(err) { console.error('Sheet error:', err); });
+      }, 2, 1000).catch(function(err) { console.error('Sheet error:', err); });
 
       // 2. Send only email + name to Mailchimp (with interest-form tag)
       var mcUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0' +
@@ -1163,12 +1119,12 @@
         anything_else: notes
       };
 
-      fetch(SHEET_URL, {
+      fetchWithRetry(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(followupData)
-      }).catch(function(err) { console.error('Sheet followup error:', err); });
+      }, 2, 1000).catch(function(err) { console.error('Sheet followup error:', err); });
 
       form.style.display = 'none';
       document.getElementById('followupSuccess').style.display = 'block';

@@ -101,6 +101,20 @@ document.querySelectorAll('.animate').forEach(function (el) {
 // ---- UTM tracking ----
 var defined_utm_source = new URLSearchParams(window.location.search).get('utm_source') || '';
 
+// ---- Fetch with retry (for Google Sheet POSTs) ----
+function fetchWithRetry(url, options, retries, delay) {
+  retries = retries || 2;
+  delay = delay || 1000;
+  return fetch(url, options).catch(function(err) {
+    if (retries <= 0) throw err;
+    return new Promise(function(resolve) {
+      setTimeout(resolve, delay);
+    }).then(function() {
+      return fetchWithRetry(url, options, retries - 1, delay);
+    });
+  });
+}
+
 // ---- Subscribe form handler (used by footer) ----
 // Google Sheet endpoint
 var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxOBlhihUAjGi44Lc8q878fQqVlW8mdaYiRa3jj0C4RvoqPrMMdcWsTe4ormHuhQ49q/exec';
@@ -112,19 +126,19 @@ function handleSubscribe(e) {
   var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
   if (honeypot) return;
 
-  // Send to Google Sheet
-  fetch(SHEET_URL, {
+  // Send to Google Sheet (with retry)
+  fetchWithRetry(SHEET_URL, {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: email, source: 'subscriber', utm_source: defined_utm_source })
-  }).catch(function (err) { console.error('Sheet subscribe error:', err); });
+  }, 2, 1000).catch(function (err) { console.error('Sheet subscribe error:', err); });
 
   // Send to Mailchimp
   var url = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0072abe6f0&EMAIL=' + encodeURIComponent(email) + '&c=handleSubscribeResponse';
 
   window.handleSubscribeResponse = function (data) {
-    var msg = document.getElementById('subscribeMsg');
+    var msg = form.closest('.footer-subscribe, .updates-subscribe').querySelector('p[id^="subscribeMsg"]');
     if (data.result === 'success') {
       msg.textContent = 'Thanks! You\u2019re subscribed.';
       msg.style.color = 'var(--red)';
