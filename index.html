@@ -525,14 +525,17 @@
     .supporters-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 2.5rem 2rem;
+      gap: 3rem 3rem;
       justify-content: center;
       margin-top: 3rem;
+      max-width: 880px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .supporters-grid .supporter-item {
-      flex: 0 0 calc(25% - 1.5rem);
-      max-width: 130px;
+      flex: 0 0 180px;
+      max-width: 180px;
     }
 
     .supporter-item {
@@ -543,8 +546,8 @@
     }
 
     .supporter-photo {
-      width: 110px;
-      height: 110px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--border);
@@ -782,9 +785,14 @@
         display: none;
       }
 
+      .supporters-grid {
+        max-width: 100%;
+        gap: 2rem 1.5rem;
+      }
+
       .supporters-grid .supporter-item {
-        flex: 0 0 calc(50% - 0.5rem);
-        max-width: 130px;
+        flex: 0 0 140px;
+        max-width: 140px;
       }
 
       .supporter-photo {
@@ -1014,6 +1022,13 @@
       </div>
 
       <div class="supporters-grid animate stagger-1">
+        <div class="supporter-item">
+          <div class="supporter-photo">
+            <img src="images/phil-kim.jpg" alt="Phil Kim">
+          </div>
+          <strong>Phil Kim</strong>
+          <span>SFUSD Board President</span>
+        </div>
         <div class="supporter-item">
           <div class="supporter-photo">
             <img src="images/jaime-huling.jpeg" alt="Jaime Huling">
