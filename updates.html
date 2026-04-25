@@ -98,6 +98,60 @@
       background: var(--red-dark);
     }
 
+    /* Table of contents */
+    .updates-toc {
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .toc-list a {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: baseline;
+      gap: 0 1rem;
+      text-decoration: none;
+      color: var(--text);
+      padding: 0.4rem 0;
+    }
+
+    .toc-list a:hover .toc-title {
+      color: var(--red);
+      text-decoration: underline;
+    }
+
+    .toc-date {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .toc-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
     /* Updates list */
     .updates-section {
       background: #fff;
@@ -253,10 +307,19 @@
   <!-- UPDATES -->
   <section class="updates-section">
     <div class="container">
+      <div class="updates-toc animate">
+        <div class="toc-label">All Updates</div>
+        <ul class="toc-list">
+          <li><a href="#update-april-24-2026"><span class="toc-date">April 24, 2026</span><span class="toc-title">April Meeting Debrief, BOE Update, May Town Hall</span></a></li>
+          <li><a href="#update-april-16-2026"><span class="toc-date">April 16, 2026</span><span class="toc-title">Welcome to Friends of the SF Mandarin School</span></a></li>
+          <li><a href="#update-march-10-2026"><span class="toc-date">March 10, 2026</span><span class="toc-title">Our Inaugural Meeting with SFUSD</span></a></li>
+        </ul>
+      </div>
+
       <div class="updates-list">
 
         <!-- UPDATE: April 24, 2026 -->
-        <article class="update-item animate">
+        <article class="update-item animate" id="update-april-24-2026">
           <div class="update-date">April 24, 2026</div>
           <h2 class="update-title">April Meeting Debrief, BOE Update, May Town Hall</h2>
           <div class="update-body">
@@ -306,8 +369,35 @@
           </div>
         </article>
 
+        <!-- UPDATE: April 16, 2026 -->
+        <article class="update-item animate" id="update-april-16-2026">
+          <div class="update-date">April 16, 2026</div>
+          <h2 class="update-title">Welcome to Friends of the SF Mandarin School</h2>
+          <div class="update-body">
+            <p>Hi everyone,</p>
+
+            <p>Welcome to the Friends of the SF Mandarin School mailing list!</p>
+
+            <p>There&rsquo;s been tremendous excitement &mdash; <strong>700+ families, representing over 1,000 kids</strong>, have signed up to support a new Mandarin Immersion K&ndash;8 school in SFUSD, and the list is growing every day.</p>
+
+            <p>Our next meeting is this Tuesday, April 21, and we&rsquo;ll share our demand data with SFUSD to inform their decisions on size and location of this school. We&rsquo;ll send you an update afterwards, and after each of our monthly meetings.</p>
+
+            <p><strong>If you haven&rsquo;t already, please share our effort with a parent group</strong> &mdash; a WhatsApp group, daycare chat, or Facebook group. More families means a stronger case for more seats. Here&rsquo;s a message you can copy and paste:</p>
+
+            <blockquote style="border-left: 3px solid var(--border); margin: 1.5rem 0; padding: 0.75rem 1.25rem; color: var(--text-secondary);">
+              <p>Are you interested in Mandarin immersion?</p>
+              <p>SFUSD is launching a new Mandarin Immersion K&ndash;8 school next year! We&rsquo;re a group of parents helping the district gather interest to inform its future size and location. Over 700 families have already signed up to support it. Add your name &mdash; it takes 2 minutes:<br>
+              <a href="https://www.sfmandarinschool.org/?utm_source=mailchimp-share&utm_medium=social&utm_campaign=april-listserv">https://www.sfmandarinschool.org</a></p>
+            </blockquote>
+
+            <p>One more thing: hit reply and tell us &mdash; what questions do you have for SFUSD? We&rsquo;ll share a summary of community questions during our meeting, and it will help guide future district communications.</p>
+
+            <p>Abby &amp; Justin<br>Friends of the SF Mandarin School</p>
+          </div>
+        </article>
+
         <!-- UPDATE: March 10, 2026 -->
-        <article class="update-item animate">
+        <article class="update-item animate" id="update-march-10-2026">
           <div class="update-date">March 10, 2026</div>
           <h2 class="update-title">Our Inaugural Meeting with SFUSD</h2>
           <div class="update-body">
