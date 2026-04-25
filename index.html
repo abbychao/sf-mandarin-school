@@ -523,11 +523,16 @@
     }
 
     .supporters-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 2.5rem 2rem;
-      justify-items: center;
+      justify-content: center;
       margin-top: 3rem;
+    }
+
+    .supporters-grid .supporter-item {
+      flex: 0 0 calc(25% - 1.5rem);
+      max-width: 130px;
     }
 
     .supporter-item {
@@ -570,7 +575,7 @@
     .supporter-quote {
       margin-top: 3rem;
       padding: 2rem 2.5rem;
-      background: #fff;
+      background: transparent;
       border-left: 4px solid var(--gold);
       border-radius: 0 var(--radius) var(--radius) 0;
       max-width: 720px;
@@ -777,9 +782,9 @@
         display: none;
       }
 
-      .supporters-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 1.5rem;
+      .supporters-grid .supporter-item {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: 130px;
       }
 
       .supporter-photo {
@@ -980,7 +985,7 @@
         <div class="work-card animate stagger-2">
           <div class="card-accent gold"></div>
           <h3>Teacher Recruiting</h3>
-          <p>Finding exceptional Mandarin immersion educators who share our vision for a world-class bilingual education.</p>
+          <p>Finding exceptional Mandarin immersion educators who share our vision for world-class bilingual education. <a href="https://www.sfmandarinschool.org/docs/Bilingual%20Mandarin%20Teacher%20(0736)%20-%20Job%20Description.pdf" style="color: var(--red); font-weight: 600; text-decoration: none;">View the job description &rarr;</a></p>
         </div>
         <div class="work-card animate stagger-3">
           <div class="card-accent gold"></div>
@@ -1000,12 +1005,12 @@
   </section>
 
   <!-- SUPPORTERS -->
-  <section class="supporters-section section">
+  <section class="supporters-section section" id="supporters">
     <div class="container">
       <div class="animate">
         <div class="section-label">Community Support</div>
         <h2 class="section-title">We Are Not Alone</h2>
-        <p class="section-desc">Community leaders across San Francisco want this school to happen.</p>
+        <p class="section-desc">Community leaders standing with us to make this school happen.</p>
       </div>
 
       <div class="supporters-grid animate stagger-1">
@@ -1054,7 +1059,7 @@
       </div>
 
       <div class="supporter-quote animate stagger-2">
-        <blockquote>&ldquo;I am in full support of the district&rsquo;s effort to establish a Mandarin immersion school. We know that complex language instruction is one of the best ways to support our learners.&rdquo;</blockquote>
+        <blockquote>&ldquo;I am in full support of the district&rsquo;s effort to establish a Mandarin immersion school. It’s exciting to see the district move in this direction.&rdquo;</blockquote>
         <cite>Phil Kim<span>SFUSD Board President</span></cite>
       </div>
     </div>
