@@ -160,19 +160,43 @@
       background: #fff;
     }
 
-    .supporters-list {
+    .supporters-grid {
       display: flex;
-      flex-direction: column;
-      gap: 0;
+      flex-wrap: wrap;
+      gap: 3rem 3rem;
+      justify-content: center;
+      margin-top: 3rem;
+      max-width: 880px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .supporters-grid .supporter-item {
+      flex: 0 0 180px;
+      max-width: 180px;
     }
 
     .supporter-item {
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
-    .supporter-item:last-child {
-      border-bottom: none;
+    .supporter-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--border);
+      margin-bottom: 0.75rem;
+    }
+
+    .supporter-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .supporter-item strong {
@@ -183,19 +207,25 @@
 
     .supporter-item span {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-secondary);
       margin-top: 0.15rem;
+      line-height: 1.45;
     }
 
-    .supporter-item.placeholder-state {
-      border-bottom: none;
-    }
-
-    .supporter-item.placeholder-state p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      font-style: italic;
+    @media (max-width: 768px) {
+      .supporters-grid {
+        max-width: 100%;
+        gap: 2rem 1.5rem;
+      }
+      .supporters-grid .supporter-item {
+        flex: 0 0 140px;
+        max-width: 140px;
+      }
+      .supporter-photo {
+        width: 90px;
+        height: 90px;
+      }
     }
 
     /* About CTA */
@@ -310,6 +340,55 @@
           <p><strong>This effort is open to everyone.</strong> Our story is about heritage &mdash; but yours might be the cognitive advantages of bilingual education, a globally connected future for your child, or simply a richer learning experience. Whatever brings you here, you belong.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTERS -->
+  <section class="supporters-section section">
+    <div class="container">
+      <div class="animate">
+        <div class="section-label">Community Support</div>
+        <h2 class="section-title">We Are Not Alone</h2>
+        <p class="section-desc">Community leaders standing with us to make this school happen.</p>
+      </div>
+
+      <div class="supporters-grid animate stagger-1">
+        <div class="supporter-item">
+          <div class="supporter-photo"><img src="images/phil-kim.jpg" alt="Phil Kim"></div>
+          <strong>Phil Kim</strong>
+          <span>SFUSD Board President</span>
+        </div>
+        <div class="supporter-item">
+          <div class="supporter-photo"><img src="images/jaime-huling.jpeg" alt="Jaime Huling"></div>
+          <strong>Jaime Huling</strong>
+          <span>SFUSD Board Vice President</span>
+        </div>
+        <div class="supporter-item">
+          <div class="supporter-photo"><img src="images/supryia-ray.jpg" alt="Supryia Ray"></div>
+          <strong>Supryia Ray</strong>
+          <span>SFUSD Board Member</span>
+        </div>
+        <div class="supporter-item">
+          <div class="supporter-photo"><img src="images/matt-alexander.jpg" alt="Matt Alexander"></div>
+          <strong>Matt Alexander</strong>
+          <span>SFUSD Board Member</span>
+        </div>
+        <div class="supporter-item">
+          <div class="supporter-photo"><img src="images/alida-fisher.jpeg" alt="Alida Fisher"></div>
+          <strong>Alida Fisher</strong>
+          <span>SFUSD Board Member</span>
+        </div>
+        <div class="supporter-item">
+          <div class="supporter-photo"><img src="images/parag-gupta.jpeg" alt="Parag Gupta"></div>
+          <strong>Parag Gupta</strong>
+          <span>SFUSD Board Member</span>
+        </div>
+        <div class="supporter-item">
+          <div class="supporter-photo"><img src="images/lisa-weissman-ward.jpg" alt="Lisa Weissman-Ward"></div>
+          <strong>Lisa Weissman-Ward</strong>
+          <span>SFUSD Board Member</span>
+        </div>
       </div>
     </div>
   </section>
