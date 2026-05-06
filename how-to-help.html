@@ -35,7 +35,9 @@
   <style>
     /* ---- HOW TO HELP PAGE STYLES ---- */
     .help-content {
-      background: var(--cream);
+      background: #fff;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
 
     .help-grid {
@@ -117,6 +119,223 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ---- INTEREST FORM SECTION ---- */
+    .interest-form-section {
+      background: var(--cream);
+      padding: 4rem 0;
+    }
+
+    .interest-form-section h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .interest-form-section .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+
+    .interest-form-card {
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: var(--radius);
+      padding: 2rem;
+      color: var(--text);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border: 1px solid var(--border);
+    }
+
+    .interest-form-card input,
+    .interest-form-card select {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .interest-form-card input:focus,
+    .interest-form-card select:focus { border-color: var(--red); }
+    .interest-form-card input::placeholder { color: #B5AFA7; }
+
+    .interest-form-card select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B635A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.875rem center;
+      padding-right: 2.25rem;
+    }
+
+    .interest-form-card .form-group { margin-bottom: 1rem; }
+
+    .interest-form-card .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .interest-form-card .form-group label .optional {
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    .interest-form-card .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .interest-form-card .child-entry {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .add-child-btn {
+      background: none;
+      border: 1.5px dashed var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-family: inherit;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .add-child-btn:hover { border-color: var(--red); color: var(--red); }
+
+    .interest-form-card .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .interest-form-card .checkbox-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .interest-form-card .checkbox-group label {
+      font-size: 0.875rem;
+      color: var(--text);
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .form-submit { margin-top: 1rem; }
+
+    .dob-dropdowns-hth {
+      display: none;
+      gap: 0.5rem;
+    }
+
+    .dob-dropdowns-hth select {
+      flex: 1;
+      padding: 0.65rem 0.5rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .dob-dropdowns-hth select:focus { border-color: var(--red); }
+
+    #hthAddressSuggestions li {
+      padding: 0.5rem 0.875rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    #hthAddressSuggestions li:last-child { border-bottom: none; }
+    #hthAddressSuggestions li:hover { background: var(--cream); }
+
+    .form-success-hth {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .form-success-hth .check-circle {
+      width: 52px;
+      height: 52px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1rem;
+    }
+
+    .form-success-hth h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-success-hth p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .followup-section-hth textarea {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      resize: vertical;
+      min-height: 60px;
+      transition: border-color 0.2s;
+    }
+
+    .followup-section-hth textarea:focus { border-color: var(--red); }
+
+    @media (max-width: 768px) {
+      .interest-form-card .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .interest-form-card input,
+      .interest-form-card select {
+        padding: 0.75rem 0.875rem;
+        font-size: 1rem;
+      }
+
+      .dob-native-hth { display: none !important; }
+      .dob-dropdowns-hth { display: flex !important; }
+    }
   </style>
 </head>
 <body>
@@ -129,13 +348,121 @@
     <div class="container">
       <div class="section-label">Get Involved</div>
       <h1>How You Can Help</h1>
-      <p>Submitted the <a href="index.html#interest" style="color: #fff; text-decoration: underline; text-underline-offset: 2px;">interest form</a> and ready for more? Here are concrete ways to help right now.</p>
+      <p>Here are concrete ways to help right now.</p>
     </div>
   </div>
+
+  <!-- INTEREST FORM -->
+  <section class="interest-form-section animate" id="interest">
+    <div class="container">
+      <div class="section-label">Add Your Family</div>
+      <h2>Show Your Interest</h2>
+      <p class="section-subtitle">Your response will directly shape the size, grades, and location of our future school. We'll keep you updated on our progress.</p>
+      <div class="interest-form-card">
+        <form id="hthInterestForm" onsubmit="handleHthInterestForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="hthParentName">Parent / Guardian Name</label>
+              <input type="text" id="hthParentName" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label for="hthEmail">Email</label>
+              <input type="email" id="hthEmail" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="hthAddress">Home Address</label>
+              <div style="position:relative;">
+                <input type="text" id="hthAddress" placeholder="Start typing your address..." autocomplete="off" required>
+                <ul id="hthAddressSuggestions" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 8px 8px;list-style:none;margin:0;padding:0;z-index:100;max-height:200px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,0.1);"></ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="hthPhone">Phone <span class="optional">(optional)</span></label>
+              <input type="tel" id="hthPhone" placeholder="(415) 555-1234" maxlength="14" oninput="hthFormatPhone(this)">
+            </div>
+          </div>
+          <div id="hthChildrenList">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="hthChildName1">Child's Name</label>
+                <input type="text" id="hthChildName1" placeholder="First name" required>
+              </div>
+              <div class="form-group">
+                <label for="hthChildDob1">Date of Birth</label>
+                <input type="date" id="hthChildDob1" min="2000-01-01" max="2050-12-31" required class="dob-native-hth">
+                <div class="dob-dropdowns-hth">
+                  <select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
+                  <select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select>
+                  <select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="add-child-btn" onclick="hthAddChild()">+ Add another child</button>
+          <div class="checkbox-group">
+            <input type="checkbox" id="hthVolunteer">
+            <label for="hthVolunteer">I'm interested in volunteering</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="hthDonate">
+            <label for="hthDonate">I'm interested in donating</label>
+          </div>
+          <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
+          <button type="submit" class="btn btn-primary form-submit" style="display: block; margin: 0 auto; width: auto;">Submit</button>
+        </form>
+        <div class="form-success-hth" id="hthFormSuccess">
+          <div class="check-circle">&#10003;</div>
+          <h3>Thank you!</h3>
+          <p>We'll be in touch as the school takes shape. Welcome to the community.</p>
+          <div class="followup-section-hth" id="hthFollowupSection">
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.35rem;">One more thing</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.25rem; line-height: 1.5;">Do any of these describe you? Check any that apply.</p>
+            <form id="hthFollowupForm" onsubmit="handleHthFollowup(event)">
+              <div class="checkbox-group">
+                <input type="checkbox" id="hth-fu-legal" name="skill_legal" value="Yes">
+                <label for="hth-fu-legal">I work in law, finance, or nonprofit management</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="hth-fu-networks" name="skill_community" value="Yes">
+                <label for="hth-fu-networks">I'm active in parent groups, listservs, or community orgs</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="hth-fu-donors" name="skill_donors" value="Yes">
+                <label for="hth-fu-donors">I know potential donors or sponsors</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="hth-fu-media" name="skill_media" value="Yes">
+                <label for="hth-fu-media">I have media, PR, or communications experience</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="hth-fu-education" name="skill_education" value="Yes">
+                <label for="hth-fu-education">I work in education or school administration</label>
+              </div>
+              <div class="form-group" style="margin-top: 0.5rem;">
+                <label for="hth-fu-other" style="font-size: 0.8rem; font-weight: 600;">Anything else we should know? <span class="optional">(optional)</span></label>
+                <textarea id="hth-fu-other" placeholder="E.g., I run a tutoring company, I know someone on the Board of Education..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="display: block; margin: 0.75rem auto 0; width: auto; padding: 0.65rem 1.75rem; font-size: 0.875rem;">Send</button>
+            </form>
+            <div id="hthFollowupSuccess" style="display: none; text-align: center; padding: 0.75rem 0 0;">
+              <p style="color: var(--red); font-size: 0.9rem; font-weight: 500;">Got it &mdash; thanks for sharing!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CONTENT -->
   <section class="help-content">
     <div class="container">
+      <div style="margin-bottom: 2rem;">
+        <div class="section-label">Get Involved</div>
+        <h2 class="section-title">Other Ways to Help</h2>
+      </div>
       <div class="help-grid">
         <div class="help-card animate stagger-1">
           <h3>Spread the Word</h3>
@@ -197,5 +524,228 @@
   <div id="footer-placeholder"></div>
 
   <script src="main.js"></script>
+  <script>
+    function hthFormatPhone(input) {
+      var digits = input.value.replace(/\D/g, '').substring(0, 10);
+      if (digits.length === 0) { input.value = ''; return; }
+      if (digits.length <= 3) { input.value = '(' + digits; }
+      else if (digits.length <= 6) { input.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3); }
+      else { input.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3, 6) + '-' + digits.substring(6); }
+    }
+
+    function hthPopulateDobDropdowns(container) {
+      var daySelect = container.querySelector('.dob-day');
+      var yearSelect = container.querySelector('.dob-year');
+      if (!daySelect || !yearSelect) return;
+      for (var d = 1; d <= 31; d++) {
+        var opt = document.createElement('option');
+        opt.value = d < 10 ? '0' + d : '' + d;
+        opt.textContent = d;
+        daySelect.appendChild(opt);
+      }
+      var currentYear = new Date().getFullYear();
+      for (var y = currentYear; y >= 2000; y--) {
+        var opt = document.createElement('option');
+        opt.value = '' + y;
+        opt.textContent = y;
+        yearSelect.appendChild(opt);
+      }
+    }
+
+    document.querySelectorAll('.dob-dropdowns-hth').forEach(hthPopulateDobDropdowns);
+
+    function hthSyncDobRequired() {
+      var isMobile = window.matchMedia('(max-width: 768px)').matches;
+      document.querySelectorAll('.dob-native-hth').forEach(function(el) {
+        el.required = !isMobile;
+        el.disabled = isMobile;
+      });
+      document.querySelectorAll('.dob-dropdowns-hth select').forEach(function(el) {
+        el.required = isMobile;
+        el.disabled = !isMobile;
+      });
+    }
+    hthSyncDobRequired();
+    window.addEventListener('resize', hthSyncDobRequired);
+
+    function hthGetDobValue(formGroup) {
+      var native = formGroup.querySelector('.dob-native-hth');
+      if (native && native.offsetParent !== null && native.value) return native.value;
+      var m = formGroup.querySelector('.dob-month');
+      var d = formGroup.querySelector('.dob-day');
+      var y = formGroup.querySelector('.dob-year');
+      if (m && d && y && m.value && d.value && y.value) return y.value + '-' + m.value + '-' + d.value;
+      return '';
+    }
+
+    var hthChildCount = 1;
+    function hthAddChild() {
+      if (hthChildCount >= 4) return;
+      hthChildCount++;
+      var wrapper = document.createElement('div');
+      wrapper.className = 'form-row';
+      wrapper.innerHTML =
+        '<div class="form-group"><label>Child\'s Name <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;float:right;" onclick="hthRemoveChildRow(this)">&times; Remove</button></label><input type="text" placeholder="First name" required></div>' +
+        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required class="dob-native-hth"><div class="dob-dropdowns-hth"><select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select><select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select></div></div>';
+      document.getElementById('hthChildrenList').appendChild(wrapper);
+      hthPopulateDobDropdowns(wrapper.querySelector('.dob-dropdowns-hth'));
+      hthSyncDobRequired();
+      if (hthChildCount >= 4) document.querySelector('.add-child-btn').style.display = 'none';
+    }
+    function hthRemoveChildRow(btn) {
+      btn.closest('.form-row').remove();
+      hthChildCount--;
+      document.querySelector('.add-child-btn').style.display = '';
+    }
+
+    var hthSubmittedEmail = '';
+
+    function handleHthInterestForm(e) {
+      e.preventDefault();
+      var form = e.target;
+      var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
+      if (honeypot) return;
+
+      var parentName = document.getElementById('hthParentName').value;
+      var email = document.getElementById('hthEmail').value;
+      var address = document.getElementById('hthAddress').value;
+      var phone = document.getElementById('hthPhone').value;
+      var volunteer = document.getElementById('hthVolunteer').checked ? 'Yes' : '';
+      var donate = document.getElementById('hthDonate').checked ? 'Yes' : '';
+      hthSubmittedEmail = email;
+
+      var childRows = document.getElementById('hthChildrenList').querySelectorAll('.form-row');
+      var children = [];
+      childRows.forEach(function(row) {
+        var nameInput = row.querySelector('input[type="text"]');
+        var dobGroup = row.querySelectorAll('.form-group')[1];
+        if (nameInput && dobGroup) children.push({ name: nameInput.value, dob: hthGetDobValue(dobGroup) });
+      });
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      fetchWithRetry(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: parentName, email: email, address: address, phone: phone,
+          child1_name: children[0] ? children[0].name : '', child1_dob: children[0] ? children[0].dob : '',
+          child2_name: children[1] ? children[1].name : '', child2_dob: children[1] ? children[1].dob : '',
+          child3_name: children[2] ? children[2].name : '', child3_dob: children[2] ? children[2].dob : '',
+          child4_name: children[3] ? children[3].name : '', child4_dob: children[3] ? children[3].dob : '',
+          volunteer: volunteer, donate: donate, source: 'interest-form', utm_source: defined_utm_source
+        })
+      }, 2, 1000).catch(function(err) { console.error('Sheet error:', err); });
+
+      var mcUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0' +
+        '&FNAME=' + encodeURIComponent(parentName) +
+        '&EMAIL=' + encodeURIComponent(email) +
+        '&c=handleHthInterestResponse';
+
+      window.handleHthInterestResponse = function(data) {
+        if (data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)) {
+          form.style.display = 'none';
+          document.getElementById('hthFormSuccess').style.display = 'block';
+          document.getElementById('hthFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          gtag('event', 'interest_form_submit', { event_category: 'forms' });
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit';
+          var msg = document.getElementById('hthFormError');
+          if (!msg) {
+            msg = document.createElement('p');
+            msg.id = 'hthFormError';
+            msg.style.cssText = 'color:#c00;text-align:center;margin-top:0.5rem;font-size:0.85rem;';
+            submitBtn.parentNode.insertBefore(msg, submitBtn.nextSibling);
+          }
+          msg.textContent = 'Something went wrong. Please try again.';
+        }
+        var s = document.getElementById('mcHthInterestScript');
+        if (s) s.parentNode.removeChild(s);
+      };
+
+      var script = document.createElement('script');
+      script.id = 'mcHthInterestScript';
+      script.src = mcUrl;
+      document.body.appendChild(script);
+    }
+
+    function handleHthFollowup(e) {
+      e.preventDefault();
+      var form = e.target;
+      var checks = form.querySelectorAll('input[type="checkbox"]:checked');
+      var skills = {};
+      checks.forEach(function(cb) { skills[cb.name] = 'Yes'; });
+      var notes = document.getElementById('hth-fu-other').value;
+
+      fetchWithRetry(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'followup', email: hthSubmittedEmail,
+          skill_legal: skills.skill_legal || '', skill_community: skills.skill_community || '',
+          skill_donors: skills.skill_donors || '', skill_media: skills.skill_media || '',
+          skill_education: skills.skill_education || '', anything_else: notes
+        })
+      }, 2, 1000).catch(function(err) { console.error('Sheet followup error:', err); });
+
+      form.style.display = 'none';
+      document.getElementById('hthFollowupSuccess').style.display = 'block';
+      gtag('event', 'followup_form_submit', { event_category: 'forms' });
+    }
+  </script>
+  <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once."):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+    ({key: "AIzaSyBZ5ql4bEFq-CJm9eOR1Ab61hbz999jbfY", v: "weekly"});
+
+    async function initHthAddressAutocomplete() {
+      var { AutocompleteSuggestion, AutocompleteSessionToken } = await google.maps.importLibrary('places');
+      var sessionToken = new AutocompleteSessionToken();
+      var input = document.getElementById('hthAddress');
+      var list = document.getElementById('hthAddressSuggestions');
+      var debounce;
+
+      input.addEventListener('input', function() {
+        clearTimeout(debounce);
+        var val = input.value.trim();
+        if (val.length < 3) { list.style.display = 'none'; return; }
+        debounce = setTimeout(async function() {
+          try {
+            var response = await AutocompleteSuggestion.fetchAutocompleteSuggestions({
+              input: val,
+              sessionToken: sessionToken,
+              includedRegionCodes: ['us']
+            });
+            list.innerHTML = '';
+            if (!response.suggestions || response.suggestions.length === 0) { list.style.display = 'none'; return; }
+            response.suggestions.forEach(function(s) {
+              var text = s.placePrediction ? s.placePrediction.text.toString() : '';
+              if (!text) return;
+              var li = document.createElement('li');
+              li.textContent = text;
+              li.addEventListener('mousedown', function(ev) {
+                ev.preventDefault();
+                input.value = text;
+                list.style.display = 'none';
+                sessionToken = new AutocompleteSessionToken();
+              });
+              list.appendChild(li);
+            });
+            list.style.display = list.children.length ? 'block' : 'none';
+          } catch(err) { list.style.display = 'none'; }
+        }, 200);
+      });
+
+      input.addEventListener('blur', function() {
+        setTimeout(function() { list.style.display = 'none'; }, 150);
+      });
+    }
+
+    initHthAddressAutocomplete();
+  </script>
 </body>
 </html>

@@ -689,7 +689,164 @@
       border-color: var(--red);
     }
 
-    /* ---- RESPONSIVE (page-specific) ---- */
+    /* ---- TOWN HALL CARD ---- */
+    .townhall-card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: var(--radius);
+      padding: 2rem;
+      color: var(--text);
+      opacity: 0;
+      animation: fadeUp 0.7s 0.3s forwards;
+    }
+
+
+    .townhall-card h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .townhall-speakers {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .townhall-speaker {
+      flex: 1;
+      text-align: center;
+    }
+
+    .townhall-speaker img {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--red);
+      margin-bottom: 0.4rem;
+    }
+
+    .townhall-speaker-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .townhall-speaker-title {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      line-height: 1.35;
+      margin-top: 0.1rem;
+    }
+
+    .townhall-desc {
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .townhall-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .townhall-detail-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .townhall-detail-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      width: 24px;
+      text-align: center;
+    }
+
+    .townhall-detail-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .townhall-detail-text strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .townhall-who {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding: 0.75rem 1rem;
+      background: var(--cream);
+      border-radius: 8px;
+      border-left: 3px solid var(--gold);
+      margin-bottom: 1.75rem;
+    }
+
+    .townhall-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn-townhall-primary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--red);
+      color: #fff;
+      padding: 0.875rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-townhall-primary:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-townhall-secondary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.875rem;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      border: 1.5px solid var(--border);
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+
+    .btn-townhall-secondary:hover {
+      border-color: var(--text-secondary);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+/* ---- RESPONSIVE (page-specific) ---- */
     @media (max-width: 768px) {
       .hero {
         min-height: auto;
@@ -712,6 +869,11 @@
         padding: 1.5rem;
         max-height: none;
         overflow-y: visible;
+      }
+
+      .townhall-card {
+        border-radius: 0;
+        margin: 0 -0.5rem;
       }
 
       .hero-form-card h2 {
@@ -825,106 +987,47 @@
           <h1>Friends of the<br><span class="highlight">SF Mandarin School</span></h1>
           <p class="subtitle">SFUSD committed to launching a Mandarin immersion K&ndash;8 school for the 2027&ndash;2028 school year. We are the parents and community members making sure it happens.</p>
         </div>
-        <div class="hero-form-card" id="interest">
-          <div id="formHeader">
-            <h2>Show Your Interest</h2>
-            <p class="form-subtitle">Your response will directly shape the size, grades, and location of our future school. We'll keep you updated on our progress.</p>
+        <!-- TOWN HALL CARD (shown until May 13, 2026) -->
+        <div class="townhall-card" id="townhallCard">
+          <h2>Town Hall: Your Presence Matters!</h2>
+          <p class="townhall-desc">Hear the update, ask your questions &mdash; and shape the grades, seats, and location of the future school.</p>
+          <div class="townhall-speakers">
+            <div class="townhall-speaker">
+              <img src="images/hong-mei-pang.jpeg" alt="Hong Mei Pang">
+              <div class="townhall-speaker-name">Hong Mei Pang</div>
+              <div class="townhall-speaker-title">SFUSD Head of Communications</div>
+            </div>
+            <div class="townhall-speaker">
+              <img src="images/liana-szeto.jpeg" alt="Liana Szeto">
+              <div class="townhall-speaker-name">Liana Szeto</div>
+              <div class="townhall-speaker-title">District Lead, MI K&ndash;8</div>
+            </div>
+            <div class="townhall-speaker">
+              <img src="images/supryia-ray.jpg" alt="Supryia Ray">
+              <div class="townhall-speaker-name">Supryia Ray</div>
+              <div class="townhall-speaker-title">SFUSD Board Commissioner</div>
+            </div>
           </div>
-          <form id="interestForm" onsubmit="handleInterestForm(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="parentName">Parent / Guardian Name</label>
-                <input type="text" id="parentName" placeholder="Full name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="you@email.com" required>
+          <div class="townhall-details">
+            <div class="townhall-detail-row">
+              <div class="townhall-detail-icon">🗓️</div>
+              <div class="townhall-detail-text">
+                6:30 PM &middot; Wednesday, May 13, 2026
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="address">Home Address</label>
-                <div style="position:relative;">
-                  <input type="text" id="address" placeholder="Start typing your address..." autocomplete="off" required>
-                  <ul id="addressSuggestions" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 8px 8px;list-style:none;margin:0;padding:0;z-index:100;max-height:200px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,0.1);"></ul>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone <span class="optional">(optional)</span></label>
-                <input type="tel" id="phone" placeholder="(415) 555-1234" maxlength="14" oninput="formatPhone(this)">
+            <div class="townhall-detail-row">
+              <div class="townhall-detail-icon">📍</div>
+              <div class="townhall-detail-text">
+                Ulloa Elementary School<br>
+                <span style="font-size:0.82rem;color:var(--text-secondary);">Virtual option available</span>
               </div>
             </div>
-            <div id="childrenList">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="childName1">Child's Name</label>
-                  <input type="text" id="childName1" placeholder="First name" required>
-                </div>
-                <div class="form-group">
-                  <label for="childDob1">Date of Birth</label>
-                  <input type="date" id="childDob1" min="2000-01-01" max="2050-12-31" required class="dob-native">
-                  <div class="dob-dropdowns">
-                    <select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
-                    <select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select>
-                    <select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button type="button" class="add-child-btn" onclick="addChild()">+ Add another child</button>
-            <div class="checkbox-group">
-              <input type="checkbox" id="volunteer">
-              <label for="volunteer">I'm interested in volunteering</label>
-            </div>
-            <div class="checkbox-group">
-              <input type="checkbox" id="donate-interest">
-              <label for="donate-interest">I'm interested in donating</label>
-            </div>
-            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
-            <button type="submit" class="btn btn-primary form-submit" style="display: block; margin: 0 auto; width: auto;">Submit</button>
-          </form>
-          <div class="form-success" id="formSuccess">
-            <div class="check-circle">&#10003;</div>
-            <h3>Thank you!</h3>
-            <p>We'll be in touch as the school takes shape. Welcome to the community.</p>
-            <div class="followup-section" id="followupSection">
-              <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
-              <h3 style="font-size: 1.05rem; margin-bottom: 0.35rem;">One more thing</h3>
-              <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.25rem; line-height: 1.5;">Do any of these describe you? Check any that apply.</p>
-              <form id="followupForm" onsubmit="handleFollowup(event)">
-                <div class="checkbox-group">
-                  <input type="checkbox" id="fu-legal" name="skill_legal" value="Yes">
-                  <label for="fu-legal">I work in law, finance, or nonprofit management</label>
-                </div>
-                <div class="checkbox-group">
-                  <input type="checkbox" id="fu-networks" name="skill_community" value="Yes">
-                  <label for="fu-networks">I'm active in parent groups, listservs, or community orgs</label>
-                </div>
-                <div class="checkbox-group">
-                  <input type="checkbox" id="fu-donors" name="skill_donors" value="Yes">
-                  <label for="fu-donors">I know potential donors or sponsors</label>
-                </div>
-                <div class="checkbox-group">
-                  <input type="checkbox" id="fu-media" name="skill_media" value="Yes">
-                  <label for="fu-media">I have media, PR, or communications experience</label>
-                </div>
-                <div class="checkbox-group">
-                  <input type="checkbox" id="fu-education" name="skill_education" value="Yes">
-                  <label for="fu-education">I work in education or school administration</label>
-                </div>
-                <div class="form-group" style="margin-top: 0.5rem;">
-                  <label for="fu-other" style="font-size: 0.8rem; font-weight: 600;">Anything else we should know? <span class="optional">(optional)</span></label>
-                  <textarea id="fu-other" placeholder="E.g., I run a tutoring company, I know someone on the Board of Education..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="display: block; margin: 0.75rem auto 0; width: auto; padding: 0.65rem 1.75rem; font-size: 0.875rem;">Send</button>
-              </form>
-              <div id="followupSuccess" style="display: none; text-align: center; padding: 0.75rem 0 0;">
-                <p style="color: var(--red); font-size: 0.9rem; font-weight: 500;">Got it &mdash; thanks for sharing!</p>
-                <a href="how-to-help.html" style="display: inline-block; margin-top: 0.75rem; font-size: 0.85rem; font-weight: 600; color: var(--red); text-decoration: none;">See how you can help &rarr;</a>
-              </div>
-            </div>
+          </div>
+          <div class="townhall-ctas">
+            <a href="https://partiful.com/e/c7Atr6WvbASoS1Dnmb99" target="_blank" rel="noopener" class="btn-townhall-primary">RSVP &rarr;</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1089,7 +1192,7 @@
       <div class="animate">
         <div class="section-label">Get Involved</div>
         <h2 class="section-title">Want to Do More?</h2>
-        <p class="section-desc">There are concrete ways to help right now.</p>
+        <p class="section-desc">Sign our interest form and find other ways to help.</p>
         <a href="how-to-help.html" class="btn-outline">See how you can help &rarr;</a>
       </div>
     </div>
@@ -1118,6 +1221,18 @@
       updateCountdown();
       // Recalculate every minute so it flips at midnight PT
       setInterval(updateCountdown, 60000);
+    })();
+
+// Hide town hall card after May 13, 2026 (PT)
+    (function() {
+      var now = new Date();
+      var pacific = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+      var todayPT = new Date(pacific.getFullYear(), pacific.getMonth(), pacific.getDate());
+      var townhallEnd = new Date(2026, 4, 14); // May 14, 2026
+      if (todayPT >= townhallEnd) {
+        var card = document.getElementById('townhallCard');
+        if (card) card.style.display = 'none';
+      }
     })();
 
     // Interest form: phone formatting
