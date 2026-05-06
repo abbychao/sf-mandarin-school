@@ -625,16 +625,11 @@
       margin-top: 0.15rem;
     }
 
-    /* ---- HOW TO HELP TEASER ---- */
+    /* ---- GET INVOLVED / INTEREST FORM ---- */
     .help-teaser {
       background: var(--red);
       color: #fff;
       text-align: center;
-    }
-
-    .help-teaser .section-label {
-      color: rgba(255,255,255,0.7);
-      border-color: rgba(255,255,255,0.3);
     }
 
     .help-teaser .section-title {
@@ -647,22 +642,179 @@
       margin: 0 auto;
     }
 
-    .help-teaser .btn-outline {
-      display: inline-block;
-      margin-top: 1.75rem;
-      padding: 0.75rem 2rem;
-      border: 2px solid #fff;
-      border-radius: 8px;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.2s;
+    .interest-form-card-hp {
+      background: rgba(255,255,255,0.97);
+      border-radius: var(--radius);
+      padding: 2rem;
+      color: var(--text);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+      text-align: left;
     }
 
-    .help-teaser .btn-outline:hover {
+    .interest-form-card-hp input,
+    .interest-form-card-hp select {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-family: inherit;
       background: #fff;
-      color: var(--red);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .interest-form-card-hp input:focus,
+    .interest-form-card-hp select:focus { border-color: var(--red); }
+    .interest-form-card-hp input::placeholder { color: #B5AFA7; }
+
+    .interest-form-card-hp select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B635A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.875rem center;
+      padding-right: 2.25rem;
+    }
+
+    .interest-form-card-hp .form-group { margin-bottom: 1rem; }
+
+    .interest-form-card-hp .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .interest-form-card-hp .form-group label .optional {
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    .hp-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .hp-add-child-btn {
+      background: none;
+      border: 1.5px dashed var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-family: inherit;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .hp-add-child-btn:hover { border-color: var(--red); color: var(--red); }
+
+    .hp-checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hp-checkbox-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .hp-checkbox-group label {
+      font-size: 0.875rem;
+      color: var(--text);
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .dob-dropdowns-hp {
+      display: none;
+      gap: 0.5rem;
+    }
+
+    .dob-dropdowns-hp select {
+      flex: 1;
+      padding: 0.65rem 0.5rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .dob-dropdowns-hp select:focus { border-color: var(--red); }
+
+    #hpAddressSuggestions li {
+      padding: 0.5rem 0.875rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    #hpAddressSuggestions li:last-child { border-bottom: none; }
+    #hpAddressSuggestions li:hover { background: var(--cream); }
+
+    .hp-form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .hp-check-circle {
+      width: 52px;
+      height: 52px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1rem;
+    }
+
+    .hp-form-success h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hp-form-success p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .interest-form-card-hp .btn-primary {
+      background: var(--text);
+    }
+
+    .interest-form-card-hp .btn-primary:hover {
+      background: #555;
+    }
+
+    @media (max-width: 768px) {
+      .hp-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .interest-form-card-hp input,
+      .interest-form-card-hp select {
+        padding: 0.75rem 0.875rem;
+        font-size: 1rem;
+      }
+
+      .dob-native-hp { display: none !important; }
+      .dob-dropdowns-hp { display: flex !important; }
     }
 
     /* ---- FOLLOWUP FORM ---- */
@@ -1082,7 +1234,7 @@
         <div class="hero-form-card" id="heroFormCta">
           <h2>Show Your Interest</h2>
           <p class="form-subtitle">Your response will directly shape the size, grades, and location of our future school. We'll keep you updated on our progress.</p>
-          <a href="how-to-help.html#interest" class="btn btn-primary" style="display:block;text-align:center;margin-top:1.5rem;">Add your family &rarr;</a>
+          <a href="#how-to-help" class="btn btn-primary" style="display:block;text-align:center;margin-top:1.5rem;">Add your family &rarr;</a>
         </div>
 
       </div>
@@ -1243,14 +1395,111 @@
     </div>
   </section>
 
-  <!-- HOW TO HELP TEASER -->
+  <!-- HOW TO HELP / INTEREST FORM -->
   <section class="help-teaser section" id="how-to-help">
     <div class="container">
       <div class="animate">
-        <div class="section-label">Get Involved</div>
-        <h2 class="section-title">Want to Do More?</h2>
-        <p class="section-desc">Sign our interest form and find other ways to help.</p>
-        <a href="how-to-help.html" class="btn-outline">See how you can help &rarr;</a>
+        <div class="section-label" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.3);">Get Involved</div>
+        <h2 class="section-title" style="color:#fff;">Show Your Interest</h2>
+        <p class="section-desc">Your response will directly shape the size, grades, and location of our future school. We'll keep you updated on our progress.</p>
+      </div>
+      <div class="animate" style="max-width:620px;margin:2rem auto 0;">
+        <div class="interest-form-card-hp">
+          <form id="hpInterestForm" onsubmit="handleHpInterestForm(event)">
+            <div class="hp-form-row">
+              <div class="form-group">
+                <label for="hpParentName">Parent / Guardian Name</label>
+                <input type="text" id="hpParentName" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <label for="hpEmail">Email</label>
+                <input type="email" id="hpEmail" placeholder="you@email.com" required>
+              </div>
+            </div>
+            <div class="hp-form-row">
+              <div class="form-group">
+                <label for="hpAddress">Home Address</label>
+                <div style="position:relative;">
+                  <input type="text" id="hpAddress" placeholder="Start typing your address..." autocomplete="off" required>
+                  <ul id="hpAddressSuggestions" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 8px 8px;list-style:none;margin:0;padding:0;z-index:100;max-height:200px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,0.1);"></ul>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="hpPhone">Phone <span class="optional">(optional)</span></label>
+                <input type="tel" id="hpPhone" placeholder="(415) 555-1234" maxlength="14" oninput="hpFormatPhone(this)">
+              </div>
+            </div>
+            <div id="hpChildrenList">
+              <div class="hp-form-row">
+                <div class="form-group">
+                  <label for="hpChildName1">Child's Name</label>
+                  <input type="text" id="hpChildName1" placeholder="First name" required>
+                </div>
+                <div class="form-group">
+                  <label for="hpChildDob1">Date of Birth</label>
+                  <input type="date" id="hpChildDob1" min="2000-01-01" max="2050-12-31" required class="dob-native-hp">
+                  <div class="dob-dropdowns-hp">
+                    <select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
+                    <select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select>
+                    <select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="hp-add-child-btn" onclick="hpAddChild()">+ Add another child</button>
+            <div class="hp-checkbox-group">
+              <input type="checkbox" id="hpVolunteer">
+              <label for="hpVolunteer">I'm interested in volunteering</label>
+            </div>
+            <div class="hp-checkbox-group">
+              <input type="checkbox" id="hpDonate">
+              <label for="hpDonate">I'm interested in donating</label>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
+            <button type="submit" class="btn btn-primary form-submit" style="display:block;margin:0 auto;width:auto;">Submit</button>
+          </form>
+          <div class="hp-form-success" id="hpFormSuccess">
+            <div class="hp-check-circle">&#10003;</div>
+            <h3>Thank you!</h3>
+            <p>We'll be in touch as the school takes shape. Welcome to the community.</p>
+            <div class="hp-followup-section" id="hpFollowupSection">
+              <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+              <h3 style="font-size:1.05rem;margin-bottom:0.35rem;">One more thing</h3>
+              <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.25rem;line-height:1.5;">Do any of these describe you? Check any that apply.</p>
+              <form id="hpFollowupForm" onsubmit="handleHpFollowup(event)">
+                <div class="hp-checkbox-group">
+                  <input type="checkbox" id="hp-fu-legal" name="skill_legal" value="Yes">
+                  <label for="hp-fu-legal">I work in law, finance, or nonprofit management</label>
+                </div>
+                <div class="hp-checkbox-group">
+                  <input type="checkbox" id="hp-fu-networks" name="skill_community" value="Yes">
+                  <label for="hp-fu-networks">I'm active in parent groups, listservs, or community orgs</label>
+                </div>
+                <div class="hp-checkbox-group">
+                  <input type="checkbox" id="hp-fu-donors" name="skill_donors" value="Yes">
+                  <label for="hp-fu-donors">I know potential donors or sponsors</label>
+                </div>
+                <div class="hp-checkbox-group">
+                  <input type="checkbox" id="hp-fu-media" name="skill_media" value="Yes">
+                  <label for="hp-fu-media">I have media, PR, or communications experience</label>
+                </div>
+                <div class="hp-checkbox-group">
+                  <input type="checkbox" id="hp-fu-education" name="skill_education" value="Yes">
+                  <label for="hp-fu-education">I work in education or school administration</label>
+                </div>
+                <div class="form-group" style="margin-top:0.5rem;">
+                  <label for="hp-fu-other" style="font-size:0.8rem;font-weight:600;">Anything else we should know? <span class="optional">(optional)</span></label>
+                  <textarea id="hp-fu-other" placeholder="E.g., I run a tutoring company, I know someone on the Board of Education..." style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid var(--border);border-radius:8px;font-size:0.875rem;font-family:inherit;background:#fff;color:var(--text);outline:none;resize:vertical;min-height:60px;transition:border-color 0.2s;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="display:block;margin:0.75rem auto 0;width:auto;padding:0.65rem 1.75rem;font-size:0.875rem;">Send</button>
+              </form>
+              <div id="hpFollowupSuccess" style="display:none;text-align:center;padding:0.75rem 0 0;">
+                <p style="color:var(--red);font-size:0.9rem;font-weight:500;">Got it &mdash; thanks for sharing!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="animate" style="text-align:center;margin-top:1.25rem;"><a href="how-to-help.html" style="color:rgba(255,255,255,0.85);font-size:0.9rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);">See other ways you can help &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -1565,6 +1814,225 @@
       });
     }
     initAddressAutocomplete();
+
+    async function initHpAddressAutocomplete() {
+      var { AutocompleteSuggestion, AutocompleteSessionToken } = await google.maps.importLibrary('places');
+      var sessionToken = new AutocompleteSessionToken();
+      var input = document.getElementById('hpAddress');
+      var list = document.getElementById('hpAddressSuggestions');
+      if (!input || !list) return;
+      var debounce;
+
+      input.addEventListener('input', function() {
+        clearTimeout(debounce);
+        var val = input.value.trim();
+        if (val.length < 3) { list.style.display = 'none'; return; }
+        debounce = setTimeout(async function() {
+          try {
+            var response = await AutocompleteSuggestion.fetchAutocompleteSuggestions({
+              input: val,
+              sessionToken: sessionToken,
+              includedRegionCodes: ['us']
+            });
+            list.innerHTML = '';
+            if (!response.suggestions || response.suggestions.length === 0) { list.style.display = 'none'; return; }
+            response.suggestions.forEach(function(s) {
+              var text = s.placePrediction ? s.placePrediction.text.toString() : '';
+              if (!text) return;
+              var li = document.createElement('li');
+              li.textContent = text;
+              li.addEventListener('mousedown', function(ev) {
+                ev.preventDefault();
+                input.value = text;
+                list.style.display = 'none';
+                sessionToken = new AutocompleteSessionToken();
+              });
+              list.appendChild(li);
+            });
+            list.style.display = list.children.length ? 'block' : 'none';
+          } catch(err) { list.style.display = 'none'; }
+        }, 200);
+      });
+
+      input.addEventListener('blur', function() {
+        setTimeout(function() { list.style.display = 'none'; }, 150);
+      });
+    }
+    initHpAddressAutocomplete();
+  </script>
+  <script>
+    function hpFormatPhone(input) {
+      var digits = input.value.replace(/\D/g, '').substring(0, 10);
+      if (digits.length === 0) { input.value = ''; return; }
+      if (digits.length <= 3) { input.value = '(' + digits; }
+      else if (digits.length <= 6) { input.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3); }
+      else { input.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3, 6) + '-' + digits.substring(6); }
+    }
+
+    function hpPopulateDobDropdowns(container) {
+      var daySelect = container.querySelector('.dob-day');
+      var yearSelect = container.querySelector('.dob-year');
+      if (!daySelect || !yearSelect) return;
+      for (var d = 1; d <= 31; d++) {
+        var opt = document.createElement('option');
+        opt.value = d < 10 ? '0' + d : '' + d;
+        opt.textContent = d;
+        daySelect.appendChild(opt);
+      }
+      var currentYear = new Date().getFullYear();
+      for (var y = currentYear; y >= 2000; y--) {
+        var opt2 = document.createElement('option');
+        opt2.value = '' + y;
+        opt2.textContent = y;
+        yearSelect.appendChild(opt2);
+      }
+    }
+
+    document.querySelectorAll('.dob-dropdowns-hp').forEach(hpPopulateDobDropdowns);
+
+    function hpSyncDobRequired() {
+      var isMobile = window.matchMedia('(max-width: 768px)').matches;
+      document.querySelectorAll('.dob-native-hp').forEach(function(el) {
+        el.required = !isMobile;
+        el.disabled = isMobile;
+      });
+      document.querySelectorAll('.dob-dropdowns-hp select').forEach(function(el) {
+        el.required = isMobile;
+        el.disabled = !isMobile;
+      });
+    }
+    hpSyncDobRequired();
+    window.addEventListener('resize', hpSyncDobRequired);
+
+    function hpGetDobValue(formGroup) {
+      var native = formGroup.querySelector('.dob-native-hp');
+      if (native && native.offsetParent !== null && native.value) return native.value;
+      var m = formGroup.querySelector('.dob-month');
+      var d = formGroup.querySelector('.dob-day');
+      var y = formGroup.querySelector('.dob-year');
+      if (m && d && y && m.value && d.value && y.value) return y.value + '-' + m.value + '-' + d.value;
+      return '';
+    }
+
+    var hpChildCount = 1;
+    function hpAddChild() {
+      if (hpChildCount >= 4) return;
+      hpChildCount++;
+      var wrapper = document.createElement('div');
+      wrapper.className = 'hp-form-row';
+      wrapper.innerHTML =
+        '<div class="form-group"><label>Child\'s Name <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;float:right;" onclick="hpRemoveChildRow(this)">&times; Remove</button></label><input type="text" placeholder="First name" required></div>' +
+        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required class="dob-native-hp"><div class="dob-dropdowns-hp"><select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select><select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select></div></div>';
+      document.getElementById('hpChildrenList').appendChild(wrapper);
+      hpPopulateDobDropdowns(wrapper.querySelector('.dob-dropdowns-hp'));
+      hpSyncDobRequired();
+      if (hpChildCount >= 4) document.querySelector('.hp-add-child-btn').style.display = 'none';
+    }
+    function hpRemoveChildRow(btn) {
+      btn.closest('.hp-form-row').remove();
+      hpChildCount--;
+      document.querySelector('.hp-add-child-btn').style.display = '';
+    }
+
+    var hpSubmittedEmail = '';
+
+    function handleHpInterestForm(e) {
+      e.preventDefault();
+      var form = e.target;
+      var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
+      if (honeypot) return;
+
+      var parentName = document.getElementById('hpParentName').value;
+      var email = document.getElementById('hpEmail').value;
+      var address = document.getElementById('hpAddress').value;
+      var phone = document.getElementById('hpPhone').value;
+      var volunteer = document.getElementById('hpVolunteer').checked ? 'Yes' : '';
+      var donate = document.getElementById('hpDonate').checked ? 'Yes' : '';
+      hpSubmittedEmail = email;
+
+      var childRows = document.getElementById('hpChildrenList').querySelectorAll('.hp-form-row');
+      var children = [];
+      childRows.forEach(function(row) {
+        var nameInput = row.querySelector('input[type="text"]');
+        var dobGroup = row.querySelectorAll('.form-group')[1];
+        if (nameInput && dobGroup) children.push({ name: nameInput.value, dob: hpGetDobValue(dobGroup) });
+      });
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      fetchWithRetry(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: parentName, email: email, address: address, phone: phone,
+          child1_name: children[0] ? children[0].name : '', child1_dob: children[0] ? children[0].dob : '',
+          child2_name: children[1] ? children[1].name : '', child2_dob: children[1] ? children[1].dob : '',
+          child3_name: children[2] ? children[2].name : '', child3_dob: children[2] ? children[2].dob : '',
+          child4_name: children[3] ? children[3].name : '', child4_dob: children[3] ? children[3].dob : '',
+          volunteer: volunteer, donate: donate, source: 'interest-form', utm_source: defined_utm_source
+        })
+      }, 2, 1000).catch(function(err) { console.error('Sheet error:', err); });
+
+      var mcUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0' +
+        '&FNAME=' + encodeURIComponent(parentName) +
+        '&EMAIL=' + encodeURIComponent(email) +
+        '&c=handleHpInterestResponse';
+
+      window.handleHpInterestResponse = function(data) {
+        if (data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)) {
+          form.style.display = 'none';
+          document.getElementById('hpFormSuccess').style.display = 'block';
+          document.getElementById('hpFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          gtag('event', 'interest_form_submit', { event_category: 'forms' });
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit';
+          var msg = document.getElementById('hpFormError');
+          if (!msg) {
+            msg = document.createElement('p');
+            msg.id = 'hpFormError';
+            msg.style.cssText = 'color:#c00;text-align:center;margin-top:0.5rem;font-size:0.85rem;';
+            submitBtn.parentNode.insertBefore(msg, submitBtn.nextSibling);
+          }
+          msg.textContent = 'Something went wrong. Please try again.';
+        }
+        var s = document.getElementById('mcHpInterestScript');
+        if (s) s.parentNode.removeChild(s);
+      };
+
+      var script = document.createElement('script');
+      script.id = 'mcHpInterestScript';
+      script.src = mcUrl;
+      document.body.appendChild(script);
+    }
+
+    function handleHpFollowup(e) {
+      e.preventDefault();
+      var form = e.target;
+      var checks = form.querySelectorAll('input[type="checkbox"]:checked');
+      var skills = {};
+      checks.forEach(function(cb) { skills[cb.name] = 'Yes'; });
+      var notes = document.getElementById('hp-fu-other').value;
+
+      fetchWithRetry(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'followup', email: hpSubmittedEmail,
+          skill_legal: skills.skill_legal || '', skill_community: skills.skill_community || '',
+          skill_donors: skills.skill_donors || '', skill_media: skills.skill_media || '',
+          skill_education: skills.skill_education || '', anything_else: notes
+        })
+      }, 2, 1000).catch(function(err) { console.error('Sheet followup error:', err); });
+
+      form.style.display = 'none';
+      document.getElementById('hpFollowupSuccess').style.display = 'block';
+      gtag('event', 'followup_form_submit', { event_category: 'forms' });
+    }
   </script>
 </body>
 </html>
