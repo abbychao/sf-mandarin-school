@@ -1028,6 +1028,13 @@
           </div>
         </div>
 
+        <!-- INTEREST FORM CTA (shown after May 13, 2026) -->
+        <div class="hero-form-card" id="heroFormCta">
+          <h2>Show Your Interest</h2>
+          <p class="form-subtitle">Your response will directly shape the size, grades, and location of our future school. We'll keep you updated on our progress.</p>
+          <a href="how-to-help.html#interest" class="btn btn-primary" style="display:block;text-align:center;margin-top:1.5rem;">Add your family &rarr;</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1223,15 +1230,19 @@
       setInterval(updateCountdown, 60000);
     })();
 
-// Hide town hall card after May 13, 2026 (PT)
+// Swap town hall card for interest form CTA after May 13, 2026 (PT)
     (function() {
       var now = new Date();
       var pacific = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
       var todayPT = new Date(pacific.getFullYear(), pacific.getMonth(), pacific.getDate());
       var townhallEnd = new Date(2026, 4, 14); // May 14, 2026
+      var card = document.getElementById('townhallCard');
+      var formCta = document.getElementById('heroFormCta');
       if (todayPT >= townhallEnd) {
-        var card = document.getElementById('townhallCard');
         if (card) card.style.display = 'none';
+        if (formCta) formCta.style.display = '';
+      } else {
+        if (formCta) formCta.style.display = 'none';
       }
     })();
 
