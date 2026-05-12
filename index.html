@@ -976,6 +976,11 @@
       transform: translateY(-1px);
     }
 
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.6); }
+    }
+
     .btn-townhall-secondary {
       display: block;
       width: 100%;
@@ -1226,7 +1231,7 @@
             </div>
           </div>
           <div class="townhall-ctas">
-            <a href="https://partiful.com/e/c7Atr6WvbASoS1Dnmb99" target="_blank" rel="noopener" class="btn-townhall-primary">RSVP &rarr;</a>
+            <a href="https://partiful.com/e/c7Atr6WvbASoS1Dnmb99" target="_blank" rel="noopener" class="btn-townhall-primary" id="townhallCta">RSVP →</a>
           </div>
         </div>
 
@@ -1571,20 +1576,55 @@
       setInterval(updateCountdown, 60000);
     })();
 
-// Swap town hall card for interest form CTA after May 13, 2026 (PT)
+// Town hall CTA: show Zoom link 6:15–8:00 PM PT on May 13, 2026
     (function() {
-      var now = new Date();
-      var pacific = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-      var todayPT = new Date(pacific.getFullYear(), pacific.getMonth(), pacific.getDate());
-      var townhallEnd = new Date(2026, 4, 14); // May 14, 2026
-      var card = document.getElementById('townhallCard');
-      var formCta = document.getElementById('heroFormCta');
-      if (todayPT >= townhallEnd) {
-        if (card) card.style.display = 'none';
-        if (formCta) formCta.style.display = '';
-      } else {
-        if (formCta) formCta.style.display = 'none';
+      var ZOOM_URL = 'https://us05web.zoom.us/j/83835046449?pwd=TJF4HV7bK1mLn2WMMNuOqvF7PSEolr.1';
+      var RSVP_URL = 'https://partiful.com/e/c7Atr6WvbASoS1Dnmb99';
+      var LIVE_HTML = '<span style="display:inline-flex;align-items:center;gap:0.5rem;"><span style="width:8px;height:8px;background:#fff;border-radius:50%;flex-shrink:0;animation:livePulse 1.2s ease-in-out infinite;"></span>Live Now — Join Zoom →</span>';
+      var RSVP_HTML = 'RSVP →';
+
+      function ptNow() {
+        return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
       }
+
+      function msUntil(h, m) {
+        var pt = ptNow();
+        var target = new Date(pt);
+        target.setHours(h, m, 0, 0);
+        return target - pt;
+      }
+
+      function setLive() {
+        var cta = document.getElementById('townhallCta');
+        if (cta) { cta.href = ZOOM_URL; cta.innerHTML = LIVE_HTML; }
+        var revertIn = msUntil(20, 0);
+        if (revertIn > 0) setTimeout(setRsvp, revertIn);
+      }
+
+      function setRsvp() {
+        var cta = document.getElementById('townhallCta');
+        if (cta) { cta.href = RSVP_URL; cta.innerHTML = RSVP_HTML; }
+      }
+
+      // Set initial state and schedule flips if on event day
+      var pt = ptNow();
+      var isEventDay = pt.getFullYear() === 2026 && pt.getMonth() === 4 && pt.getDate() === 13;
+      if (isEventDay) {
+        var msToStart = msUntil(18, 15);
+        var msToEnd   = msUntil(20, 0);
+        if (msToStart > 0) {
+          setTimeout(setLive, msToStart);  // not yet live
+        } else if (msToEnd > 0) {
+          setLive();                        // already live, revert scheduled inside setLive()
+        }
+        // past 8 PM: do nothing, stays as RSVP
+      }
+    })();
+
+    // Hide interest form CTA (manual control only going forward)
+    (function() {
+      var formCta = document.getElementById('heroFormCta');
+      if (formCta) formCta.style.display = 'none';
     })();
 
     // Interest form: phone formatting
