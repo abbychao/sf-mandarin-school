@@ -846,7 +846,7 @@
       border-color: var(--red);
     }
 
-    /* ---- TOWN HALL CARD ---- */
+    /* ---- HERO SUBSCRIBE CARD ---- */
     .townhall-card {
       background: rgba(255, 255, 255, 0.97);
       border-radius: var(--radius);
@@ -856,109 +856,53 @@
       animation: fadeUp 0.7s 0.3s forwards;
     }
 
-
     .townhall-card h2 {
       font-size: 1.45rem;
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
       color: var(--text);
-    }
-
-    .townhall-speakers {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .townhall-speaker {
-      flex: 1;
-      text-align: center;
-    }
-
-    .townhall-speaker img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 3px solid var(--red);
-      margin-bottom: 0.4rem;
-    }
-
-    .townhall-speaker-name {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.3;
-    }
-
-    .townhall-speaker-title {
-      font-size: 0.7rem;
-      color: var(--text-secondary);
-      line-height: 1.35;
-      margin-top: 0.1rem;
     }
 
     .townhall-desc {
       font-size: 0.875rem;
-      color: var(--text);
+      color: var(--text-secondary);
       line-height: 1.6;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
-    .townhall-details {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 1.75rem;
+    .hero-subscribe-field {
+      margin-bottom: 1rem;
     }
 
-    .townhall-detail-row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .townhall-detail-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      width: 24px;
-      text-align: center;
-    }
-
-    .townhall-detail-text {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: var(--text);
-    }
-
-    .townhall-detail-text strong {
+    .hero-sub-label {
       display: block;
+      font-size: 0.8rem;
       font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.1rem;
-      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      margin-bottom: 0.3rem;
     }
 
-    .townhall-who {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      padding: 0.75rem 1rem;
-      background: var(--cream);
+    .hero-subscribe-field input {
+      width: 100%;
+      padding: 0.7rem 0.875rem;
+      border: 1.5px solid var(--border);
       border-radius: 8px;
-      border-left: 3px solid var(--gold);
-      margin-bottom: 1.75rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
     }
 
-    .townhall-ctas {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
+    .hero-subscribe-field input:focus {
+      border-color: var(--red);
+    }
+
+    .hero-subscribe-field input::placeholder {
+      color: #B5AFA7;
     }
 
     .btn-townhall-primary {
@@ -973,38 +917,13 @@
       font-size: 1rem;
       font-family: 'Inter', sans-serif;
       text-decoration: none;
+      border: none;
+      cursor: pointer;
       transition: background 0.2s, transform 0.15s;
     }
 
     .btn-townhall-primary:hover {
       background: var(--red-dark);
-      transform: translateY(-1px);
-    }
-
-    @keyframes livePulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.6); }
-    }
-
-    .btn-townhall-secondary {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: transparent;
-      color: var(--text-secondary);
-      padding: 0.6rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 0.875rem;
-      font-family: 'Inter', sans-serif;
-      text-decoration: none;
-      border: 1.5px solid var(--border);
-      transition: border-color 0.2s, color 0.2s, transform 0.15s;
-    }
-
-    .btn-townhall-secondary:hover {
-      border-color: var(--text-secondary);
-      color: var(--text);
       transform: translateY(-1px);
     }
 
@@ -1037,49 +956,6 @@
         border-radius: 0;
         margin: 0 -0.5rem;
         padding: 2.25rem 1.75rem;
-      }
-
-      .townhall-card h2 {
-        margin-bottom: 1.75rem;
-      }
-
-      .townhall-speakers {
-        flex-direction: column;
-        gap: 1.25rem;
-        margin-bottom: 1.75rem;
-      }
-
-      .townhall-speaker {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-        gap: 1rem;
-      }
-
-      .townhall-speaker img {
-        width: 64px;
-        height: 64px;
-        flex-shrink: 0;
-        margin-bottom: 0;
-      }
-
-      .townhall-speaker-name {
-        font-size: 0.9rem;
-      }
-
-      .townhall-speaker-title {
-        font-size: 0.85rem;
-      }
-
-      .townhall-speaker-title br {
-        display: none;
-      }
-
-
-      .townhall-details {
-        gap: 1rem;
-        margin-bottom: 2rem;
       }
 
       .hero-form-card h2 {
@@ -1193,58 +1069,27 @@
           <h1>Friends of the<br><span class="highlight">SF Mandarin School</span></h1>
           <p class="subtitle">SFUSD committed to launching a Mandarin immersion K&ndash;8 school for the 2027&ndash;2028 school year. We are the parents and community members making sure it happens.</p>
         </div>
-        <!-- TOWN HALL CARD (shown until May 13, 2026) -->
-        <div class="townhall-card" id="townhallCard">
-          <h2>Town Hall: Your Presence Matters!</h2>
-          <p class="townhall-desc">Hear the update, ask your questions &mdash; and shape the grades, seats, and location of the future school.</p>
-          <div class="townhall-speakers">
-            <div class="townhall-speaker">
-              <img src="images/hong-mei-pang.jpeg" alt="Hong Mei Pang">
-              <div class="townhall-speaker-text">
-                <div class="townhall-speaker-name">Hong Mei Pang</div>
-                <div class="townhall-speaker-title">SFUSD Head of Communications</div>
-              </div>
+        <!-- EMAIL SUBSCRIBE CARD -->
+        <div class="townhall-card" id="heroSubscribeCard">
+          <h2>Stay in the Loop</h2>
+          <p class="townhall-desc">Get updates on our progress, upcoming events, and how you can help make this school happen.</p>
+          <form id="heroSubscribeForm" onsubmit="handleHeroSubscribe(event)">
+            <div class="hero-subscribe-field">
+              <label for="heroSubName" class="hero-sub-label">Name</label>
+              <input type="text" id="heroSubName" placeholder="Your name" required>
             </div>
-            <div class="townhall-speaker">
-              <img src="images/liana-szeto.jpeg" alt="Liana Szeto">
-              <div class="townhall-speaker-text">
-                <div class="townhall-speaker-name">Liana Szeto</div>
-                <div class="townhall-speaker-title">Founding Principal,<br> Alice Fong Yu</div>
-              </div>
+            <div class="hero-subscribe-field">
+              <label for="heroSubEmail" class="hero-sub-label">Email</label>
+              <input type="email" id="heroSubEmail" placeholder="you@email.com" required>
             </div>
-            <div class="townhall-speaker">
-              <img src="images/supryia-ray.jpg" alt="Supryia Ray">
-              <div class="townhall-speaker-text">
-                <div class="townhall-speaker-name">Supryia Ray</div>
-                <div class="townhall-speaker-title">SFUSD Board Commissioner</div>
-              </div>
-            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
+            <button type="submit" class="btn-townhall-primary" id="heroSubBtn" style="margin-top:1.25rem;">Subscribe →</button>
+          </form>
+          <div id="heroSubscribeSuccess" style="display:none;text-align:center;padding:2rem 0;">
+            <div style="width:48px;height:48px;border-radius:50%;background:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin:0 auto 0.75rem;">✓</div>
+            <h3 style="margin-bottom:0.4rem;font-size:1.15rem;">You're subscribed!</h3>
+            <p style="color:var(--text-secondary);font-size:0.875rem;">We'll keep you updated as the school takes shape.</p>
           </div>
-          <div class="townhall-details">
-            <div class="townhall-detail-row">
-              <div class="townhall-detail-icon">🗓️</div>
-              <div class="townhall-detail-text">
-                6:30 PM &middot; Wednesday, May 13, 2026
-              </div>
-            </div>
-            <div class="townhall-detail-row">
-              <div class="townhall-detail-icon">📍</div>
-              <div class="townhall-detail-text">
-                Ulloa Elementary School<br>
-                <span style="font-size:0.82rem;color:var(--text-secondary);">Virtual option available</span>
-              </div>
-            </div>
-          </div>
-          <div class="townhall-ctas">
-            <a href="https://partiful.com/e/c7Atr6WvbASoS1Dnmb99" target="_blank" rel="noopener" class="btn-townhall-primary" id="townhallCta">RSVP →</a>
-          </div>
-        </div>
-
-        <!-- INTEREST FORM CTA (shown after May 13, 2026) -->
-        <div class="hero-form-card" id="heroFormCta">
-          <h2>Show Your Interest</h2>
-          <p class="form-subtitle">Your response will directly shape the size, grades, and location of our future school. We'll keep you updated on our progress.</p>
-          <a href="#how-to-help" class="btn btn-primary" style="display:block;text-align:center;margin-top:1.5rem;">Add your family &rarr;</a>
         </div>
 
       </div>
@@ -1596,56 +1441,54 @@
       setInterval(updateCountdown, 60000);
     })();
 
-// Town hall CTA: show Zoom link 6:15–8:00 PM PT on May 13, 2026
-    (function() {
-      var ZOOM_URL = 'https://us05web.zoom.us/j/83835046449?pwd=TJF4HV7bK1mLn2WMMNuOqvF7PSEolr.1';
-      var RSVP_URL = 'https://partiful.com/e/c7Atr6WvbASoS1Dnmb99';
-      var LIVE_HTML = '<span style="display:inline-flex;align-items:center;gap:0.5rem;"><span style="width:8px;height:8px;background:#fff;border-radius:50%;flex-shrink:0;animation:livePulse 1.2s ease-in-out infinite;"></span>Live Now — Join Zoom →</span>';
-      var RSVP_HTML = 'RSVP →';
+    // Hero subscribe form
+    function handleHeroSubscribe(e) {
+      e.preventDefault();
+      var form = e.target;
+      var name = document.getElementById('heroSubName').value;
+      var email = document.getElementById('heroSubEmail').value;
+      var btn = document.getElementById('heroSubBtn');
+      btn.disabled = true;
+      btn.textContent = 'Subscribing...';
 
-      function ptNow() {
-        return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-      }
+      // Send to Google Sheet
+      fetchWithRetry(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, source: 'subscriber', utm_source: defined_utm_source })
+      }, 2, 1000).catch(function(err) { console.error('Sheet error:', err); });
 
-      function msUntil(h, m) {
-        var pt = ptNow();
-        var target = new Date(pt);
-        target.setHours(h, m, 0, 0);
-        return target - pt;
-      }
+      // Send to Mailchimp
+      var mcUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0072abe6f0' +
+        '&FNAME=' + encodeURIComponent(name) +
+        '&EMAIL=' + encodeURIComponent(email) +
+        '&c=handleHeroSubResponse';
 
-      function setLive() {
-        var cta = document.getElementById('townhallCta');
-        if (cta) { cta.href = ZOOM_URL; cta.innerHTML = LIVE_HTML; }
-        var revertIn = msUntil(20, 0);
-        if (revertIn > 0) setTimeout(setRsvp, revertIn);
-      }
-
-      function setRsvp() {
-        var cta = document.getElementById('townhallCta');
-        if (cta) { cta.href = RSVP_URL; cta.innerHTML = RSVP_HTML; }
-      }
-
-      // Set initial state and schedule flips if on event day
-      var pt = ptNow();
-      var isEventDay = pt.getFullYear() === 2026 && pt.getMonth() === 4 && pt.getDate() === 13;
-      if (isEventDay) {
-        var msToStart = msUntil(18, 15);
-        var msToEnd   = msUntil(20, 0);
-        if (msToStart > 0) {
-          setTimeout(setLive, msToStart);  // not yet live
-        } else if (msToEnd > 0) {
-          setLive();                        // already live, revert scheduled inside setLive()
+      var callbackFired = false;
+      var timeout = setTimeout(function() {
+        if (!callbackFired) {
+          form.style.display = 'none';
+          document.getElementById('heroSubscribeSuccess').style.display = 'block';
+          gtag('event', 'subscribe_form_submit', { event_category: 'forms', mc_status: 'timeout' });
         }
-        // past 8 PM: do nothing, stays as RSVP
-      }
-    })();
+      }, 8000);
 
-    // Hide interest form CTA (manual control only going forward)
-    (function() {
-      var formCta = document.getElementById('heroFormCta');
-      if (formCta) formCta.style.display = 'none';
-    })();
+      window.handleHeroSubResponse = function(data) {
+        callbackFired = true;
+        clearTimeout(timeout);
+        form.style.display = 'none';
+        document.getElementById('heroSubscribeSuccess').style.display = 'block';
+        gtag('event', 'subscribe_form_submit', { event_category: 'forms', mc_status: data.result });
+        var s = document.getElementById('mcHeroSubScript');
+        if (s) s.parentNode.removeChild(s);
+      };
+
+      var script = document.createElement('script');
+      script.id = 'mcHeroSubScript';
+      script.src = mcUrl;
+      document.body.appendChild(script);
+    }
 
     // Interest form: phone formatting
     function formatPhone(input) {
