@@ -522,20 +522,38 @@
       background: var(--cream);
     }
 
+    .supporters-group {
+      margin-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .supporters-group-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
     .supporters-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 3rem 2rem;
+      gap: 3rem 1.75rem;
       justify-content: center;
-      margin-top: 3rem;
-      max-width: 860px;
+      max-width: 1078px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .supporters-grid .supporter-item {
-      flex: 0 0 140px;
-      max-width: 140px;
+      flex: 0 0 130px;
+      max-width: 130px;
+    }
+
+    .supporters-grid.row-5 {
+      max-width: 858px;
     }
 
     .supporters-row-break {
@@ -1188,139 +1206,154 @@
         <p class="section-desc">Community leaders standing with us to make this school happen.</p>
       </div>
 
-      <div class="supporters-grid animate stagger-1">
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/phil-kim.jpg" alt="Phil Kim">
+      <div class="supporters-group animate stagger-1">
+        <div class="supporters-group-label">SFUSD Board of Education</div>
+        <div class="supporters-grid">
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/phil-kim.jpg" alt="Phil Kim">
+            </div>
+            <strong>Phil Kim</strong>
+            <span>SFUSD Board President</span>
           </div>
-          <strong>Phil Kim</strong>
-          <span>SFUSD Board President</span>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/jaime-huling.jpeg" alt="Jaime Huling">
+            </div>
+            <strong>Jaime Huling</strong>
+            <span>SFUSD Board Vice President</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/supryia-ray.jpg" alt="Supryia Ray">
+            </div>
+            <strong>Supryia Ray</strong>
+            <span>SFUSD Board Member</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/matt-alexander.jpg" alt="Matt Alexander">
+            </div>
+            <strong>Matt Alexander</strong>
+            <span>SFUSD Board Member</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/alida-fisher.jpeg" alt="Alida Fisher">
+            </div>
+            <strong>Alida Fisher</strong>
+            <span>SFUSD Board Member</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/parag-gupta.jpeg" alt="Parag Gupta">
+            </div>
+            <strong>Parag Gupta</strong>
+            <span>SFUSD Board Member</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/lisa-weissman-ward.jpg" alt="Lisa Weissman-Ward">
+            </div>
+            <strong>Lisa Weissman-Ward</strong>
+            <span>SFUSD Board Member</span>
+          </div>
         </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/jaime-huling.jpeg" alt="Jaime Huling">
+      </div>
+
+      <div class="supporters-group animate stagger-2">
+        <div class="supporters-group-label">SF Board of Supervisors</div>
+        <div class="supporters-grid row-5">
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/rafael-mandelman.jpg" alt="Rafael Mandelman">
+            </div>
+            <strong>Rafael Mandelman</strong>
+            <span>President, SF Board of Supervisors (D8)</span>
           </div>
-          <strong>Jaime Huling</strong>
-          <span>SFUSD Board Vice President</span>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/connie-chan.jpg" alt="Connie Chan">
+            </div>
+            <strong>Connie Chan</strong>
+            <span>SF District 1 Supervisor</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/stephen-sherrill.png" alt="Stephen Sherrill">
+            </div>
+            <strong>Stephen Sherrill</strong>
+            <span>SF District 2 Supervisor</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/danny-sauter.jpeg" alt="Danny Sauter">
+            </div>
+            <strong>Danny Sauter</strong>
+            <span>SF District 3 Supervisor</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/alan-wong.jpeg" alt="Alan Wong">
+            </div>
+            <strong>Alan Wong</strong>
+            <span>SF District 4 Supervisor</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/bilal-mahmood.png" alt="Bilal Mahmood">
+            </div>
+            <strong>Bilal Mahmood</strong>
+            <span>SF District 5 Supervisor</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/matt-dorsey.png" alt="Matt Dorsey">
+            </div>
+            <strong>Matt Dorsey</strong>
+            <span>SF District 6 Supervisor</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/myrna-melgar.png" alt="Myrna Melgar">
+            </div>
+            <strong>Myrna Melgar</strong>
+            <span>SF District 7 Supervisor</span>
+          </div>
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/chyanne-chen.png" alt="Chyanne Chen">
+            </div>
+            <strong>Chyanne Chen</strong>
+            <span>SF District 11 Supervisor</span>
+          </div>
         </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/supryia-ray.jpg" alt="Supryia Ray">
+      </div>
+
+      <div class="supporters-group animate stagger-3">
+        <div class="supporters-group-label">Candidates</div>
+        <div class="supporters-grid row-5">
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/albert-chow.jpg" alt="Albert Chow">
+            </div>
+            <strong>Albert Chow</strong>
+            <span>Candidate, D4 Supervisor</span>
           </div>
-          <strong>Supryia Ray</strong>
-          <span>SFUSD Board Member</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/matt-alexander.jpg" alt="Matt Alexander">
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/virginia-cheung.jpeg" alt="Virginia Cheung">
+            </div>
+            <strong>Virginia Cheung</strong>
+            <span>Candidate, SFUSD Board (June 2026)</span>
           </div>
-          <strong>Matt Alexander</strong>
-          <span>SFUSD Board Member</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/alida-fisher.jpeg" alt="Alida Fisher">
+          <div class="supporter-item">
+            <div class="supporter-photo">
+              <img src="images/laurance-lee.jpeg" alt="Laurance Lee">
+            </div>
+            <strong>Laurance Lee</strong>
+            <span>Candidate, SFUSD Board (Nov 2026)</span>
           </div>
-          <strong>Alida Fisher</strong>
-          <span>SFUSD Board Member</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/parag-gupta.jpeg" alt="Parag Gupta">
-          </div>
-          <strong>Parag Gupta</strong>
-          <span>SFUSD Board Member</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/lisa-weissman-ward.jpg" alt="Lisa Weissman-Ward">
-          </div>
-          <strong>Lisa Weissman-Ward</strong>
-          <span>SFUSD Board Member</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/rafael-mandelman.jpg" alt="Rafael Mandelman">
-          </div>
-          <strong>Rafael Mandelman</strong>
-          <span>President, SF Board of Supervisors (D8)</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/connie-chan.jpg" alt="Connie Chan">
-          </div>
-          <strong>Connie Chan</strong>
-          <span>SF District 1 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/stephen-sherrill.png" alt="Stephen Sherrill">
-          </div>
-          <strong>Stephen Sherrill</strong>
-          <span>SF District 2 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/danny-sauter.jpeg" alt="Danny Sauter">
-          </div>
-          <strong>Danny Sauter</strong>
-          <span>SF District 3 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/alan-wong.jpeg" alt="Alan Wong">
-          </div>
-          <strong>Alan Wong</strong>
-          <span>SF District 4 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/bilal-mahmood.png" alt="Bilal Mahmood">
-          </div>
-          <strong>Bilal Mahmood</strong>
-          <span>SF District 5 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/matt-dorsey.png" alt="Matt Dorsey">
-          </div>
-          <strong>Matt Dorsey</strong>
-          <span>SF District 6 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/myrna-melgar.png" alt="Myrna Melgar">
-          </div>
-          <strong>Myrna Melgar</strong>
-          <span>SF District 7 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/chyanne-chen.png" alt="Chyanne Chen">
-          </div>
-          <strong>Chyanne Chen</strong>
-          <span>SF District 11 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/albert-chow.jpg" alt="Albert Chow">
-          </div>
-          <strong>Albert Chow</strong>
-          <span>Candidate, D4 Supervisor</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/virginia-cheung.jpeg" alt="Virginia Cheung">
-          </div>
-          <strong>Virginia Cheung</strong>
-          <span>Candidate, SFUSD Board (June 2026)</span>
-        </div>
-        <div class="supporter-item">
-          <div class="supporter-photo">
-            <img src="images/laurance-lee.jpeg" alt="Laurance Lee">
-          </div>
-          <strong>Laurance Lee</strong>
-          <span>Candidate, SFUSD Board (Nov 2026)</span>
         </div>
       </div>
 
