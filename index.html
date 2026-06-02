@@ -945,6 +945,61 @@
       transform: translateY(-1px);
     }
 
+    .townhall-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .townhall-detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .townhall-detail-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      width: 24px;
+      text-align: center;
+      margin-top: 0.1rem;
+    }
+
+    .townhall-detail-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .townhall-detail-text strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .townhall-who {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding: 0.75rem 1rem;
+      background: var(--cream);
+      border-radius: 8px;
+      border-left: 3px solid var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .townhall-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
 /* ---- RESPONSIVE (page-specific) ---- */
     @media (max-width: 768px) {
       .hero {
@@ -1087,8 +1142,38 @@
           <h1>Friends of the<br><span class="highlight">SF Mandarin School</span></h1>
           <p class="subtitle">SFUSD committed to launching a Mandarin immersion TK&ndash;8 school for the 2027&ndash;2028 school year. We are the parents and community members making sure it happens.</p>
         </div>
-        <!-- EMAIL SUBSCRIBE CARD -->
-        <div class="townhall-card" id="heroSubscribeCard">
+        <!-- JUNE 9 BOARD MEETING CARD (shown until June 9, 2026; subscribe card shown after) -->
+        <div class="townhall-card" id="boardMeetingCard">
+          <h2>SFUSD Board Update:<br>Mandarin Immersion TK–8</h2>
+          <p class="townhall-desc">The district is presenting an update to the Board on the Mandarin Immersion TK&ndash;8, slated to open in fall 2027.</p>
+          <p class="townhall-desc" style="margin-top:-0.75rem;">Come hear the latest on facilities, staffing, and programming &mdash; and remind the Board why this matters.</p>
+          <div class="townhall-details">
+            <div class="townhall-detail-row">
+              <div class="townhall-detail-icon">🗓️</div>
+              <div class="townhall-detail-text">
+                <strong>When</strong>
+                Tuesday, June 9 &middot; 6:15 PM
+              </div>
+            </div>
+            <div class="townhall-detail-row">
+              <div class="townhall-detail-icon">📍</div>
+              <div class="townhall-detail-text">
+                <strong>Where</strong>
+                555 Franklin St, San Francisco<br>
+                <span style="font-size:0.82rem;color:var(--text-secondary);">Zoom available for remote participation</span>
+              </div>
+            </div>
+          </div>
+          <div class="townhall-who">
+            📢 Want to speak? Submit a speaker card by <strong>6:30 PM</strong>. In-person comments prioritized.
+          </div>
+          <div class="townhall-ctas">
+            <a href="https://partiful.com/e/9fuoGe9C53GSDJA33fHI" target="_blank" rel="noopener" class="btn-townhall-primary" id="boardMeetingCta">RSVP →</a>
+          </div>
+        </div>
+
+        <!-- EMAIL SUBSCRIBE CARD (shown after June 9, 2026) -->
+        <div class="townhall-card" id="heroSubscribeCard" style="display:none;">
           <h2>Stay in the Loop</h2>
           <p class="townhall-desc">Get updates on our progress, upcoming events, and how you can help make this school happen.</p>
           <form id="heroSubscribeForm" onsubmit="handleHeroSubscribe(event)">
@@ -1541,6 +1626,20 @@
       script.src = mcUrl;
       document.body.appendChild(script);
     }
+
+    // Board meeting card: show until June 9 PT, then flip to subscribe card
+    (function() {
+      var now = new Date();
+      var pacific = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+      var todayPT = new Date(pacific.getFullYear(), pacific.getMonth(), pacific.getDate());
+      var boardMeetingDay = new Date(2026, 5, 9); // June 9, 2026
+      if (todayPT > boardMeetingDay) {
+        var bmc = document.getElementById('boardMeetingCard');
+        var hsc = document.getElementById('heroSubscribeCard');
+        if (bmc) bmc.style.display = 'none';
+        if (hsc) hsc.style.display = 'block';
+      }
+    })();
 
     // Interest form: phone formatting
     function formatPhone(input) {
