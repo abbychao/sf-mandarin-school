@@ -5,3 +5,10 @@ preview-supporters.html
 images/wah-mei-logo.png
 share.html
 design/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
