@@ -99,7 +99,15 @@ document.querySelectorAll('.animate').forEach(function (el) {
 });
 
 // ---- UTM tracking ----
+// Remember the source for this browser session so it survives navigation to other pages.
 var defined_utm_source = new URLSearchParams(window.location.search).get('utm_source') || '';
+try {
+  if (defined_utm_source) {
+    sessionStorage.setItem('utm_source', defined_utm_source);
+  } else {
+    defined_utm_source = sessionStorage.getItem('utm_source') || '';
+  }
+} catch (e) {}
 
 // ---- Fetch with retry (for Google Sheet POSTs) ----
 function fetchWithRetry(url, options, retries, delay) {
