@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press — Friends of the SF Mandarin School</title>
+  <meta name="description" content="Press coverage of the effort to launch San Francisco's Mandarin Immersion TK-8 school. Media inquiries: info@sfmandarinschool.org.">
+  <meta property="og:title" content="Press — Friends of the SF Mandarin School">
+  <meta property="og:description" content="News coverage of the effort to launch San Francisco's Mandarin Immersion TK-8 school.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sfmandarinschool.org/press.html">
+  <meta property="og:image" content="https://www.sfmandarinschool.org/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Press — Friends of the SF Mandarin School">
+  <meta name="twitter:description" content="News coverage of the effort to launch San Francisco's Mandarin Immersion TK-8 school.">
+  <meta name="twitter:image" content="https://www.sfmandarinschool.org/images/og-image.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCR9CRJD65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FCR9CRJD65');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ---- PRESS PAGE STYLES ---- */
+
+    .press-section {
+      background: #fff;
+    }
+
+    .press-section.alt {
+      background: var(--cream);
+    }
+
+    .press-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .press-group-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    /* Featured card */
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .featured-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .featured-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-outlet {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+    }
+
+    .featured-body h2 {
+      font-size: 1.4rem;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .featured-body p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .featured-body .btn {
+      align-self: flex-start;
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+
+    /* Archive list */
+    .press-list {
+      list-style: none;
+      margin: 0 0 2rem;
+      padding: 0;
+    }
+
+    .press-item {
+      padding: 0.75rem 0;
+      line-height: 1.5;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .press-event {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .press-event-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .press-event .press-group-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .press-event-desc {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .press-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin: 0 0 0.25rem;
+    }
+
+    .press-list-event {
+      background: var(--gold-light);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 0.25rem 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .press-list-event .press-item:last-child {
+      border-bottom: none;
+    }
+
+    .press-outlet {
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .press-item:last-child {
+      border-bottom: none;
+    }
+
+    .press-item a {
+      font-weight: 400;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.4;
+    }
+
+    .press-translation {
+      display: block;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-top: 0.15rem;
+    }
+
+    .press-item a:hover {
+      color: var(--red);
+      text-decoration: underline;
+    }
+
+    .press-contact {
+      text-align: center;
+      padding: 3.5rem 2rem;
+      background: #fff;
+      border-top: 1px solid var(--border);
+    }
+
+    .press-contact h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .press-contact p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .press-contact a {
+      color: var(--red);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .press-contact a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .featured-card {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-body {
+        padding: 1.5rem;
+      }
+
+      .press-event {
+        padding: 1.5rem 1.25rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div id="nav-placeholder"></div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="section-label">Press</div>
+      <h1>In the News</h1>
+      <p>Coverage of our work advocating for the launch of San Francisco&rsquo;s first Mandarin immersion TK&ndash;8 school.</p>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <section class="press-section">
+    <div class="press-container">
+      <h2 class="press-group-title">Featured</h2>
+      <div class="featured-card">
+        <a href="https://www.sfchronicle.com/sf/article/sfusd-mandarin-immersion-school-location-22442780.php" target="_blank" rel="noopener">
+          <img src="images/press-conference-1670-noe.jpg" alt="Press conference announcing the Mandarin Immersion TK-8 site at 1670 Noe St." loading="lazy">
+        </a>
+        <div class="featured-body">
+          <div class="featured-outlet">SF Chronicle &middot; September 24, 2026</div>
+          <!-- TODO: swap in the exact Chronicle headline -->
+          <h2>SFUSD announces the location of its Mandarin immersion school</h2>
+          <p>The Mandarin Immersion TK&ndash;8 school will launch in fall 2027 at the Mission Education Center, 1670 Noe St. in Noe Valley.</p>
+          <a href="https://www.sfchronicle.com/sf/article/sfusd-mandarin-immersion-school-location-22442780.php" target="_blank" rel="noopener" class="btn">Read the article &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section class="press-section alt">
+    <div class="press-container">
+
+      <!-- EVENT: Site announcement -->
+      <div class="press-event">
+        <div class="press-event-date">September 24, 2026</div>
+        <h2 class="press-group-title">Site Announcement: 1670 Noe St.</h2>
+        <p class="press-event-desc">SFUSD announced that the Mandarin Immersion TK&ndash;8 school will launch in fall 2027 at the Mission Education Center, with a press conference at the site.</p>
+
+        <h3 class="press-subtitle">The event</h3>
+        <ul class="press-list press-list-event">
+          <li class="press-item">
+          <span class="press-outlet">SFUSD:</span> <a href="https://www.sfusd.edu/about-sfusd/sfusd-news/press-releases/2026-09-24-sfusd-selects-launch-site-new-mandarin-immersion-tk-8-school" target="_blank" rel="noopener">SFUSD selects launch site for new Mandarin immersion TK-8 school</a>
+        </li>
+          <li class="press-item">
+          <span class="press-outlet">Mayor Daniel Lurie &middot; Instagram:</span> <a href="https://www.instagram.com/reel/DdrjfTvB4WP/" target="_blank" rel="noopener">Reel announcing the new Mandarin immersion TK&ndash;8 school</a>
+        </li>
+          <li class="press-item">
+          <span class="press-outlet">YouTube:</span> <a href="https://www.youtube.com/watch?v=Y9eFLi82jhA" target="_blank" rel="noopener">Press conference at 1670 Noe St. (~20 min)</a>
+        </li>
+        </ul>
+
+        <ul class="press-list">
+          <li class="press-item">
+          <span class="press-outlet">SF Standard:</span> <a href="https://sfstandard.com/2026/09/24/sfusd-mandarin-immersion-school-opening-2027/" target="_blank" rel="noopener">SFUSD&rsquo;s long-awaited Mandarin immersion school finally has a (temporary) address</a>
+        </li>
+          <li class="press-item">
+          <span class="press-outlet">SF Examiner:</span> <a href="https://www.sfexaminer.com/news/education/sfusd-will-open-tk-8-mandarin-language-school-in-noe-valley/article_7e164706-32f6-441f-9a43-b717a20f8143.html" target="_blank" rel="noopener">SFUSD will open TK-8 Mandarin language school in Noe Valley</a>
+        </li>
+          <li class="press-item">
+          <span class="press-outlet">Mission Local:</span> <a href="https://missionlocal.org/2026/09/san-francisco-mandarin-immersion-school-mission-education-cente/" target="_blank" rel="noopener">S.F. opens Mandarin program in school that once housed Spanish-speaking immigrant kids</a>
+        </li>
+          <li class="press-item">
+          <!-- TODO: exact headline -->
+          <span class="press-outlet">KQED:</span> <a href="https://www.kqed.org/news/12101173/sfusd-reveals-location-of-new-mandarin-immersion-campus" target="_blank" rel="noopener">SFUSD reveals location of new Mandarin immersion campus</a>
+        </li>
+          <li class="press-item">
+          <!-- TODO: exact headline -->
+          <span class="press-outlet">KALW:</span> <a href="https://www.kalw.org/bay-area-news/2026-09-24/sfusds-mandarin-immersion-school-will-spend-first-year-at-mission-education-center" target="_blank" rel="noopener">SFUSD&rsquo;s Mandarin immersion school will spend first year at Mission Education Center</a>
+        </li>
+          <li class="press-item">
+          <!-- TODO: exact headline -->
+          <span class="press-outlet">GrowSF:</span> <a href="https://growsf.org/news/2026-09-24-mandarin-immersion-school-to-open-in-noe-valley-in-2027/" target="_blank" rel="noopener">Mandarin immersion school to open in Noe Valley in 2027</a>
+        </li>
+          <li class="press-item">
+          <!-- TODO: exact headline -->
+          <span class="press-outlet">AsAmNews:</span> <a href="https://asamnews.com/2026/09/25/sfusd-mandarin-immersion-school-san-francisco-2027/" target="_blank" rel="noopener">SFUSD&rsquo;s Mandarin immersion school to open in 2027</a>
+        </li>
+          <li class="press-item">
+          <span class="press-outlet">World Journal 世界日報:</span> <a href="https://www.worldjournal.com/wj/story/121519/9777089" target="_blank" rel="noopener">全新中文沉浸式學校落腳Noe Valley 最多可容納600名學生</a>
+          <span class="press-translation">A new Chinese immersion school settles in Noe Valley, able to hold up to 600 students</span>
+        </li>
+        </ul>
+      </div>
+
+      <!-- EVENT: Summer advocacy -->
+      <div class="press-event">
+        <div class="press-event-date">Summer 2026</div>
+        <h2 class="press-group-title">Advocacy for the School</h2>
+        <p class="press-event-desc">As the district&rsquo;s site and budget decisions approached, families spoke up, at the June 9 Board meeting and in the press.</p>
+
+        <ul class="press-list">
+          <li class="press-item">
+          <span class="press-outlet">Sing Tao 星島日報:</span> <a href="https://www.singtaousa.com/2026/07/06/news/usa/san-francisco-mandarin-immersion-school-3/" target="_blank" rel="noopener">三藩市普通話沉浸新校 9月公佈過渡校址</a>
+          <span class="press-translation">San Francisco Mandarin immersion school to announce interim site in September</span>
+        </li>
+        <li class="press-item">
+          <span class="press-outlet">SF Chronicle:</span> <a href="https://www.sfchronicle.com/sf/article/sf-school-mandarin-immersion-hiba-academy-22326073.php" target="_blank" rel="noopener">A $52,000 private Mandarin immersion school opens as SFUSD&rsquo;s waitlists grow</a>
+        </li>
+        </ul>
+      </div>
+
+      <!-- EVENT: Town hall -->
+      <div class="press-event">
+        <div class="press-event-date">May 13, 2026</div>
+        <h2 class="press-group-title">Town Hall at Ulloa Elementary</h2>
+        <p class="press-event-desc">Families met with SFUSD leadership in the Sunset, in person and online, to hear the district&rsquo;s plan for the school.</p>
+
+        <ul class="press-list">
+          <li class="press-item">
+          <span class="press-outlet">SF Standard:</span> <a href="https://sfstandard.com/2026/05/15/elon-musk-s-son-learning-mandarin-sf-families-want-their-kids/" target="_blank" rel="noopener">Elon Musk&rsquo;s son is learning Mandarin. SF families want the same</a>
+        </li>
+        <li class="press-item">
+          <span class="press-outlet">Sing Tao 星島日報:</span> <a href="https://www.singtaousa.com/2026/05/15/news/usa/san-francisco-mandarin-immersion-school/" target="_blank" rel="noopener">三藩市普通話沉浸式學校 2027-2028學年如期開課</a>
+          <span class="press-translation">San Francisco Mandarin immersion school to open on schedule for the 2027&ndash;2028 school year</span>
+        </li>
+        </ul>
+      </div>
+
+      <!-- EVENT: 2025 donor announcement -->
+      <div class="press-event">
+        <div class="press-event-date">July 2025</div>
+        <h2 class="press-group-title">Background: The Donor Announcement</h2>
+        <p class="press-event-desc">An anonymous donor&rsquo;s gift to SFUSD&rsquo;s nonprofit made the new school possible.</p>
+
+        <ul class="press-list">
+          <li class="press-item">
+          <span class="press-outlet">SF Chronicle:</span> <a href="https://www.sfchronicle.com/sf/article/sfusd-new-mandarin-immersion-school-2027-20771313.php" target="_blank" rel="noopener">Anonymous benefactor helps SFUSD open new Mandarin immersion school</a>
+        </li>
+        <li class="press-item">
+          <span class="press-outlet">KQED:</span> <a href="https://www.kqed.org/news/12048313/san-francisco-unified-plans-new-mandarin-immersion-school-amid-charter-push" target="_blank" rel="noopener">San Francisco Unified Plans New Mandarin Immersion School Amid Charter Push</a>
+        </li>
+        <li class="press-item">
+          <span class="press-outlet">GrowSF:</span> <a href="https://growsf.org/news/2025-07-18-mandarin-immersion-donation/" target="_blank" rel="noopener">Anonymous benefactor funds new Mandarin immersion K-8 public school</a>
+        </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MEDIA INQUIRIES -->
+  <section class="press-contact">
+    <div class="container">
+      <h2>Media Inquiries</h2>
+      <p>Reporters and editors can reach us at <a href="mailto:info@sfmandarinschool.org">info@sfmandarinschool.org</a>.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
