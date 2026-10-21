@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The School — Friends of the SF Mandarin School</title>
+  <meta name="description" content="What we know about SFUSD's new Mandarin Immersion TK-8 school opening fall 2027: grades, seats, the temporary site, key dates, and how to apply.">
+  <meta property="og:title" content="The School — Friends of the SF Mandarin School">
+  <meta property="og:description" content="What we know about SFUSD's new Mandarin Immersion TK-8 school opening fall 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sfmandarinschool.org/school.html">
+  <meta property="og:image" content="https://www.sfmandarinschool.org/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The School — Friends of the SF Mandarin School">
+  <meta name="twitter:description" content="What we know about SFUSD's new Mandarin Immersion TK-8 school opening fall 2027.">
+  <meta name="twitter:image" content="https://www.sfmandarinschool.org/images/og-image.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCR9CRJD65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FCR9CRJD65');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ---- SCHOOL PAGE STYLES ---- */
+    .school-section { background: #fff; }
+    .school-section.cream { background: var(--cream); }
+
+    .school-narrow,
+    .school-wide { max-width: 720px; margin: 0 auto; }
+
+
+    .school-narrow > p {
+      font-size: 0.975rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .school-narrow h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem;
+    }
+
+    .lang { margin: 0 0 1.5rem; }
+
+    .lrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .lg {
+      flex: 0 0 3rem;
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .bar {
+      flex: 1;
+      display: flex;
+      height: 2rem;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .bar i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: normal;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .bar i.m { background: var(--red); color: #fff; }
+    .bar i.e { background: var(--border); color: var(--text); }
+
+    .legend {
+      display: flex;
+      gap: 1.25rem;
+      margin: 0.75rem 0 0 4rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+    .legend i {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    .legend i.m { background: var(--red); }
+    .legend i.e { background: var(--border); }
+
+    .school-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .fact-card {
+      padding: 1.25rem;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .fact-label {
+      font-family: 'Lora', serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .fact-label svg {
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .apply-card .fact-label { justify-content: center; }
+
+    .fact-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .fact-card p + p { margin-top: 0.6rem; }
+
+    .school-narrow a:not(.btn),
+    .fact-card a {
+      color: var(--red);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .fact-links { display: flex; flex-direction: column; }
+
+    .fact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 0;
+      border-top: 1px solid var(--border);
+      text-decoration: none;
+    }
+
+    .fact-label + .fact-row { border-top: none; padding-top: 0.2rem; }
+
+    .fact-row-text { flex: 1; min-width: 0; }
+
+    .fact-row-desc {
+      display: block;
+      font-size: 0.75rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
+    }
+
+    .fact-url {
+      display: block;
+      font-family: 'Lora', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .fact-arrow {
+      font-size: 1.2rem;
+      color: var(--red);
+      transition: transform 0.2s;
+    }
+
+    .fact-row:hover .fact-url { color: var(--red); }
+    .fact-row:hover .fact-arrow { transform: translateX(4px); }
+
+    .school-dates {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+    }
+
+    .school-dates li {
+      display: flex;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .school-dates li:last-child { border-bottom: none; }
+
+    .school-dates b {
+      flex: 0 0 10rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .school-dates span { color: var(--text-secondary); }
+
+    /* keep the cream/white rhythm while the apply module is hidden */
+    #apply[hidden] + section { background: #fff; }
+
+    .apply-card {
+      padding: 2rem;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 2px solid var(--red);
+      text-align: center;
+    }
+
+    .apply-card h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .apply-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .school-tba {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .qa { margin-bottom: 1.75rem; }
+
+    .qa h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+
+    .qa p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .qa a { color: var(--red); font-weight: 600; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .school-facts { grid-template-columns: 1fr; }
+      .school-dates li { flex-direction: column; gap: 0.15rem; }
+      .school-dates b { flex: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div id="nav-placeholder"></div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="section-label">The School</div>
+      <h1>Mandarin Immersion TK&ndash;8</h1>
+      <p>SFUSD&rsquo;s new public Mandarin immersion school opens in fall 2027. Here is what we know so far.</p>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <section class="school-section cream">
+    <div class="container">
+      <div class="school-wide animate">
+        <div class="section-label">At a Glance</div>
+        <h2 class="section-title">Key Facts</h2>
+        <div class="school-facts">
+          <div class="fact-card">
+            <div class="fact-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.500V16c0 1.500 3 3 6 3s6-1.500 6-3v-4.500"/></svg>Grades &amp; students</div>
+            <p>TK&ndash;K in 2027&ndash;2028, adding one grade each year to reach TK&ndash;8.</p>
+            <p>86 students for 2027&ndash;2028, growing each year to approx. 634 at full size (24 classrooms).</p>
+          </div>
+          <div class="fact-card">
+            <div class="fact-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.200-7-11a7 7 0 0 1 14 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Location</div>
+            <p>1670 Noe Street in Noe Valley for 2027&ndash;2028.</p>
+            <p>The permanent site for 2028 onwards will be announced in January 2027. <a href="permanent-location-survey.html">Tell us where you&rsquo;d enroll &rarr;</a></p>
+          </div>
+          <div class="fact-card fact-links">
+            <div class="fact-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/></svg>SFUSD links</div>
+            <a class="fact-row" href="https://www.sfusd.edu/mandarinschool" target="_blank" rel="noopener">
+              <span class="fact-row-text"><span class="fact-row-desc">School website</span><span class="fact-url">sfusd.edu/<wbr>mandarinschool</span></span>
+              <span class="fact-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="fact-row" href="https://www.sfusd.edu/apply" target="_blank" rel="noopener">
+              <span class="fact-row-text"><span class="fact-row-desc">Apply by Feb 1</span><span class="fact-url">sfusd.edu/apply</span></span>
+              <span class="fact-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <p class="school-tba">Still to be announced: school hours (start time will be 7:50, 8:40, or 9:30 am), principal, and before- and after-school care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT STUDENTS EXPERIENCE -->
+  <section class="school-section">
+    <div class="container">
+      <div class="school-narrow animate">
+        <div class="section-label">In the Classroom</div>
+        <h2 class="section-title">What Students Experience</h2>
+        <p>Instruction happens in Mandarin and English. Language learning is woven throughout the day, not taught as a separate class.</p>
+        <h3>Planned language model</h3>
+        <p>The share of instruction in Mandarin and English changes by grade. These percentages are the current plan and may change.</p>
+        <div class="lang">
+          <div class="lrow"><span class="lg">TK</span><div class="bar"><i class="m" style="width:95%">90&ndash;100%</i><i class="e" style="width:5%"></i></div></div>
+          <div class="lrow"><span class="lg">K&ndash;3</span><div class="bar"><i class="m" style="width:80%">80%</i><i class="e" style="width:20%">20%</i></div></div>
+          <div class="lrow"><span class="lg">4&ndash;5</span><div class="bar"><i class="m" style="width:50%">50%</i><i class="e" style="width:50%">50%</i></div></div>
+          <div class="lrow"><span class="lg">6&ndash;8</span><div class="bar"><i class="m" style="width:33%">33%</i><i class="e" style="width:67%">67%</i></div></div>
+          <div class="legend"><span><i class="m"></i>Mandarin</span><span><i class="e"></i>English</span></div>
+        </div>
+        <p>Enrichment may include visual, media, and performing arts, Chinese music, martial arts, social-emotional learning, and community partner activities. The school also plans to explore cultural exchange study tours to Asia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY DATES -->
+  <section class="school-section cream">
+    <div class="container">
+      <div class="school-narrow animate">
+        <div class="section-label">Timeline</div>
+        <h2 class="section-title">The Road to Opening Day</h2>
+        <ul class="school-dates">
+          <li><b>Nov 2026 &ndash; Jan 2027</b><span>School tours</span></li>
+          <li><b>Jan 2027</b><span>Permanent site announcement</span></li>
+          <li><b>Feb 1, 2027</b><span>Applications due</span></li>
+          <li><b>March 2027</b><span>Assignment letters mailed</span></li>
+          <li><b>Fall 2027</b><span>School opens with 1 TK and 3 K classes</span></li>
+          <li><b>Fall 2028</b><span>Move to the permanent campus</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY (hidden until Oct 24, 2026 Pacific; see script at bottom) -->
+  <section class="school-section" id="apply" hidden>
+    <div class="container">
+      <div class="school-narrow animate">
+        <div class="apply-card">
+          <div class="fact-label">Applications are open</div>
+          <h2>Apply by Feb 1, 2027</h2>
+          <a href="https://www.sfusd.edu/apply" target="_blank" rel="noopener" class="btn btn-primary">Apply on the SFUSD site &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="school-section cream">
+    <div class="container">
+      <div class="school-narrow animate">
+        <div class="section-label">Questions</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p>These answers are designed to supplement the district&rsquo;s <a href="https://www.sfusd.edu/learning/multilingual-learner-programs-and-services/new-mandarin-immersion-tk-8-school#83961-frequently-asked-questions-faqs-" target="_blank" rel="noopener">official FAQ</a>.</p>
+        <div class="qa">
+          <h3>Does my child need to speak Mandarin?</h3>
+          <p>For TK&ndash;1st, any student in the district can apply. Each class will be composed of a mix of English and Mandarin speakers. From 2nd grade, all applicants must pass a grade-level Mandarin assessment.</p>
+        </div>
+        <div class="qa">
+          <h3>How will students be assigned to this school?</h3>
+          <p>For 2027&ndash;2028, this will be considered a citywide language pathway in the student assignment process. See <a href="https://www.sfusd.edu/tiebreakers" target="_blank" rel="noopener">sfusd.edu/tiebreakers</a> for more information.</p>
+        </div>
+        <div class="qa">
+          <h3>How can I provide input on the permanent location?</h3>
+          <p>Friends of the SF Mandarin School is the parent group representing prospective families on the district&rsquo;s permanent location working group. <a href="permanent-location-survey.html">Take the Permanent Location Survey &rarr;</a></p>
+        </div>
+        <div class="qa">
+          <h3>How is this different from the Mandarin immersion programs at Starr King and Jos&eacute; Ortega?</h3>
+          <p>Starr King and Jos&eacute; Ortega elementary schools offer Mandarin immersion for grades K&ndash;5. This will be SFUSD&rsquo;s first wall-to-wall Mandarin immersion school, serving students from TK through 8th grade, and the first to offer Mandarin immersion in TK.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="main.js"></script>
+  <script>
+    // Show the "Applications are open" module starting Oct 24, 2026 (Pacific time).
+    (function() {
+      var pacific = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+      if (pacific >= new Date(2026, 9, 24)) {
+        document.getElementById('apply').hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>

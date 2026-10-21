@@ -51,7 +51,6 @@
       padding: 5rem 0 3rem;
     }
 
-
     .hero-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -94,250 +93,6 @@
       line-height: 1.75;
       opacity: 0;
       animation: fadeUp 0.7s 0.35s forwards;
-    }
-
-    .hero .cta-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.5s forwards;
-    }
-
-    /* ---- HERO FORM ---- */
-    .hero-form-card {
-      background: rgba(255, 255, 255, 0.97);
-      border-radius: var(--radius);
-      padding: 2rem;
-      color: var(--text);
-      opacity: 0;
-      animation: fadeUp 0.7s 0.3s forwards;
-      max-height: 85vh;
-      overflow-y: auto;
-    }
-
-    .hero-form-card h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      color: var(--text);
-    }
-
-    .hero-form-card .form-subtitle {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-      line-height: 1.5;
-    }
-
-    .hero-form-card input,
-    .hero-form-card select {
-      width: 100%;
-      padding: 0.65rem 0.875rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.875rem;
-      font-family: inherit;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    #addressSuggestions li {
-      padding: 0.5rem 0.875rem;
-      cursor: pointer;
-      font-size: 0.85rem;
-      color: var(--text);
-      border-bottom: 1px solid var(--border);
-    }
-    #addressSuggestions li:last-child {
-      border-bottom: none;
-    }
-    #addressSuggestions li:hover {
-      background: var(--cream);
-    }
-
-    .dob-dropdowns {
-      display: none;
-      gap: 0.5rem;
-    }
-
-    .dob-dropdowns select {
-      flex: 1;
-      padding: 0.65rem 0.5rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-family: inherit;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .dob-dropdowns select:focus {
-      border-color: var(--red);
-    }
-
-    .hero-form-card input:focus,
-    .hero-form-card select:focus {
-      border-color: var(--red);
-    }
-
-    .hero-form-card input::placeholder {
-      color: #B5AFA7;
-    }
-
-    .hero-form-card select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B635A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.875rem center;
-      padding-right: 2.25rem;
-    }
-
-    .hero-form-card .form-group {
-      margin-bottom: 1rem;
-    }
-
-    .hero-form-card .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-form-card .form-group label .optional {
-      font-weight: 400;
-      color: var(--text-secondary);
-    }
-
-    .hero-form-card .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-    }
-
-    .hero-form-card .child-entry {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-form-card .child-entry .child-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-form-card .child-entry .remove-child {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      cursor: pointer;
-      float: right;
-      padding: 0;
-      font-family: inherit;
-    }
-
-    .hero-form-card .child-entry .remove-child:hover {
-      color: var(--red);
-    }
-
-    .hero-form-card .add-child-btn {
-      background: none;
-      border: 1.5px dashed var(--border);
-      border-radius: 8px;
-      padding: 0.6rem;
-      width: 100%;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.2s;
-      margin-bottom: 1rem;
-    }
-
-    .hero-form-card .add-child-btn:hover {
-      border-color: var(--red);
-      color: var(--red);
-    }
-
-    .hero-form-card .checkbox-group {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-form-card .checkbox-group input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      accent-color: var(--red);
-      cursor: pointer;
-    }
-
-    .hero-form-card .checkbox-group label {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 0;
-      cursor: pointer;
-    }
-
-    .hero-form-card .form-submit {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 0.95rem;
-    }
-
-    .hero-form-card .form-success {
-      text-align: center;
-      padding: 2rem 0;
-      display: none;
-    }
-
-    .hero-form-card .form-success .check-circle {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--gold-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      margin: 0 auto 0.75rem;
-    }
-
-    .hero-form-card .form-success h3 {
-      margin-bottom: 0.4rem;
-      font-size: 1.15rem;
-    }
-
-    .hero-form-card .form-success p {
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-    }
-
-    /* ---- HERO BUTTONS ---- */
-    .btn-hero-secondary {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .btn-hero-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-1px);
     }
 
     .btn-secondary {
@@ -400,73 +155,90 @@
       align-self: stretch;
     }
 
-    /* ---- WHY THIS MATTERS (timeline) ---- */
-    .about {
+    /* ---- ABOUT THE SCHOOL ---- */
+    .school-info {
       background: var(--cream);
     }
 
-    .about .timeline {
+    .road {
       position: relative;
-      padding-left: 4rem;
-      margin-top: 3rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin-top: 3.5rem;
     }
-    .about .timeline::before {
+
+    .road::before {
       content: '';
       position: absolute;
-      left: 15px;
-      top: 8px;
-      bottom: 8px;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--gold), var(--red));
+      left: 0;
+      right: 0;
+      top: 7px;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), var(--red));
     }
-    .timeline-item {
+
+    .road-item {
       position: relative;
-      padding-bottom: 3.5rem;
+      padding-top: 2rem;
     }
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-    .timeline-item::before {
+
+    .road-item::before {
       content: '';
       position: absolute;
-      left: calc(-4rem + 10px);
-      top: 6px;
+      left: 0;
+      top: 0;
       width: 12px;
       height: 12px;
       border-radius: 50%;
       background: var(--cream);
       border: 3px solid var(--gold);
     }
-    .timeline-item:last-child::before {
-      border-color: var(--red);
+
+    .road-item.road-key::before {
       background: var(--red);
+      border-color: var(--red);
       box-shadow: 0 0 0 4px rgba(190, 49, 68, 0.15);
     }
-    .timeline-era {
+
+    .road-date {
       font-family: 'Lora', serif;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
-    .timeline-item:last-child .timeline-era {
+
+    .road-key .road-date {
       color: var(--red);
     }
-    .timeline-item h3 {
+
+    .road-item h3 {
       font-family: 'Lora', serif;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
     }
-    .timeline-item p {
+
+    .road-item p {
+      font-size: 0.85rem;
+      line-height: 1.6;
       color: var(--text-secondary);
-      line-height: 1.8;
+    }
+
+    .school-more {
+      text-align: center;
+      margin-top: 2.5rem;
       font-size: 0.95rem;
+    }
+
+    .school-more a {
+      color: var(--red);
+      font-weight: 600;
+      text-decoration: none;
     }
 
     /* ---- OUR WORK ---- */
@@ -673,203 +445,22 @@
       margin: 0 auto;
     }
 
-    .interest-form-card-hp {
-      background: rgba(255,255,255,0.97);
-      border-radius: var(--radius);
-      padding: 2rem;
-      color: var(--text);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-      text-align: left;
-    }
-
-    .interest-form-card-hp input,
-    .interest-form-card-hp select {
-      width: 100%;
-      padding: 0.65rem 0.875rem;
-      border: 1.5px solid var(--border);
+    .help-teaser .btn-outline {
+      display: inline-block;
+      margin-top: 1.75rem;
+      padding: 0.75rem 2rem;
+      border: 2px solid #fff;
       border-radius: 8px;
-      font-size: 0.875rem;
-      font-family: inherit;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .interest-form-card-hp input:focus,
-    .interest-form-card-hp select:focus { border-color: var(--red); }
-    .interest-form-card-hp input::placeholder { color: #B5AFA7; }
-
-    .interest-form-card-hp select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B635A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.875rem center;
-      padding-right: 2.25rem;
-    }
-
-    .interest-form-card-hp .form-group { margin-bottom: 1rem; }
-
-    .interest-form-card-hp .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-    }
-
-    .interest-form-card-hp .form-group label .optional {
-      font-weight: 400;
-      color: var(--text-secondary);
-    }
-
-    .hp-form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-    }
-
-    .hp-add-child-btn {
-      background: none;
-      border: 1.5px dashed var(--border);
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      font-family: inherit;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-      margin-bottom: 1rem;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .hp-add-child-btn:hover { border-color: var(--red); color: var(--red); }
-
-    .hp-checkbox-group {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .hp-checkbox-group input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    .hp-checkbox-group label {
-      font-size: 0.875rem;
-      color: var(--text);
-      margin: 0;
-      font-weight: 400;
-    }
-
-    .dob-dropdowns-hp {
-      display: none;
-      gap: 0.5rem;
-    }
-
-    .dob-dropdowns-hp select {
-      flex: 1;
-      padding: 0.65rem 0.5rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-family: inherit;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .dob-dropdowns-hp select:focus { border-color: var(--red); }
-
-    #hpAddressSuggestions li {
-      padding: 0.5rem 0.875rem;
-      cursor: pointer;
-      font-size: 0.85rem;
-      color: var(--text);
-      border-bottom: 1px solid var(--border);
-    }
-    #hpAddressSuggestions li:last-child { border-bottom: none; }
-    #hpAddressSuggestions li:hover { background: var(--cream); }
-
-    .hp-form-success {
-      display: none;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .hp-check-circle {
-      width: 52px;
-      height: 52px;
-      background: var(--red);
       color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin: 0 auto 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
     }
 
-    .hp-form-success h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hp-form-success p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    .interest-form-card-hp .btn-primary {
-      background: var(--text);
-    }
-
-    .interest-form-card-hp .btn-primary:hover {
-      background: #555;
-    }
-
-    @media (max-width: 768px) {
-      .hp-form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .interest-form-card-hp input,
-      .interest-form-card-hp select {
-        padding: 0.75rem 0.875rem;
-        font-size: 1rem;
-      }
-
-      .dob-native-hp { display: none !important; }
-      .dob-dropdowns-hp { display: flex !important; }
-    }
-
-    /* ---- FOLLOWUP FORM ---- */
-    .followup-section {
-      text-align: left;
-    }
-
-    .followup-section textarea {
-      width: 100%;
-      padding: 0.65rem 0.875rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.875rem;
-      font-family: inherit;
+    .help-teaser .btn-outline:hover {
       background: #fff;
-      color: var(--text);
-      outline: none;
-      resize: vertical;
-      min-height: 60px;
-      transition: border-color 0.2s;
-    }
-
-    .followup-section textarea:focus {
-      border-color: var(--red);
+      color: var(--red);
     }
 
     /* ---- HERO SUBSCRIBE CARD ---- */
@@ -897,40 +488,6 @@
       margin-bottom: 1.5rem;
     }
 
-    .hero-subscribe-field {
-      margin-bottom: 1rem;
-    }
-
-    .hero-sub-label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-subscribe-field input {
-      width: 100%;
-      padding: 0.7rem 0.875rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-family: inherit;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-      box-sizing: border-box;
-    }
-
-    .hero-subscribe-field input:focus {
-      border-color: var(--red);
-    }
-
-    .hero-subscribe-field input::placeholder {
-      color: #B5AFA7;
-    }
-
     .btn-townhall-primary {
       display: block;
       width: 100%;
@@ -953,61 +510,6 @@
       transform: translateY(-1px);
     }
 
-    .townhall-details {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .townhall-detail-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-
-    .townhall-detail-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      width: 24px;
-      text-align: center;
-      margin-top: 0.1rem;
-    }
-
-    .townhall-detail-text {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: var(--text);
-    }
-
-    .townhall-detail-text strong {
-      display: block;
-      font-weight: 600;
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.1rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .townhall-who {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      padding: 0.75rem 1rem;
-      background: var(--cream);
-      border-radius: 8px;
-      border-left: 3px solid var(--gold);
-      margin-bottom: 1.25rem;
-    }
-
-    .townhall-ctas {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
 /* ---- RESPONSIVE (page-specific) ---- */
     @media (max-width: 768px) {
       .hero {
@@ -1027,43 +529,10 @@
         padding: 0 1rem;
       }
 
-      .hero-form-card {
-        padding: 1.5rem;
-        max-height: none;
-        overflow-y: visible;
-      }
-
       .townhall-card {
         border-radius: 0;
         margin: 0 -0.5rem;
         padding: 2.25rem 1.75rem;
-      }
-
-      .hero-form-card h2 {
-        font-size: 1.2rem;
-      }
-
-      .hero-form-card .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .hero-form-card input,
-      .hero-form-card select {
-        padding: 0.75rem 0.875rem;
-        font-size: 1rem;
-      }
-
-      .dob-native {
-        display: none !important;
-      }
-
-      .dob-dropdowns {
-        display: flex !important;
-      }
-
-      .hero-form-card .checkbox-group label {
-        font-size: 0.9rem;
       }
 
       .hero-split {
@@ -1079,23 +548,42 @@
         margin: 0 auto 2rem;
       }
 
-      .hero .cta-group {
-        justify-content: center;
-      }
-
       .hero .container {
         padding: 7rem 0 0;
       }
 
-      .our-work .grid {
+      .road {
         grid-template-columns: 1fr;
+        gap: 0;
+        padding-left: 2.5rem;
+        margin-top: 2.5rem;
       }
 
-      .about .timeline {
-        padding-left: 3rem;
+      .road::before {
+        left: 5px;
+        right: auto;
+        top: 6px;
+        bottom: 6px;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(to bottom, var(--gold), var(--red));
       }
-      .timeline-item::before {
-        left: calc(-3rem + 10px) !important;
+
+      .road-item {
+        padding: 0 0 2rem;
+      }
+
+      .road-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .road-item::before {
+        left: calc(-2.5rem);
+        top: 4px;
+      }
+
+      .our-work .grid {
+        grid-template-columns: 1fr;
       }
 
       .stats-banner .stats {
@@ -1146,33 +634,17 @@
     <div class="container">
       <div class="hero-split">
         <div class="hero-copy">
-          <div class="chinese-chars">&#26087;&#37329;&#23665;&#20013;&#25991;&#27785;&#28024;&#23398;&#26657;&#20043;&#21451;</div>
+          <div class="chinese-chars">&#19977;&#34281;&#24066;&#32852;&#21512;&#26657;&#21306;&#20013;&#25991;&#27785;&#28024;&#23398;&#26657;&#20043;&#21451;</div>
           <h1>Friends of the<br><span class="highlight">SF Mandarin School</span></h1>
           <p class="subtitle">SFUSD is opening its first-ever Mandarin immersion TK&ndash;8 school in fall 2027. We are the parents and community members supporting the launch.</p>
         </div>
-        <!-- EMAIL SUBSCRIBE CARD  -->
-        <div class="townhall-card" id="heroSubscribeCard">
-          <h2>Stay in the Loop</h2>
-          <p class="townhall-desc">Get updates on our progress, upcoming events, and how you can help make this school happen.</p>
-          <form id="heroSubscribeForm" onsubmit="handleHeroSubscribe(event)">
-            <div class="hero-subscribe-field">
-              <label for="heroSubName" class="hero-sub-label">Name</label>
-              <input type="text" id="heroSubName" placeholder="Your name" required>
-            </div>
-            <div class="hero-subscribe-field">
-              <label for="heroSubEmail" class="hero-sub-label">Email</label>
-              <input type="email" id="heroSubEmail" placeholder="you@email.com" required>
-            </div>
-            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
-            <button type="submit" class="btn-townhall-primary" id="heroSubBtn" style="margin-top:1.25rem;">Subscribe →</button>
-          </form>
-          <div id="heroSubscribeSuccess" style="display:none;text-align:center;padding:2rem 0;">
-            <div style="width:48px;height:48px;border-radius:50%;background:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin:0 auto 0.75rem;">✓</div>
-            <h3 style="margin-bottom:0.4rem;font-size:1.15rem;">You're subscribed!</h3>
-            <p style="color:var(--text-secondary);font-size:0.875rem;">We'll keep you updated as the school takes shape.</p>
-          </div>
+        <!-- SURVEY CALLOUT CARD -->
+        <div class="townhall-card" id="heroSurveyCard">
+          <h2>Where would you enroll long-term?</h2>
+          <p class="townhall-desc" style="margin-bottom:0.75rem;">The school is launching at 1670 Noe St, but only for one year. The permanent site will be announced in January 2027, and we are part of the district&rsquo;s working group recommending a permanent site.</p>
+          <p class="townhall-desc">Your response helps us recommend a location that is accessible for as many families as possible.</p>
+          <a href="permanent-location-survey.html" class="btn-townhall-primary">Take the Survey &rarr;</a>
         </div>
-
       </div>
     </div>
   </section>
@@ -1181,7 +653,7 @@
   <div class="stats-banner animate">
     <div class="stats">
       <div class="stat">
-        <div class="stat-number">08.16.27</div>
+        <div class="stat-number">Aug 2027</div>
         <div class="stat-label">School opens at temp site</div>
       </div>
       <div class="stat-divider"></div>
@@ -1197,30 +669,44 @@
     </div>
   </div>
 
-  <!-- WHY THIS SCHOOL MATTERS -->
-  <section class="about" id="why-it-matters">
+  <!-- ABOUT THE SCHOOL -->
+  <section class="school-info" id="the-school">
     <div class="container">
       <div class="animate">
         <div class="section-label">A Long-Awaited Win</div>
-        <h2 class="section-title">Why This School Matters</h2>
+        <h2 class="section-title">From Advocacy to School Launch</h2>
+        <p class="section-desc">More than 900 families raised their hands and asked SFUSD for more Mandarin immersion. In fall 2027, a new TK&ndash;8 school opens, and we&rsquo;re not done yet.</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-item animate stagger-1">
-          <div class="timeline-era">The Legacy</div>
-          <h3>San Francisco Led the Way</h3>
-          <p>Our city has a proud legacy of language immersion education. Alice Fong Yu was the <strong>first public Chinese immersion school in the country</strong> and Chinese American International School was the <strong>first Mandarin immersion school of any kind in the nation</strong>.</p>
+      <div class="road animate">
+        <div class="road-item">
+          <div class="road-date">Sept 24</div>
+          <h3>Temporary site announcement</h3>
+          <p>1670 Noe St in Noe Valley</p>
         </div>
-        <div class="timeline-item animate stagger-2">
-          <div class="timeline-era">The Demand</div>
-          <h3>Far More Families Than Seats</h3>
-          <p>For years, roughly <strong>400 families</strong> have applied each year for just <strong>66 seats</strong> in Mandarin Immersion Kindergarten at Starr King and Jose Ortega elementary schools. Families were turned away every year. The new school <strong>doubles that capacity</strong>.</p>
+        <div class="road-item">
+          <div class="road-date">Jan 2027</div>
+          <h3>Permanent site announcement</h3>
+          <p>Where the school moves in fall 2028</p>
         </div>
-        <div class="timeline-item animate stagger-3">
-          <div class="timeline-era">Fall 2027</div>
-          <h3>It&rsquo;s Happening</h3>
-          <p>SFUSD has announced a dedicated Mandarin Immersion TK&ndash;8 school, opening in a temporary site in fall 2027. <strong>900+ families</strong> raised their hands along the way, and Liana Szeto, founding principal of Alice Fong Yu, is leading the school launch efforts. <a href="press.html" style="color: var(--red); font-weight: 600; text-decoration: none;">Read the coverage &rarr;</a></p>
+        <div class="road-item road-key">
+          <div class="road-date">Feb 1, 2027</div>
+          <h3>Applications due</h3>
+          <p>Apply at sfusd.edu/apply</p>
+        </div>
+        <div class="road-item">
+          <div class="road-date">March 2027</div>
+          <h3>Assignment letters</h3>
+          <p>Mailed to families</p>
+        </div>
+        <div class="road-item">
+          <div class="road-date">Aug 2027</div>
+          <h3>School opens</h3>
+          <p>1670 Noe St: 20 TK and 66 K seats</p>
         </div>
       </div>
+      <p class="school-more animate">
+        <a href="school.html">Everything we know about the school, and how to apply &rarr;</a>
+      </p>
     </div>
   </section>
 
@@ -1472,110 +958,14 @@
     </div>
   </section>
 
-  <!-- HOW TO HELP / INTEREST FORM -->
-  <section class="help-teaser section" id="interest">
+  <!-- SURVEY CTA -->
+  <section class="help-teaser section" id="survey">
     <div class="container">
       <div class="animate">
         <div class="section-label" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.3);">Get Involved</div>
-        <h2 class="section-title" style="color:#fff;">Join the Community</h2>
-        <p class="section-desc">Join the 900+ families following the school as it takes shape. We&rsquo;ll keep you updated on the permanent site, teacher hiring, and ways to help.</p>
-      </div>
-      <div class="animate" style="max-width:620px;margin:2rem auto 0;">
-        <div class="interest-form-card-hp">
-          <form id="hpInterestForm" onsubmit="handleHpInterestForm(event)">
-            <div class="hp-form-row">
-              <div class="form-group">
-                <label for="hpParentName">Parent / Guardian Name</label>
-                <input type="text" id="hpParentName" placeholder="Full name" required>
-              </div>
-              <div class="form-group">
-                <label for="hpEmail">Email</label>
-                <input type="email" id="hpEmail" placeholder="you@email.com" required>
-              </div>
-            </div>
-            <div class="hp-form-row">
-              <div class="form-group">
-                <label for="hpAddress">Home Address</label>
-                <div style="position:relative;">
-                  <input type="text" id="hpAddress" placeholder="Start typing your address..." autocomplete="off" required>
-                  <ul id="hpAddressSuggestions" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 8px 8px;list-style:none;margin:0;padding:0;z-index:100;max-height:200px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,0.1);"></ul>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="hpPhone">Phone <span class="optional">(optional)</span></label>
-                <input type="tel" id="hpPhone" placeholder="(415) 555-1234" maxlength="14" oninput="hpFormatPhone(this)">
-              </div>
-            </div>
-            <div id="hpChildrenList">
-              <div class="hp-form-row">
-                <div class="form-group">
-                  <label for="hpChildName1">Child's Name</label>
-                  <input type="text" id="hpChildName1" placeholder="First name" required>
-                </div>
-                <div class="form-group">
-                  <label for="hpChildDob1">Date of Birth</label>
-                  <input type="date" id="hpChildDob1" min="2000-01-01" max="2050-12-31" required class="dob-native-hp">
-                  <div class="dob-dropdowns-hp">
-                    <select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
-                    <select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select>
-                    <select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button type="button" class="hp-add-child-btn" onclick="hpAddChild()">+ Add another child</button>
-            <div class="hp-checkbox-group">
-              <input type="checkbox" id="hpVolunteer">
-              <label for="hpVolunteer">I'm interested in volunteering</label>
-            </div>
-            <div class="hp-checkbox-group">
-              <input type="checkbox" id="hpDonate">
-              <label for="hpDonate">I'm interested in donating</label>
-            </div>
-            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_041966420b3984e390841b884_5afc9a6ca7" tabindex="-1" value=""></div>
-            <button type="submit" class="btn btn-primary form-submit" style="display:block;margin:0 auto;width:auto;">Submit</button>
-          </form>
-          <div class="hp-form-success" id="hpFormSuccess">
-            <div class="hp-check-circle">&#10003;</div>
-            <h3>Thank you!</h3>
-            <p>We'll be in touch as the school takes shape. Welcome to the community.</p>
-            <div class="hp-followup-section" id="hpFollowupSection">
-              <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-              <h3 style="font-size:1.05rem;margin-bottom:0.35rem;">One more thing</h3>
-              <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.25rem;line-height:1.5;">Do any of these describe you? Check any that apply.</p>
-              <form id="hpFollowupForm" onsubmit="handleHpFollowup(event)">
-                <div class="hp-checkbox-group">
-                  <input type="checkbox" id="hp-fu-legal" name="skill_legal" value="Yes">
-                  <label for="hp-fu-legal">I work in law, finance, or nonprofit management</label>
-                </div>
-                <div class="hp-checkbox-group">
-                  <input type="checkbox" id="hp-fu-networks" name="skill_community" value="Yes">
-                  <label for="hp-fu-networks">I'm active in parent groups, listservs, or community orgs</label>
-                </div>
-                <div class="hp-checkbox-group">
-                  <input type="checkbox" id="hp-fu-donors" name="skill_donors" value="Yes">
-                  <label for="hp-fu-donors">I know potential donors or sponsors</label>
-                </div>
-                <div class="hp-checkbox-group">
-                  <input type="checkbox" id="hp-fu-media" name="skill_media" value="Yes">
-                  <label for="hp-fu-media">I have media, PR, or communications experience</label>
-                </div>
-                <div class="hp-checkbox-group">
-                  <input type="checkbox" id="hp-fu-education" name="skill_education" value="Yes">
-                  <label for="hp-fu-education">I work in education or school administration</label>
-                </div>
-                <div class="form-group" style="margin-top:0.5rem;">
-                  <label for="hp-fu-other" style="font-size:0.8rem;font-weight:600;">Anything else we should know? <span class="optional">(optional)</span></label>
-                  <textarea id="hp-fu-other" placeholder="E.g., I run a tutoring company, I know someone on the Board of Education..." style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid var(--border);border-radius:8px;font-size:0.875rem;font-family:inherit;background:#fff;color:var(--text);outline:none;resize:vertical;min-height:60px;transition:border-color 0.2s;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="display:block;margin:0.75rem auto 0;width:auto;padding:0.65rem 1.75rem;font-size:0.875rem;">Send</button>
-              </form>
-              <div id="hpFollowupSuccess" style="display:none;text-align:center;padding:0.75rem 0 0;">
-                <p style="color:var(--red);font-size:0.9rem;font-weight:500;">Got it &mdash; thanks for sharing!</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2 class="section-title">Haven&rsquo;t Taken the Survey Yet?</h2>
+        <p class="section-desc">Tell SFUSD where your family would sign up for the permanent school. It takes a few minutes and every response counts.</p>
+        <a href="permanent-location-survey.html" class="btn-outline">Take the Permanent Location Survey &rarr;</a>
       </div>
     </div>
   </section>
@@ -1585,55 +975,6 @@
 
   <script src="main.js"></script>
   <script>
-    // Hero subscribe form
-    function handleHeroSubscribe(e) {
-      e.preventDefault();
-      var form = e.target;
-      var name = document.getElementById('heroSubName').value;
-      var email = document.getElementById('heroSubEmail').value;
-      var btn = document.getElementById('heroSubBtn');
-      btn.disabled = true;
-      btn.textContent = 'Subscribing...';
-
-      // Send to Google Sheet
-      fetchWithRetry(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, source: 'subscriber', utm_source: defined_utm_source })
-      }, 2, 1000).catch(function(err) { console.error('Sheet error:', err); });
-
-      // Send to Mailchimp
-      var mcUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0072abe6f0' +
-        '&FNAME=' + encodeURIComponent(name) +
-        '&EMAIL=' + encodeURIComponent(email) +
-        '&c=handleHeroSubResponse';
-
-      var callbackFired = false;
-      var timeout = setTimeout(function() {
-        if (!callbackFired) {
-          form.style.display = 'none';
-          document.getElementById('heroSubscribeSuccess').style.display = 'block';
-          gtag('event', 'subscribe_form_submit', { event_category: 'forms', mc_status: 'timeout' });
-        }
-      }, 8000);
-
-      window.handleHeroSubResponse = function(data) {
-        callbackFired = true;
-        clearTimeout(timeout);
-        form.style.display = 'none';
-        document.getElementById('heroSubscribeSuccess').style.display = 'block';
-        gtag('event', 'subscribe_form_submit', { event_category: 'forms', mc_status: data.result });
-        var s = document.getElementById('mcHeroSubScript');
-        if (s) s.parentNode.removeChild(s);
-      };
-
-      var script = document.createElement('script');
-      script.id = 'mcHeroSubScript';
-      script.src = mcUrl;
-      document.body.appendChild(script);
-    }
-
     // Countdown to permanent site announcement (Jan 31, 2027) — updates live at midnight Pacific.
     // Falls back to the "2× MI kindergarten seats" stat once the date passes.
     (function() {
@@ -1658,508 +999,6 @@
       setInterval(updateCountdown, 60000);
     })();
 
-    // Interest form: phone formatting
-    function formatPhone(input) {
-      var digits = input.value.replace(/\D/g, '').substring(0, 10);
-      if (digits.length === 0) { input.value = ''; return; }
-      if (digits.length <= 3) { input.value = '(' + digits; }
-      else if (digits.length <= 6) { input.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3); }
-      else { input.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3, 6) + '-' + digits.substring(6); }
-    }
-
-    // Populate DOB dropdowns (days 1-31, years current back to 2000)
-    function populateDobDropdowns(container) {
-      var daySelect = container.querySelector('.dob-day');
-      var yearSelect = container.querySelector('.dob-year');
-      if (!daySelect || !yearSelect) return;
-      for (var d = 1; d <= 31; d++) {
-        var opt = document.createElement('option');
-        opt.value = d < 10 ? '0' + d : '' + d;
-        opt.textContent = d;
-        daySelect.appendChild(opt);
-      }
-      var currentYear = new Date().getFullYear();
-      for (var y = currentYear; y >= 2000; y--) {
-        var opt = document.createElement('option');
-        opt.value = '' + y;
-        opt.textContent = y;
-        yearSelect.appendChild(opt);
-      }
-    }
-
-    // Init first child's dropdowns
-    document.querySelectorAll('.dob-dropdowns').forEach(populateDobDropdowns);
-
-    // Toggle required/disabled on DOB fields based on which is visible (mobile vs desktop)
-    function syncDobRequired() {
-      var isMobile = window.matchMedia('(max-width: 768px)').matches;
-      document.querySelectorAll('.dob-native').forEach(function(el) {
-        el.required = !isMobile;
-        el.disabled = isMobile;
-      });
-      document.querySelectorAll('.dob-dropdowns select').forEach(function(el) {
-        el.required = isMobile;
-        el.disabled = !isMobile;
-      });
-    }
-    syncDobRequired();
-    window.addEventListener('resize', syncDobRequired);
-
-    // Get DOB value from either native input or dropdowns
-    function getDobValue(formGroup) {
-      var native = formGroup.querySelector('.dob-native');
-      if (native && native.offsetParent !== null && native.value) {
-        return native.value;
-      }
-      var m = formGroup.querySelector('.dob-month');
-      var d = formGroup.querySelector('.dob-day');
-      var y = formGroup.querySelector('.dob-year');
-      if (m && d && y && m.value && d.value && y.value) {
-        return y.value + '-' + m.value + '-' + d.value;
-      }
-      return '';
-    }
-
-    var childCount = 1;
-    function addChild() {
-      if (childCount >= 4) return;
-      childCount++;
-      var wrapper = document.createElement('div');
-      wrapper.className = 'form-row';
-      wrapper.style.position = 'relative';
-      wrapper.innerHTML =
-        '<div class="form-group"><label>Child\'s Name <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;float:right;" onclick="removeChildRow(this)">&times; Remove</button></label><input type="text" placeholder="First name" required></div>' +
-        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required class="dob-native"><div class="dob-dropdowns"><select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select><select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select></div></div>';
-      document.getElementById('childrenList').appendChild(wrapper);
-      populateDobDropdowns(wrapper.querySelector('.dob-dropdowns'));
-      syncDobRequired();
-      if (childCount >= 4) document.querySelector('.add-child-btn').style.display = 'none';
-    }
-    function removeChildRow(btn) {
-      btn.closest('.form-row').remove();
-      childCount--;
-      document.querySelector('.add-child-btn').style.display = '';
-    }
-
-    // Store email for followup form
-    var submittedEmail = '';
-
-    // Interest form: submit
-    function handleInterestForm(e) {
-      e.preventDefault();
-      var form = e.target;
-
-      // Honeypot check
-      var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
-      if (honeypot) return;
-
-      var parentName = document.getElementById('parentName').value;
-      var email = document.getElementById('email').value;
-      var address = document.getElementById('address').value;
-      var phone = document.getElementById('phone').value;
-      var volunteer = document.getElementById('volunteer').checked ? 'Yes' : '';
-      var donate = document.getElementById('donate-interest').checked ? 'Yes' : '';
-
-      // Store email for followup
-      submittedEmail = email;
-
-      // Collect children
-      var childRows = document.getElementById('childrenList').querySelectorAll('.form-row');
-      var children = [];
-      childRows.forEach(function(row) {
-        var nameInput = row.querySelector('input[type="text"]');
-        var dobGroup = row.querySelectorAll('.form-group')[1];
-        if (nameInput && dobGroup) {
-          children.push({ name: nameInput.value, dob: getDobValue(dobGroup) });
-        }
-      });
-
-      // Show loading state
-      var submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
-
-      // 1. Send ALL data to Google Sheet
-      var sheetData = {
-        name: parentName,
-        email: email,
-        address: address,
-        phone: phone,
-        child1_name: children[0] ? children[0].name : '',
-        child1_dob: children[0] ? children[0].dob : '',
-        child2_name: children[1] ? children[1].name : '',
-        child2_dob: children[1] ? children[1].dob : '',
-        child3_name: children[2] ? children[2].name : '',
-        child3_dob: children[2] ? children[2].dob : '',
-        child4_name: children[3] ? children[3].name : '',
-        child4_dob: children[3] ? children[3].dob : '',
-        volunteer: volunteer,
-        donate: donate,
-        source: 'interest-form',
-        utm_source: defined_utm_source
-      };
-
-      fetchWithRetry(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(sheetData)
-      }, 2, 1000).catch(function(err) { console.error('Sheet error:', err); });
-
-      // 2. Send only email + name to Mailchimp (with interest-form tag)
-      var mcUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0' +
-        '&FNAME=' + encodeURIComponent(parentName) +
-        '&EMAIL=' + encodeURIComponent(email) +
-        '&c=handleInterestResponse';
-
-      window.handleInterestResponse = function(data) {
-        if (data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)) {
-          form.style.display = 'none';
-          document.getElementById('formHeader').style.display = 'none';
-          document.getElementById('formSuccess').style.display = 'block';
-          document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
-          gtag('event', 'interest_form_submit', { event_category: 'forms' });
-        } else {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Submit';
-          var msg = document.getElementById('formError');
-          if (!msg) {
-            msg = document.createElement('p');
-            msg.id = 'formError';
-            msg.style.cssText = 'color:#c00;text-align:center;margin-top:0.5rem;font-size:0.85rem;';
-            submitBtn.parentNode.insertBefore(msg, submitBtn.nextSibling);
-          }
-          msg.textContent = 'Something went wrong. Please try again.';
-        }
-        var s = document.getElementById('mcInterestScript');
-        if (s) s.parentNode.removeChild(s);
-      };
-
-      var script = document.createElement('script');
-      script.id = 'mcInterestScript';
-      script.src = mcUrl;
-      document.body.appendChild(script);
-    }
-
-    // Followup form (skills/resources) → Google Sheet
-    function handleFollowup(e) {
-      e.preventDefault();
-      var form = e.target;
-      var checks = form.querySelectorAll('input[type="checkbox"]:checked');
-      var skills = {};
-      checks.forEach(function(cb) { skills[cb.name] = 'Yes'; });
-      var notes = document.getElementById('fu-other').value;
-
-      var followupData = {
-        type: 'followup',
-        email: submittedEmail,
-        skill_legal: skills.skill_legal || '',
-        skill_community: skills.skill_community || '',
-        skill_donors: skills.skill_donors || '',
-        skill_media: skills.skill_media || '',
-        skill_education: skills.skill_education || '',
-        anything_else: notes
-      };
-
-      fetchWithRetry(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(followupData)
-      }, 2, 1000).catch(function(err) { console.error('Sheet followup error:', err); });
-
-      form.style.display = 'none';
-      document.getElementById('followupSuccess').style.display = 'block';
-      gtag('event', 'followup_form_submit', { event_category: 'forms' });
-    }
-  </script>
-  <script>
-    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once."):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-    ({key: "AIzaSyBZ5ql4bEFq-CJm9eOR1Ab61hbz999jbfY", v: "weekly"});
-
-    async function initAddressAutocomplete() {
-      var { AutocompleteSuggestion, AutocompleteSessionToken } = await google.maps.importLibrary('places');
-      var sessionToken = new AutocompleteSessionToken();
-      var input = document.getElementById('address');
-      var list = document.getElementById('addressSuggestions');
-      var debounce;
-
-      input.addEventListener('input', function() {
-        clearTimeout(debounce);
-        var val = input.value.trim();
-        if (val.length < 3) { list.style.display = 'none'; return; }
-        debounce = setTimeout(async function() {
-          try {
-            var response = await AutocompleteSuggestion.fetchAutocompleteSuggestions({
-              input: val,
-              sessionToken: sessionToken,
-              region: 'us',
-              includedPrimaryTypes: ['street_address', 'subpremise', 'premise']
-            });
-            list.innerHTML = '';
-            if (!response.suggestions || response.suggestions.length === 0) {
-              list.style.display = 'none';
-              return;
-            }
-            response.suggestions.forEach(function(s) {
-              var li = document.createElement('li');
-              li.textContent = s.placePrediction.text.toString();
-              li.addEventListener('mousedown', function() {
-                input.value = s.placePrediction.text.toString();
-                list.style.display = 'none';
-                sessionToken = new AutocompleteSessionToken();
-              });
-              list.appendChild(li);
-            });
-            list.style.display = 'block';
-          } catch(err) {
-            console.error('Autocomplete error:', err);
-            list.style.display = 'none';
-          }
-        }, 300);
-      });
-
-      input.addEventListener('blur', function() {
-        setTimeout(function() { list.style.display = 'none'; }, 200);
-      });
-      input.addEventListener('focus', function() {
-        if (list.children.length > 0) list.style.display = 'block';
-      });
-    }
-    initAddressAutocomplete();
-
-    async function initHpAddressAutocomplete() {
-      var { AutocompleteSuggestion, AutocompleteSessionToken } = await google.maps.importLibrary('places');
-      var sessionToken = new AutocompleteSessionToken();
-      var input = document.getElementById('hpAddress');
-      var list = document.getElementById('hpAddressSuggestions');
-      if (!input || !list) return;
-      var debounce;
-
-      input.addEventListener('input', function() {
-        clearTimeout(debounce);
-        var val = input.value.trim();
-        if (val.length < 3) { list.style.display = 'none'; return; }
-        debounce = setTimeout(async function() {
-          try {
-            var response = await AutocompleteSuggestion.fetchAutocompleteSuggestions({
-              input: val,
-              sessionToken: sessionToken,
-              includedRegionCodes: ['us']
-            });
-            list.innerHTML = '';
-            if (!response.suggestions || response.suggestions.length === 0) { list.style.display = 'none'; return; }
-            response.suggestions.forEach(function(s) {
-              var text = s.placePrediction ? s.placePrediction.text.toString() : '';
-              if (!text) return;
-              var li = document.createElement('li');
-              li.textContent = text;
-              li.addEventListener('mousedown', function(ev) {
-                ev.preventDefault();
-                input.value = text;
-                list.style.display = 'none';
-                sessionToken = new AutocompleteSessionToken();
-              });
-              list.appendChild(li);
-            });
-            list.style.display = list.children.length ? 'block' : 'none';
-          } catch(err) { list.style.display = 'none'; }
-        }, 200);
-      });
-
-      input.addEventListener('blur', function() {
-        setTimeout(function() { list.style.display = 'none'; }, 150);
-      });
-    }
-    initHpAddressAutocomplete();
-  </script>
-  <script>
-    function hpFormatPhone(input) {
-      var digits = input.value.replace(/\D/g, '').substring(0, 10);
-      if (digits.length === 0) { input.value = ''; return; }
-      if (digits.length <= 3) { input.value = '(' + digits; }
-      else if (digits.length <= 6) { input.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3); }
-      else { input.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3, 6) + '-' + digits.substring(6); }
-    }
-
-    function hpPopulateDobDropdowns(container) {
-      var daySelect = container.querySelector('.dob-day');
-      var yearSelect = container.querySelector('.dob-year');
-      if (!daySelect || !yearSelect) return;
-      for (var d = 1; d <= 31; d++) {
-        var opt = document.createElement('option');
-        opt.value = d < 10 ? '0' + d : '' + d;
-        opt.textContent = d;
-        daySelect.appendChild(opt);
-      }
-      var currentYear = new Date().getFullYear();
-      for (var y = currentYear; y >= 2000; y--) {
-        var opt2 = document.createElement('option');
-        opt2.value = '' + y;
-        opt2.textContent = y;
-        yearSelect.appendChild(opt2);
-      }
-    }
-
-    document.querySelectorAll('.dob-dropdowns-hp').forEach(hpPopulateDobDropdowns);
-
-    function hpSyncDobRequired() {
-      var isMobile = window.matchMedia('(max-width: 768px)').matches;
-      document.querySelectorAll('.dob-native-hp').forEach(function(el) {
-        el.required = !isMobile;
-        el.disabled = isMobile;
-      });
-      document.querySelectorAll('.dob-dropdowns-hp select').forEach(function(el) {
-        el.required = isMobile;
-        el.disabled = !isMobile;
-      });
-    }
-    hpSyncDobRequired();
-    window.addEventListener('resize', hpSyncDobRequired);
-
-    function hpGetDobValue(formGroup) {
-      var native = formGroup.querySelector('.dob-native-hp');
-      if (native && native.offsetParent !== null && native.value) return native.value;
-      var m = formGroup.querySelector('.dob-month');
-      var d = formGroup.querySelector('.dob-day');
-      var y = formGroup.querySelector('.dob-year');
-      if (m && d && y && m.value && d.value && y.value) return y.value + '-' + m.value + '-' + d.value;
-      return '';
-    }
-
-    var hpChildCount = 1;
-    function hpAddChild() {
-      if (hpChildCount >= 4) return;
-      hpChildCount++;
-      var wrapper = document.createElement('div');
-      wrapper.className = 'hp-form-row';
-      wrapper.innerHTML =
-        '<div class="form-group"><label>Child\'s Name <button type="button" style="background:none;border:none;color:var(--text-secondary);font-size:0.75rem;cursor:pointer;padding:0;font-family:inherit;float:right;" onclick="hpRemoveChildRow(this)">&times; Remove</button></label><input type="text" placeholder="First name" required></div>' +
-        '<div class="form-group"><label>Date of Birth</label><input type="date" min="2000-01-01" max="2050-12-31" required class="dob-native-hp"><div class="dob-dropdowns-hp"><select class="dob-month" aria-label="Birth month"><option value="" disabled selected>Month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="dob-day" aria-label="Birth day"><option value="" disabled selected>Day</option></select><select class="dob-year" aria-label="Birth year"><option value="" disabled selected>Year</option></select></div></div>';
-      document.getElementById('hpChildrenList').appendChild(wrapper);
-      hpPopulateDobDropdowns(wrapper.querySelector('.dob-dropdowns-hp'));
-      hpSyncDobRequired();
-      if (hpChildCount >= 4) document.querySelector('.hp-add-child-btn').style.display = 'none';
-    }
-    function hpRemoveChildRow(btn) {
-      btn.closest('.hp-form-row').remove();
-      hpChildCount--;
-      document.querySelector('.hp-add-child-btn').style.display = '';
-    }
-
-    var hpSubmittedEmail = '';
-
-    function handleHpInterestForm(e) {
-      e.preventDefault();
-      var form = e.target;
-      var honeypot = form.querySelector('input[name="b_041966420b3984e390841b884_5afc9a6ca7"]').value;
-      if (honeypot) return;
-
-      var parentName = document.getElementById('hpParentName').value;
-      var email = document.getElementById('hpEmail').value;
-      var address = document.getElementById('hpAddress').value;
-      var phone = document.getElementById('hpPhone').value;
-      var volunteer = document.getElementById('hpVolunteer').checked ? 'Yes' : '';
-      var donate = document.getElementById('hpDonate').checked ? 'Yes' : '';
-      hpSubmittedEmail = email;
-
-      var childRows = document.getElementById('hpChildrenList').querySelectorAll('.hp-form-row');
-      var children = [];
-      childRows.forEach(function(row) {
-        var nameInput = row.querySelector('input[type="text"]');
-        var dobGroup = row.querySelectorAll('.form-group')[1];
-        if (nameInput && dobGroup) children.push({ name: nameInput.value, dob: hpGetDobValue(dobGroup) });
-      });
-
-      var submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
-
-      fetchWithRetry(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: parentName, email: email, address: address, phone: phone,
-          child1_name: children[0] ? children[0].name : '', child1_dob: children[0] ? children[0].dob : '',
-          child2_name: children[1] ? children[1].name : '', child2_dob: children[1] ? children[1].dob : '',
-          child3_name: children[2] ? children[2].name : '', child3_dob: children[2] ? children[2].dob : '',
-          child4_name: children[3] ? children[3].name : '', child4_dob: children[3] ? children[3].dob : '',
-          volunteer: volunteer, donate: donate, source: 'interest-form', utm_source: defined_utm_source
-        })
-      }, 2, 1000).catch(function(err) { console.error('Sheet error:', err); });
-
-      var mcUrl = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0' +
-        '&FNAME=' + encodeURIComponent(parentName) +
-        '&EMAIL=' + encodeURIComponent(email) +
-        '&c=handleHpInterestResponse';
-
-      var mcCallbackFired = false;
-      var mcTimeout = setTimeout(function() {
-        if (!mcCallbackFired) {
-          console.error('[MC] Mailchimp JSONP callback timed out for email:', email);
-          form.style.display = 'none';
-          document.getElementById('hpFormSuccess').style.display = 'block';
-          document.getElementById('hpFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
-          gtag('event', 'interest_form_submit', { event_category: 'forms', mc_status: 'timeout' });
-        }
-      }, 8000);
-
-      window.handleHpInterestResponse = function(data) {
-        mcCallbackFired = true;
-        clearTimeout(mcTimeout);
-        if (data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)) {
-          form.style.display = 'none';
-          document.getElementById('hpFormSuccess').style.display = 'block';
-          document.getElementById('hpFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
-          gtag('event', 'interest_form_submit', { event_category: 'forms', mc_status: data.result });
-        } else {
-          console.error('[MC] Mailchimp error for email:', email, '| result:', data.result, '| msg:', data.msg);
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Submit';
-          var msg = document.getElementById('hpFormError');
-          if (!msg) {
-            msg = document.createElement('p');
-            msg.id = 'hpFormError';
-            msg.style.cssText = 'color:#c00;text-align:center;margin-top:0.5rem;font-size:0.85rem;';
-            submitBtn.parentNode.insertBefore(msg, submitBtn.nextSibling);
-          }
-          msg.textContent = 'Something went wrong. Please try again.';
-        }
-        var s = document.getElementById('mcHpInterestScript');
-        if (s) s.parentNode.removeChild(s);
-      };
-
-      var script = document.createElement('script');
-      script.id = 'mcHpInterestScript';
-      script.src = mcUrl;
-      document.body.appendChild(script);
-    }
-
-    function handleHpFollowup(e) {
-      e.preventDefault();
-      var form = e.target;
-      var checks = form.querySelectorAll('input[type="checkbox"]:checked');
-      var skills = {};
-      checks.forEach(function(cb) { skills[cb.name] = 'Yes'; });
-      var notes = document.getElementById('hp-fu-other').value;
-
-      fetchWithRetry(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'followup', email: hpSubmittedEmail,
-          skill_legal: skills.skill_legal || '', skill_community: skills.skill_community || '',
-          skill_donors: skills.skill_donors || '', skill_media: skills.skill_media || '',
-          skill_education: skills.skill_education || '', anything_else: notes
-        })
-      }, 2, 1000).catch(function(err) { console.error('Sheet followup error:', err); });
-
-      form.style.display = 'none';
-      document.getElementById('hpFollowupSuccess').style.display = 'block';
-      gtag('event', 'followup_form_submit', { event_category: 'forms' });
-    }
   </script>
 </body>
 </html>

@@ -35,6 +35,79 @@
   <style>
     /* ---- ABOUT PAGE STYLES ---- */
 
+    /* Why this school matters (timeline) */
+    .why-matters {
+      background: #fff;
+    }
+
+    .why-matters .timeline {
+      position: relative;
+      padding-left: 4rem;
+      margin-top: 3rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .why-matters .container > .animate:first-child {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .why-matters .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--red));
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3.5rem;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-4rem + 10px);
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--gold);
+    }
+    .timeline-item:last-child::before {
+      border-color: var(--red);
+      background: var(--red);
+      box-shadow: 0 0 0 4px rgba(190, 49, 68, 0.15);
+    }
+    .timeline-era {
+      font-family: 'Lora', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item:last-child .timeline-era {
+      color: var(--red);
+    }
+    .timeline-item h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .timeline-item p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
     /* Partnership section */
     .partnership-section {
       background: #fff;
@@ -204,6 +277,13 @@
     }
 
     @media (max-width: 768px) {
+      .why-matters .timeline {
+        padding-left: 3rem;
+      }
+      .timeline-item::before {
+        left: calc(-3rem + 10px) !important;
+      }
+
       .story-intro {
         font-size: 1.1rem;
       }
@@ -297,13 +377,40 @@
     </div>
   </section>
 
+  <!-- WHY THIS SCHOOL MATTERS -->
+  <section class="why-matters" id="why-it-matters">
+    <div class="container">
+      <div class="animate">
+        <div class="section-label">A Long-Awaited Win</div>
+        <h2 class="section-title">Why This School Matters</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item animate stagger-1">
+          <div class="timeline-era">The Legacy</div>
+          <h3>San Francisco Led the Way</h3>
+          <p>Our city has a proud legacy of language immersion education. Alice Fong Yu was the <strong>first public Chinese immersion school in the country</strong> and Chinese American International School was the <strong>first Mandarin immersion school of any kind in the nation</strong>.</p>
+        </div>
+        <div class="timeline-item animate stagger-2">
+          <div class="timeline-era">The Demand</div>
+          <h3>Far More Families Than Seats</h3>
+          <p>For years, roughly <strong>400 families</strong> have applied each year for just <strong>66 seats</strong> in Mandarin Immersion Kindergarten at Starr King and Jose Ortega elementary schools. Families were turned away every year. The new school <strong>doubles that capacity</strong>.</p>
+        </div>
+        <div class="timeline-item animate stagger-3">
+          <div class="timeline-era">Fall 2027</div>
+          <h3>It&rsquo;s Happening</h3>
+          <p>SFUSD has announced a dedicated Mandarin Immersion TK&ndash;8 school, opening in a temporary site in fall 2027, with Liana Szeto, founding principal of Alice Fong Yu, leading the launch. <a href="press.html" style="color: var(--red); font-weight: 600; text-decoration: none;">Read the coverage &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="about-cta">
     <div class="container">
       <div class="animate">
         <h2 class="section-title">There&rsquo;s a Place for You in This</h2>
         <p class="section-desc">Join 900+ families helping make this school great.</p>
-        <a href="index.html#interest" class="btn btn-primary">Join the community &rarr;</a>
+        <a href="permanent-location-survey.html" class="btn btn-primary">Take the survey &rarr;</a>
       </div>
     </div>
   </section>
