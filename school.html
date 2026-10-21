@@ -280,6 +280,8 @@
       margin: 0;
     }
 
+    .qa p + p { margin-top: 0.75rem; }
+
     .qa a { color: var(--red); font-weight: 600; text-decoration: none; }
 
     @media (max-width: 768px) {
@@ -376,7 +378,7 @@
     </div>
   </section>
 
-  <!-- APPLY (hidden until Oct 24, 2026 Pacific; see script at bottom) -->
+  <!-- APPLY (hidden until Oct 23, 2026 Pacific; see script at bottom) -->
   <section class="school-section" id="apply" hidden>
     <div class="container">
       <div class="school-narrow animate">
@@ -399,19 +401,33 @@
         <p>These answers are designed to supplement the district&rsquo;s <a href="https://www.sfusd.edu/learning/multilingual-learner-programs-and-services/new-mandarin-immersion-tk-8-school#83961-frequently-asked-questions-faqs-" target="_blank" rel="noopener">official FAQ</a>.</p>
         <div class="qa">
           <h3>Does my child need to speak Mandarin?</h3>
-          <p>For TK&ndash;1st, any student in the district can apply. Each class will be composed of a mix of English and Mandarin speakers. From 2nd grade, all applicants must pass a grade-level Mandarin assessment.</p>
+          <p>For TK&ndash;1st, any student eligible to enroll in SFUSD can apply. Each class will be composed of a mix of English and Mandarin speakers. From 2nd grade, all applicants must pass a grade-level Mandarin assessment.</p>
         </div>
         <div class="qa">
           <h3>How will students be assigned to this school?</h3>
-          <p>For 2027&ndash;2028, this will be considered a citywide language pathway in the student assignment process. See <a href="https://www.sfusd.edu/tiebreakers" target="_blank" rel="noopener">sfusd.edu/tiebreakers</a> for more information.</p>
+          <p>For 2027&ndash;2028, this will be considered a citywide language pathway in the student assignment process. See <a href="https://www.sfusd.edu/tiebreakers" target="_blank" rel="noopener">sfusd.edu/tiebreakers</a>.</p>
+          <p>SFUSD is moving to a neighborhood-based assignment system for elementary schools starting in 2028&ndash;2029, with a final policy expected in April 2027. However, any changes will not impact the 2027&ndash;2028 enrollment cycle.</p>
+        </div>
+        <div class="qa">
+          <h3>Will there be school tours?</h3>
+          <p>Yes! Keep an eye on <a href="https://www.sfusd.edu/tours" target="_blank" rel="noopener">sfusd.edu/tours</a>. SFUSD will host tours specifically for the Mandarin Immersion school, but they haven&rsquo;t been scheduled yet. Tours of the other programs at 1670 Noe Street are for those programs, and their staff may not have answers about the new school, so please save your Mandarin immersion questions for the dedicated tours.</p>
+        </div>
+        <div class="qa">
+          <h3>Where will the permanent location be?</h3>
+          <p>SFUSD is in the process of investigating possible school sites and engaging the community through a working group, which includes Friends of the SF Mandarin School. It will announce the permanent location in January 2027. The permanent location will open in Fall 2028 for the 2028&ndash;2029 school year.</p>
         </div>
         <div class="qa">
           <h3>How can I provide input on the permanent location?</h3>
-          <p>Friends of the SF Mandarin School is the parent group representing prospective families on the district&rsquo;s permanent location working group. <a href="permanent-location-survey.html">Take the Permanent Location Survey &rarr;</a></p>
+          <p>The best way to provide input is to <a href="permanent-location-survey.html">take the permanent location survey</a>. You can also reach out directly to <a href="mailto:info@sfmandarinschool.org">info@sfmandarinschool.org</a>.</p>
+          <p>Since we&rsquo;re part of the district&rsquo;s working group on the permanent site, we&rsquo;ll bring what we hear directly to the district through that group. We&rsquo;ll also report back on our progress through our email list and the <a href="updates.html">Updates</a> page.</p>
         </div>
         <div class="qa">
-          <h3>How is this different from the Mandarin immersion programs at Starr King and Jos&eacute; Ortega?</h3>
-          <p>Starr King and Jos&eacute; Ortega elementary schools offer Mandarin immersion for grades K&ndash;5. This will be SFUSD&rsquo;s first wall-to-wall Mandarin immersion school, serving students from TK through 8th grade, and the first to offer Mandarin immersion in TK.</p>
+          <h3>Are there other Mandarin Immersion programs in SFUSD?</h3>
+          <p>Yes, Starr King Elementary and Jos&eacute; Ortega Elementary both have Mandarin Immersion classes for K&ndash;5 grades. However, the new Mandarin Immersion school will hold SFUSD&rsquo;s first and only TK Mandarin Immersion classes. Also, it will eventually be the first and only wall-to-wall Mandarin immersion school.</p>
+        </div>
+        <div class="qa">
+          <h3>How can I stay up to date?</h3>
+          <p>Sign up for email updates with the form at the bottom of this page, read the latest on our <a href="updates.html">Updates</a> page, or <a href="https://chat.whatsapp.com/Id6DeSiiDgUJZkOSUljOMv?mode=gi_t" target="_blank" rel="noopener">join the WhatsApp group &rarr;</a></p>
         </div>
       </div>
     </div>
@@ -422,10 +438,10 @@
 
   <script src="main.js"></script>
   <script>
-    // Show the "Applications are open" module starting Oct 24, 2026 (Pacific time).
+    // Show the "Applications are open" module starting Oct 23, 2026 (Pacific time).
     (function() {
       var pacific = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-      if (pacific >= new Date(2026, 9, 24)) {
+      if (pacific >= new Date(2026, 9, 23)) {
         document.getElementById('apply').hidden = false;
       }
     })();
