@@ -495,7 +495,9 @@
           cx = (Math.min.apply(null, xs) + Math.max.apply(null, xs)) / 2;
           cy = (Math.min.apply(null, ys) + Math.max.apply(null, ys)) / 2;
         }
-        return toXY(cx, cy);
+        var xy = toXY(cx, cy);
+        if (n === 7) xy[0] += 90; // centroid sits on the District 4 border; nudge into the district
+        return xy;
       }
 
       var NS = 'http://www.w3.org/2000/svg';
