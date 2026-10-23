@@ -209,28 +209,67 @@
 
     .school-dates {
       list-style: none;
-      padding: 0;
-      margin: 1.5rem 0 0;
+      position: relative;
+      padding: 0 0 0 3rem;
+      margin: 2rem 0 0;
+    }
+
+    .school-dates::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--red));
     }
 
     .school-dates li {
-      display: flex;
-      gap: 1rem;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
-      line-height: 1.5;
+      position: relative;
+      padding-bottom: 2rem;
     }
 
-    .school-dates li:last-child { border-bottom: none; }
+    .school-dates li:last-child { padding-bottom: 0; }
+
+    .school-dates li::before {
+      content: '';
+      position: absolute;
+      left: calc(-3rem + 10px);
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--gold);
+    }
+
+    .school-dates li.highlight::before,
+    .school-dates li:last-child::before {
+      border-color: var(--red);
+      background: var(--red);
+      box-shadow: 0 0 0 4px rgba(190, 49, 68, 0.15);
+    }
 
     .school-dates b {
-      flex: 0 0 10rem;
+      display: block;
+      font-family: 'Lora', serif;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--text);
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
     }
 
-    .school-dates span { color: var(--text-secondary); }
+    .school-dates li.highlight b,
+    .school-dates li:last-child b { color: var(--red); }
+
+    .school-dates span {
+      display: block;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
     /* keep the cream/white rhythm while the apply module is hidden */
     #apply[hidden] + section { background: #fff; }
@@ -286,8 +325,8 @@
 
     @media (max-width: 768px) {
       .school-facts { grid-template-columns: 1fr; }
-      .school-dates li { flex-direction: column; gap: 0.15rem; }
-      .school-dates b { flex: none; }
+      .school-dates { padding-left: 2.5rem; }
+      .school-dates li::before { left: calc(-2.5rem + 10px); }
     }
   </style>
 </head>
@@ -367,9 +406,9 @@
         <div class="section-label">Timeline</div>
         <h2 class="section-title">The Road to Opening Day</h2>
         <ul class="school-dates">
-          <li><b>Nov 2026 &ndash; Jan 2027</b><span>School tours</span></li>
+          <li><b>Nov 2026 &ndash; Jan 2027</b><span>School tours (coming soon!)</span></li>
           <li><b>Jan 2027</b><span>Permanent site announcement</span></li>
-          <li><b>Feb 1, 2027</b><span>Applications due</span></li>
+          <li class="highlight"><b>Feb 1, 2027</b><span>Applications due</span></li>
           <li><b>March 2027</b><span>Assignment letters mailed</span></li>
           <li><b>Fall 2027</b><span>School opens with 1 TK and 3 K classes</span></li>
           <li><b>Fall 2028</b><span>Move to the permanent campus</span></li>
