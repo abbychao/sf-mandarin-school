@@ -18,6 +18,11 @@
  *
  * 3. Redeploy: Deploy -> Manage deployments -> Edit -> New version -> Deploy.
  *
+ * Language: the survey has English (en), Simplified (zh-Hans) and Traditional (zh-Hant) pages; each sends data.language.
+ * It is appended as the LAST column so existing columns do not shift. On the live tab, add headers by hand:
+ * "Language" in the column after "Already on Interest List?", then "Comment (English)" with
+ * =IF(Comment="","",GOOGLETRANSLATE(Comment,"auto","en")) filled down (use the real cell reference for Comment).
+ *
  * The "Permanent Location Survey" tab is created on first submission. One row per response.
  * Join to the interest list by email (column B here = column C on the main sheet).
  */
@@ -30,7 +35,7 @@ function handleLocationSurvey(data) {
       'Child 1 Name', 'Child 1 DOB', 'Child 2 Name', 'Child 2 DOB', 'Child 3 Name', 'Child 3 DOB', 'Child 4 Name', 'Child 4 DOB',
       'Family Type', 'Travel Mode', 'Max One-Way Trip'];
     for (var d = 1; d <= 11; d++) headers.push('D' + d);
-    headers.push('Comment', 'UTM Source', 'Already on Interest List?');
+    headers.push('Comment', 'UTM Source', 'Already on Interest List?', 'Language', 'Comment (English)');
     sheet.appendRow(headers);
     sheet.setFrozenRows(1);
   }
@@ -49,7 +54,7 @@ function handleLocationSurvey(data) {
     data.child1_name, data.child1_dob, data.child2_name, data.child2_dob, data.child3_name, data.child3_dob, data.child4_name, data.child4_dob,
     data.family_type, data.travel_mode, data.max_trip];
   for (var n = 1; n <= 11; n++) row.push(data['d' + n]);
-  row.push(data.comment, data.utm_source, onList);
+  row.push(data.comment, data.utm_source, onList, data.language || 'en');
   sheet.appendRow(row);
 
   return ContentService.createTextOutput(JSON.stringify({ result: 'success' })).setMimeType(ContentService.MimeType.JSON);

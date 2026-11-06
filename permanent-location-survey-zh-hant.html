@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>永久校址問卷 — 三藩市聯合校區中文沉浸學校之友</title>
+  <meta name="description" content="您會在哪裡為孩子報名新的中文沉浸 TK-8 學校？又不會在哪裡？請告訴 SFUSD，三藩市哪些地區適合您的家庭。">
+  <meta property="og:title" content="您會在哪裡報名？— 永久校址問卷">
+  <meta property="og:description" content="幫助 SFUSD 為三藩市新的中文沉浸 TK-8 學校選定永久校址。告訴我們哪些選區適合您的家庭。只需 3 分鐘。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sfmandarinschool.org/permanent-location-survey-zh-hant.html">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://www.sfmandarinschool.org/permanent-location-survey-zh-hant.html">
+  <link rel="alternate" hreflang="en" href="https://www.sfmandarinschool.org/permanent-location-survey.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.sfmandarinschool.org/permanent-location-survey-zh-hans.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://www.sfmandarinschool.org/permanent-location-survey-zh-hant.html">
+  <meta property="og:image" content="https://www.sfmandarinschool.org/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="您會在哪裡報名？— 永久校址問卷">
+  <meta name="twitter:description" content="幫助 SFUSD 為三藩市新的中文沉浸 TK-8 學校選定永久校址。只需 3 分鐘。">
+  <meta name="twitter:image" content="https://www.sfmandarinschool.org/images/og-image.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCR9CRJD65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FCR9CRJD65');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ---- PERMANENT LOCATION SURVEY STYLES ---- */
+
+    body { overflow-x: clip; } /* hidden would break sticky on iOS Safari */
+    :root { --yes-green: #2E7D4F; }
+
+    .pls-section { background: var(--cream); padding: 3rem 2rem 5rem; }
+    .pls-wrap { max-width: 1000px; margin: 0 auto; }
+    .pls-wrap.narrow { max-width: 640px; }
+
+    .pls-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    /* Part 1 is a narrow, centered, single-column form; Part 2 stays wide for the map */
+    #plsStep1 { max-width: 640px; margin: 0 auto; }
+
+    .pls-steps {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .pls-card h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .pls-lead { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+    .pls-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .pls-field { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; min-width: 0; }
+    .pls-row .pls-field { margin-bottom: 0; }
+    .pls-field label, .pls-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .pls-field .optional { font-weight: 400; color: var(--text-secondary); }
+    .pls-field input, .pls-field select, .pls-field textarea {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .pls-field input:focus, .pls-field select:focus, .pls-field textarea:focus { border-color: var(--red); }
+    .pls-field textarea { resize: vertical; min-height: 90px; }
+    /* iOS Safari gives date inputs a wide intrinsic size; keep them inside the card */
+    .pls-field input[type="date"] {
+      display: block;
+      min-width: 0;
+      max-width: 100%;
+      min-height: 2.65rem;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      appearance: none;
+      text-align: left;
+    }
+    .pls-field input[type="date"]::-webkit-date-and-time-value { text-align: left; }
+    .pls-hint { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+    .pls-suggestions {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      list-style: none;
+      margin: 0; padding: 0;
+      z-index: 100;
+      max-height: 200px;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .pls-suggestions li { padding: 0.6rem 0.875rem; font-size: 0.9rem; cursor: pointer; }
+    .pls-suggestions li:hover { background: var(--warm-gray); }
+
+    .pls-add-child {
+      background: none; border: none; padding: 0;
+      color: var(--red); font-weight: 600; font-size: 0.875rem;
+      font-family: inherit; cursor: pointer; margin: 0.25rem 0 1.5rem;
+    }
+    .pls-add-child:hover { text-decoration: underline; }
+    .pls-remove-child {
+      background: none; border: none; color: var(--text-secondary);
+      font-size: 0.8rem; font-family: inherit; cursor: pointer;
+      padding: 0; margin: -0.5rem 0 1rem; text-decoration: underline;
+    }
+
+    .pls-notice {
+      background: var(--gold-light);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    .pls-actions { display: flex; align-items: center; gap: 1.25rem; margin-top: 1.5rem; }
+    .pls-actions .btn { width: auto; }
+    .pls-back {
+      background: none; border: none; color: var(--text-secondary);
+      font-size: 0.9rem; font-family: inherit; cursor: pointer; text-decoration: underline; padding: 0;
+    }
+    .pls-error { color: #c00; font-size: 0.85rem; margin-top: 0.75rem; display: none; }
+
+    /* Step 2: map + questions */
+    .pls-districts { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 2rem; align-items: start; }
+    .pls-map-col { position: sticky; top: 5.5rem; }
+    .pls-map { width: 100%; height: auto; display: block; }
+    .pls-map path {
+      fill: var(--warm-gray);
+      stroke: #fff;
+      stroke-width: 5;
+      stroke-linejoin: round;
+      cursor: pointer;
+      transition: fill 0.2s;
+    }
+    .pls-map path.yes { fill: var(--yes-green); }
+    .pls-map path.no { fill: #B9B1A7; }
+    .pls-map path.hover { fill: var(--gold); }
+    .pls-map text {
+      font-family: 'Inter', sans-serif;
+      font-size: 54px;
+      font-weight: 700;
+      text-anchor: middle;
+      dominant-baseline: central;
+      fill: var(--text);
+      pointer-events: none;
+      paint-order: stroke;
+      stroke: rgba(255,255,255,0.8);
+      stroke-width: 8px;
+    }
+    .pls-map text.on-yes { fill: #fff; stroke: none; }
+    .pls-legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.75rem; justify-content: center; }
+    .pls-legend span::before {
+      content: ''; display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 3px;
+      margin-right: 0.4rem; vertical-align: -1px; background: var(--warm-gray); border: 1px solid var(--border);
+    }
+    .pls-legend .l-yes::before { background: var(--yes-green); border-color: var(--yes-green); }
+    .pls-legend .l-no::before { background: #B9B1A7; border-color: #B9B1A7; }
+
+    .pls-q {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 0.75rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .pls-q.hover { background: var(--gold-light); }
+    .pls-q.missing { background: var(--red-light); }
+    .pls-q-text { font-weight: 600; font-size: 0.95rem; line-height: 1.3; }
+    .pls-q-text small { display: block; font-weight: 400; font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.15rem; }
+    .pls-yn { display: flex; gap: 0.5rem; flex-shrink: 0; border: 0; padding: 0; margin: 0; }
+    .pls-yn label { position: relative; cursor: pointer; }
+    .pls-yn input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+    .pls-yn span {
+      display: inline-block; min-width: 3.4rem; text-align: center;
+      padding: 0.45rem 0.9rem; border: 1.5px solid var(--border); border-radius: 999px;
+      font-size: 0.85rem; font-weight: 600; background: #fff; color: var(--text);
+      transition: all 0.15s;
+    }
+    .pls-yn input:focus-visible + span { outline: 2px solid var(--red); outline-offset: 2px; }
+    .pls-yn input[value="Yes"]:checked + span { background: var(--yes-green); border-color: var(--yes-green); color: #fff; }
+    .pls-yn input[value="No"]:checked + span { background: #6B635A; border-color: #6B635A; color: #fff; }
+
+    .pls-progress { font-size: 0.85rem; color: var(--text-secondary); margin: 0.75rem 0 1.25rem; }
+    .pls-comment { margin-top: 1.5rem; }
+
+    /* Success */
+    .pls-success { display: none; text-align: center; }
+    .pls-success h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .pls-success p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+    .pls-share { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin: 1.5rem 0 0.5rem; }
+    .pls-share .btn { padding: 0.7rem 1.4rem; }
+    #plsCopyMsg { margin: 0.5rem 0 0; text-align: center; }
+    #plsCopyMsg:empty { display: none; }
+    .pls-wa { text-align: center; font-size: 0.9rem; margin-top: 0.5rem; }
+    .pls-wa a { color: var(--red); font-weight: 600; text-decoration: none; }
+
+    @media (max-width: 800px) {
+      .pls-section { padding: 2rem 1rem 4rem; }
+      .pls-card { padding: 1.25rem; }
+      .pls-row { grid-template-columns: minmax(0, 1fr); }
+      .pls-districts { grid-template-columns: 1fr; gap: 1rem; }
+      .pls-map-col {
+        position: sticky; top: 68px; z-index: 5;
+        background: #fff; margin: 0 -0.25rem; padding: 0.5rem 0 0.4rem;
+        border-bottom: 1px solid var(--border); box-shadow: 0 6px 10px -8px rgba(0,0,0,0.25);
+      }
+      .pls-map { height: 30vh; max-height: 260px; margin: 0 auto; }
+      .pls-legend { margin-top: 0.25rem; gap: 0.75rem; font-size: 0.72rem; }
+      .pls-q { padding: 0.75rem 0.25rem; }
+    }
+
+    /* ---- Chinese typography ---- */
+    .page-header, .pls-section { font-family: 'Inter', "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif; }
+    .page-header h1, .pls-card h2, .pls-success h2 { font-family: 'Inter', "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif; font-weight: 700; letter-spacing: 0.02em; line-height: 1.4; }
+    .pls-steps { letter-spacing: 0.05em; }
+    .pls-field input, .pls-field select, .pls-field textarea, .pls-section .btn, .pls-section button { font-family: inherit; }
+    .pls-lead, .pls-hint, .pls-success p { line-height: 1.8; }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div class="page-header">
+    <div class="section-label">三藩市聯合校區中文沉浸學校之友</div>
+    <h1>中文沉浸學校<br>永久校址問卷</h1>
+    <p>三藩市聯合校區（SFUSD）正在為新的中文沉浸 TK-8 學校選定永久校址。本問卷由家長團體「三藩市聯合校區中文沉浸學校之友」發起，結果將作為這項決定的參考。</p>
+  </div>
+
+  <section class="pls-section">
+    <div class="pls-wrap" id="plsWrap">
+      <form id="plsForm" novalidate>
+
+        <!-- STEP 2 -->
+        <div class="pls-card" id="plsStep2">
+          <div class="pls-steps">第 1 部分（共 2 部分）· 選區</div>
+          <h2>如果學校設在這裡，您會報名嗎？</h2>
+          <p class="pls-lead">問卷分兩個簡短的部分：先是選區，再是您的家庭情況。三藩市共有 11 個市監督選區（Supervisor District），請逐一告訴我們：如果永久校址設在該選區，您會為孩子報名嗎？每個選區都請回答「會」或「不會」。「不會」和「會」同樣有用。</p>
+
+          <div class="pls-districts">
+            <div class="pls-map-col">
+              <svg class="pls-map" id="plsMap" viewBox="30 -10 1270 1260" role="img" aria-label="三藩市 11 個監督選區地圖"></svg>
+              <div class="pls-legend"><span class="l-yes">會</span><span class="l-no">不會</span><span>未回答</span></div>
+            </div>
+            <div>
+              <div id="plsQuestions"></div>
+              <p class="pls-progress" id="plsProgress">已回答 0/11</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 1 -->
+        <div class="pls-card" id="plsStep1" style="margin-top:1.5rem;">
+          <div class="pls-steps">第 2 部分（共 2 部分）· 關於您</div>
+          <h2>再請您介紹一下家庭情況</h2>
+          <p class="pls-lead">最後一步。我們會根據您的地址了解各家庭的居住位置，並且只以彙總數據與 SFUSD 分享結果，絕不提供個人答覆。我們也會向您通報最新進展。</p>
+
+          <div class="pls-field">
+            <label for="plsName">家長/監護人姓名</label>
+            <input type="text" id="plsName" placeholder="全名（中文或英文皆可）" autocomplete="name" required>
+          </div>
+          <div class="pls-field">
+            <label for="plsEmail">電子郵件</label>
+            <input type="email" id="plsEmail" placeholder="you@email.com" autocomplete="email" required>
+          </div>
+
+          <div class="pls-field">
+            <label for="plsAddress">家庭住址</label>
+            <div style="position:relative;">
+              <input type="text" id="plsAddress" placeholder="開始輸入您的地址（請用英文）..." autocomplete="off" required>
+              <ul class="pls-suggestions" id="plsSuggestions"></ul>
+            </div>
+            <p class="pls-hint">請用英文輸入地址，並從下拉建議中選擇。</p>
+          </div>
+          <div class="pls-field">
+            <label for="plsPhone">電話 <span class="optional">（選填）</span></label>
+            <input type="tel" id="plsPhone" placeholder="(415) 555-1234" maxlength="14" autocomplete="tel">
+          </div>
+
+          <div id="plsChildren"></div>
+          <button type="button" class="pls-add-child" id="plsAddChild">+ 再新增一個孩子</button>
+
+          <div class="pls-field">
+            <label for="plsFamily">以下哪一項最符合您的家庭情況？</label>
+            <select id="plsFamily" required>
+              <option value="" disabled selected>請選擇</option>
+              <option value="Current SFUSD family (any grade)">目前就讀 SFUSD 的家庭（任何年級）</option>
+              <option value="Future family (child not yet in school)">未來家庭（孩子尚未入學）</option>
+              <option value="Private or charter school family">私立或特許學校家庭</option>
+              <option value="Other or prefer not to answer">其他或不願回答</option>
+            </select>
+          </div>
+
+          <div class="pls-field">
+            <label for="plsMode">您通常會怎樣送孩子上學？</label>
+            <select id="plsMode" required>
+              <option value="" disabled selected>請選擇</option>
+              <option value="Walk">步行</option>
+              <option value="Bike">騎自行車</option>
+              <option value="Public transit (Muni, BART)">大眾運輸（Muni、BART）</option>
+              <option value="Drive or carpool">自駕或共乘</option>
+              <option value="Not sure">不確定</option>
+            </select>
+          </div>
+          <div class="pls-field">
+            <label for="plsMax">為送孩子上學，您願意接受的單程最長時間</label>
+            <select id="plsMax" required>
+              <option value="" disabled selected>請選擇</option>
+              <option value="15 minutes">15 分鐘</option>
+              <option value="20 minutes">20 分鐘</option>
+              <option value="30 minutes">30 分鐘</option>
+              <option value="45 minutes">45 分鐘</option>
+              <option value="No limit">不設上限</option>
+            </select>
+          </div>
+
+          <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" id="plsHoney" tabindex="-1" autocomplete="off" value=""></div>
+
+
+          <div class="pls-field pls-comment">
+            <label for="plsComment">關於您會在哪裡報名，還有什麼想讓我們知道的嗎？ <span class="optional">（選填）</span></label>
+            <textarea id="plsComment" placeholder="任何關於位置、安全、交通，或哪些因素會改變您答案的想法……"></textarea>
+          </div>
+
+          <p class="pls-error" id="plsStep2Error"></p>
+          <div class="pls-actions">
+            <button type="submit" class="btn btn-primary" id="plsSubmit">提交我的答案</button>
+          </div>
+
+      </form>
+
+      <!-- SUCCESS -->
+      <div class="pls-card pls-success" id="plsSuccess">
+        <h2>謝謝您！</h2>
+        <p>您的答案已提交。您正在幫助確保新的中文沉浸學校，能讓有需要的家庭方便就讀。</p>
+        <p><strong>參與的家庭越多，結果就越有說服力。</strong>請把問卷轉發給其他可能考慮中文沉浸學校的家庭。</p>
+        <div class="pls-share">
+          <button type="button" class="btn btn-primary" id="plsCopy">複製並分享問卷連結</button>
+        </div>
+        <p class="pls-hint" id="plsCopyMsg"></p>
+        <p class="pls-wa"><a href="https://chat.whatsapp.com/Id6DeSiiDgUJZkOSUljOMv?mode=gi_t" target="_blank" rel="noopener">加入我們的 WhatsApp 群組 &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="district-data.js"></script>
+  <script src="main.js"></script>
+  <script>
+    (function () {
+      var DISTRICTS = [
+        '', '里士滿（Richmond）', '濱海區、太平洋高地（Marina, Pacific Heights）', '北灘、唐人街、諾布山（North Beach, Chinatown, Nob Hill）', '日落區、帕克賽德（Sunset, Parkside）',
+        '海特、西增區（Haight, Western Addition）', '市場南區、田德隆、金銀島（SoMa, Tenderloin, Treasure Island）', '西門戶、帕克梅賽德、內日落區（West Portal, Parkmerced, Inner Sunset）',
+        '卡斯特羅、諾伊谷、格倫公園（Castro, Noe Valley, Glen Park）', '教會區、伯納爾高地（Mission, Bernal Heights）', '灣景區、波特雷羅山（Bayview, Potrero Hill）', '埃克塞爾西奧、海景區（Excelsior, Oceanview）'
+      ];
+      var MAX_CHILDREN = 4;
+      var SHARE_URL = 'https://www.sfmandarinschool.org/permanent-location-survey-zh-hant.html?utm_source=survey-share&utm_medium=social&utm_campaign=location-survey';
+      var $ = function (id) { return document.getElementById(id); };
+
+      // ---- Prefill from ?name= & ?email= (e.g. Mailchimp merge tags) ----
+      var qs = new URLSearchParams(window.location.search);
+      if (qs.get('name')) $('plsName').value = qs.get('name');
+      if (qs.get('email')) $('plsEmail').value = qs.get('email');
+
+      // ---- Phone formatting ----
+      $('plsPhone').addEventListener('input', function () {
+        var d = this.value.replace(/\D/g, '').slice(0, 10), out = d;
+        if (d.length > 6) out = '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+        else if (d.length > 3) out = '(' + d.slice(0, 3) + ') ' + d.slice(3);
+        this.value = out;
+      });
+
+      // ---- Children rows ----
+      function addChild() {
+        var list = $('plsChildren');
+        var n = list.children.length + 1;
+        if (n > MAX_CHILDREN) return;
+        var wrap = document.createElement('div');
+        wrap.innerHTML =
+          '<div class="pls-row">' +
+            '<div class="pls-field"><label for="plsChildName' + n + '">孩子的姓名</label>' +
+            '<input type="text" id="plsChildName' + n + '" placeholder="名字" required></div>' +
+            '<div class="pls-field"><label for="plsChildDob' + n + '">出生日期</label>' +
+            '<input type="date" id="plsChildDob' + n + '" min="2000-01-01" max="2050-12-31" required></div>' +
+          '</div>' +
+          (n > 1 ? '<button type="button" class="pls-remove-child">刪除</button>' : '');
+        list.appendChild(wrap);
+        var rm = wrap.querySelector('.pls-remove-child');
+        if (rm) rm.addEventListener('click', function () { wrap.remove(); $('plsAddChild').style.display = ''; });
+        if (list.children.length >= MAX_CHILDREN) $('plsAddChild').style.display = 'none';
+      }
+      addChild();
+      $('plsAddChild').addEventListener('click', addChild);
+
+      // ---- Point in polygon (used to place map labels inside each district) ----
+      function inRing(x, y, ring) {
+        var c = false;
+        for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+          if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) c = !c;
+        }
+        return c;
+      }
+
+      // ---- Address autocomplete (Places API New; works on our domains only) ----
+      async function initAddress() {
+        if (!window.google || !google.maps || !google.maps.importLibrary) return;
+        var lib = await google.maps.importLibrary('places');
+        var AutocompleteSuggestion = lib.AutocompleteSuggestion, AutocompleteSessionToken = lib.AutocompleteSessionToken;
+        var token = new AutocompleteSessionToken();
+        var input = $('plsAddress'), list = $('plsSuggestions'), debounce;
+
+        input.addEventListener('input', function () {
+          clearTimeout(debounce);
+          var val = input.value.trim();
+          if (val.length < 3) { list.style.display = 'none'; return; }
+          debounce = setTimeout(async function () {
+            try {
+              var res = await AutocompleteSuggestion.fetchAutocompleteSuggestions({
+                input: val,
+                sessionToken: token,
+                region: 'us',
+                language: 'en',
+                locationBias: { west: -122.55, south: 37.69, east: -122.33, north: 37.83 },
+                includedPrimaryTypes: ['street_address', 'subpremise', 'premise']
+              });
+              list.innerHTML = '';
+              if (!res.suggestions || !res.suggestions.length) { list.style.display = 'none'; return; }
+              res.suggestions.forEach(function (s) {
+                var li = document.createElement('li');
+                li.textContent = s.placePrediction.text.toString();
+                li.addEventListener('mousedown', function () {
+                  input.value = s.placePrediction.text.toString();
+                  list.style.display = 'none';
+                  token = new AutocompleteSessionToken();
+                });
+                list.appendChild(li);
+              });
+              list.style.display = 'block';
+            } catch (err) {
+              console.error('Autocomplete error:', err);
+              list.style.display = 'none';
+            }
+          }, 300);
+        });
+        input.addEventListener('blur', function () { setTimeout(function () { list.style.display = 'none'; }, 200); });
+        input.addEventListener('focus', function () { if (list.children.length) list.style.display = 'block'; });
+      }
+
+      window.addEventListener('load', initAddress);
+
+      // ---- Map + questions ----
+      var C = Math.cos(37.76 * Math.PI / 180);
+      function toXY(lng, lat) { return [(lng + 122.52) * C * 10000, (37.832 - lat) * 10000]; }
+      function labelPoint(n) {
+        var polys = SF_DISTRICT_POLYS[n], best = null, bestA = -1;
+        polys.forEach(function (poly) {
+          var r = poly[0], a = 0;
+          for (var i = 0, j = r.length - 1; i < r.length; j = i++) a += (r[j][0] * r[i][1] - r[i][0] * r[j][1]);
+          a = Math.abs(a / 2);
+          if (a > bestA) { bestA = a; best = r; }
+        });
+        var A = 0, cx = 0, cy = 0;
+        for (var i = 0, j = best.length - 1; i < best.length; j = i++) {
+          var f = best[j][0] * best[i][1] - best[i][0] * best[j][1];
+          A += f; cx += (best[j][0] + best[i][0]) * f; cy += (best[j][1] + best[i][1]) * f;
+        }
+        cx /= 3 * A; cy /= 3 * A;
+        if (!inRing(cx, cy, best)) {
+          var xs = best.map(function (p) { return p[0]; }), ys = best.map(function (p) { return p[1]; });
+          cx = (Math.min.apply(null, xs) + Math.max.apply(null, xs)) / 2;
+          cy = (Math.min.apply(null, ys) + Math.max.apply(null, ys)) / 2;
+        }
+        var xy = toXY(cx, cy);
+        if (n === 7) xy[0] += 90; // centroid sits on the District 4 border; nudge into the district
+        return xy;
+      }
+
+      var NS = 'http://www.w3.org/2000/svg';
+      var svg = $('plsMap'), qWrap = $('plsQuestions');
+      for (var n = 1; n <= 11; n++) {
+        var path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', SF_DISTRICT_PATHS[n]);
+        path.setAttribute('data-d', n);
+        path.setAttribute('fill-rule', 'evenodd');
+        svg.appendChild(path);
+      }
+      for (n = 1; n <= 11; n++) {
+        var pt = labelPoint(n);
+        var t = document.createElementNS(NS, 'text');
+        t.setAttribute('x', pt[0]); t.setAttribute('y', pt[1]);
+        t.setAttribute('data-d', n);
+        t.textContent = n;
+        svg.appendChild(t);
+
+        var q = document.createElement('div');
+        q.className = 'pls-q';
+        q.id = 'plsQ' + n;
+        q.setAttribute('data-d', n);
+        q.innerHTML =
+          '<div class="pls-q-text" id="plsQT' + n + '">第 ' + n + ' 選區<small>' + DISTRICTS[n] + '</small></div>' +
+          '<fieldset class="pls-yn" aria-labelledby="plsQT' + n + '">' +
+            '<label><input type="radio" name="d' + n + '" value="Yes"><span>會</span></label>' +
+            '<label><input type="radio" name="d' + n + '" value="No"><span>不會</span></label>' +
+          '</fieldset>';
+        qWrap.appendChild(q);
+      }
+
+      function setHover(d, on) {
+        var p = svg.querySelector('path[data-d="' + d + '"]'), q = $('plsQ' + d);
+        if (p) p.classList.toggle('hover', on);
+        if (q) q.classList.toggle('hover', on);
+      }
+      svg.addEventListener('mouseover', function (e) { var d = e.target.getAttribute('data-d'); if (d) setHover(d, true); });
+      svg.addEventListener('mouseout', function (e) { var d = e.target.getAttribute('data-d'); if (d) setHover(d, false); });
+      svg.addEventListener('click', function (e) {
+        var d = e.target.getAttribute('data-d');
+        if (d) $('plsQ' + d).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      qWrap.addEventListener('mouseover', function (e) { var q = e.target.closest('.pls-q'); if (q) setHover(q.getAttribute('data-d'), true); });
+      qWrap.addEventListener('mouseout', function (e) { var q = e.target.closest('.pls-q'); if (q) setHover(q.getAttribute('data-d'), false); });
+
+      function answers() {
+        var out = {};
+        for (var i = 1; i <= 11; i++) {
+          var c = document.querySelector('input[name="d' + i + '"]:checked');
+          out[i] = c ? c.value : '';
+        }
+        return out;
+      }
+      function refresh() {
+        var a = answers(), count = 0;
+        for (var i = 1; i <= 11; i++) {
+          var p = svg.querySelector('path[data-d="' + i + '"]'), tx = svg.querySelector('text[data-d="' + i + '"]');
+          p.classList.toggle('yes', a[i] === 'Yes');
+          p.classList.toggle('no', a[i] === 'No');
+          tx.classList.toggle('on-yes', a[i] === 'Yes');
+          if (a[i]) { count++; $('plsQ' + i).classList.remove('missing'); }
+        }
+        $('plsProgress').textContent = '已回答 ' + count + '/11';
+      }
+      qWrap.addEventListener('change', refresh);
+
+      // ---- Step navigation ----
+      function show(step) {
+        $('plsStep1').style.display = step === 1 ? '' : 'none';
+        $('plsStep2').style.display = step === 2 ? '' : 'none';
+        window.scrollTo({ top: document.querySelector('.pls-section').offsetTop - 80, behavior: 'smooth' });
+      }
+      function err(id, msg) { var e = $(id); e.textContent = msg; e.style.display = msg ? 'block' : 'none'; }
+
+      // ---- Mailchimp (same list and form id as the interest form; failures never block the survey) ----
+      function addToMailchimp(name, email) {
+        var cb = 'plsMcCallback' + Date.now();
+        var script = document.createElement('script');
+        var cleanup = function () { delete window[cb]; if (script.parentNode) script.parentNode.removeChild(script); };
+        window[cb] = function (res) {
+          if (res.result !== 'success' && !(res.msg && res.msg.indexOf('already subscribed') > -1)) {
+            console.error('[MC] Mailchimp error for email:', email, '| result:', res.result, '| msg:', res.msg);
+          }
+          cleanup();
+        };
+        script.onerror = function () { console.error('[MC] Mailchimp request failed for email:', email); cleanup(); };
+        script.src = 'https://sfmandarinschool.us18.list-manage.com/subscribe/post-json?u=041966420b3984e390841b884&id=5afc9a6ca7&f_id=0071abe6f0' +
+          '&FNAME=' + encodeURIComponent(name) +
+          '&EMAIL=' + encodeURIComponent(email) +
+          '&c=' + cb;
+        document.body.appendChild(script);
+      }
+
+      // ---- Submit ----
+      $('plsForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if ($('plsHoney').value) return;
+        var a = answers(), missing = [];
+        for (var i = 1; i <= 11; i++) if (!a[i]) missing.push(i);
+        if (missing.length) {
+          missing.forEach(function (d) { $('plsQ' + d).classList.add('missing'); });
+          err('plsStep2Error', '請為每個選區回答「會」或「不會」。還剩 ' + missing.length + ' 個。');
+          $('plsQ' + missing[0]).scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        var req = $('plsStep1').querySelectorAll('input[required], select[required]');
+        for (var k = 0; k < req.length; k++) {
+          if (!req[k].checkValidity()) { req[k].scrollIntoView({ behavior: 'smooth', block: 'center' }); req[k].reportValidity(); return; }
+        }
+        err('plsStep2Error', '');
+
+        var data = {
+          type: 'location_survey',
+          name: $('plsName').value.trim(),
+          email: $('plsEmail').value.trim(),
+          address: $('plsAddress').value.trim(),
+          phone: $('plsPhone').value,
+          family_type: $('plsFamily').value,
+          travel_mode: $('plsMode').value,
+          max_trip: $('plsMax').value,
+          comment: $('plsComment').value.trim(),
+          source: 'location-survey',
+          language: 'zh-Hant',
+          utm_source: defined_utm_source
+        };
+        for (i = 1; i <= 4; i++) {
+          var nm = $('plsChildName' + i), dob = $('plsChildDob' + i);
+          data['child' + i + '_name'] = nm ? nm.value.trim() : '';
+          data['child' + i + '_dob'] = dob ? dob.value : '';
+        }
+        for (i = 1; i <= 11; i++) data['d' + i] = a[i];
+
+        addToMailchimp(data.name, data.email);
+
+        var btn = $('plsSubmit');
+        btn.disabled = true;
+        btn.textContent = '提交中...';
+        fetchWithRetry(SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }, 2, 1000).then(function () {
+          $('plsForm').style.display = 'none';
+          $('plsSuccess').style.display = 'block';
+          $('plsWrap').classList.add('narrow');
+          window.scrollTo({ top: document.querySelector('.pls-section').offsetTop - 80, behavior: 'smooth' });
+          gtag('event', 'location_survey_submit', { event_category: 'forms' });
+        }).catch(function (error) {
+          console.error('Sheet error:', error);
+          btn.disabled = false;
+          btn.textContent = '提交我的答案';
+          err('plsStep2Error', '出了點問題，請重試。');
+        });
+      });
+
+      // ---- Share ----
+      $('plsCopy').addEventListener('click', function () {
+        var msg = $('plsCopyMsg');
+        var done = function () { msg.textContent = '連結已複製。請貼到群組聊天或電子郵件中。'; };
+        if (navigator.share && /Mobi|Android/i.test(navigator.userAgent)) {
+          navigator.share({ title: '您會在哪裡報名？', url: SHARE_URL }).catch(function () {});
+        } else if (navigator.clipboard) {
+          navigator.clipboard.writeText(SHARE_URL).then(done, function () { msg.textContent = SHARE_URL; });
+        } else {
+          msg.textContent = SHARE_URL;
+        }
+      });
+    })();
+  </script>
+  <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once."):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+    ({key: "AIzaSyBZ5ql4bEFq-CJm9eOR1Ab61hbz999jbfY", v: "weekly"});
+  </script>
+</body>
+</html>
