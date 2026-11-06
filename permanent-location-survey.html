@@ -255,11 +255,29 @@
     <div class="pls-wrap" id="plsWrap">
       <form id="plsForm" novalidate>
 
+        <!-- STEP 2 -->
+        <div class="pls-card" id="plsStep2">
+          <div class="pls-steps">Part 1 of 2 · Districts</div>
+          <h2>Would you sign up if the school were here?</h2>
+          <p class="pls-lead">Two short parts: first the districts, then a little about your family. For each of San Francisco's 11 supervisor districts, tell us: if the permanent school were located there, would you sign up your child? Please answer Yes or No for every district. A "No" is just as useful as a "Yes."</p>
+
+          <div class="pls-districts">
+            <div class="pls-map-col">
+              <svg class="pls-map" id="plsMap" viewBox="30 -10 1270 1260" role="img" aria-label="Map of San Francisco's 11 supervisor districts"></svg>
+              <div class="pls-legend"><span class="l-yes">Yes</span><span class="l-no">No</span><span>Not answered</span></div>
+            </div>
+            <div>
+              <div id="plsQuestions"></div>
+              <p class="pls-progress" id="plsProgress">0 of 11 answered</p>
+            </div>
+          </div>
+        </div>
+
         <!-- STEP 1 -->
-        <div class="pls-card" id="plsStep1">
-          <div class="pls-steps">Part 1 of 2 · About you</div>
-          <h2>First, a little about your family</h2>
-          <p class="pls-lead">We share results with SFUSD as totals, not individual responses. We'll keep you updated on our progress.</p>
+        <div class="pls-card" id="plsStep1" style="margin-top:1.5rem;">
+          <div class="pls-steps">Part 2 of 2 · About you</div>
+          <h2>Now, a little about your family</h2>
+          <p class="pls-lead">Last step. We use your address to see where families live, and we share results with SFUSD only as totals, never individual responses. We'll keep you updated on our progress.</p>
 
           <div class="pls-field">
             <label for="plsName">Parent / Guardian Name</label>
@@ -321,27 +339,9 @@
 
           <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" id="plsHoney" tabindex="-1" autocomplete="off" value=""></div>
 
-        </div>
-
-        <!-- STEP 2 -->
-        <div class="pls-card" id="plsStep2" style="margin-top:1.5rem;">
-          <div class="pls-steps">Part 2 of 2 · Districts</div>
-          <h2>Would you sign up if the school were here?</h2>
-          <p class="pls-lead">For each of San Francisco's 11 supervisor districts, tell us: if the permanent school were located there, would you sign up your child? Please answer Yes or No for every district. A "No" is just as useful as a "Yes."</p>
-
-          <div class="pls-districts">
-            <div class="pls-map-col">
-              <svg class="pls-map" id="plsMap" viewBox="30 -10 1270 1260" role="img" aria-label="Map of San Francisco's 11 supervisor districts"></svg>
-              <div class="pls-legend"><span class="l-yes">Yes</span><span class="l-no">No</span><span>Not answered</span></div>
-            </div>
-            <div>
-              <div id="plsQuestions"></div>
-              <p class="pls-progress" id="plsProgress">0 of 11 answered</p>
-            </div>
-          </div>
 
           <div class="pls-field pls-comment">
-            <label for="plsComment">Anything else we should know? <span class="optional">(optional)</span></label>
+            <label for="plsComment">Anything else you'd like us to know about where you'd enroll? <span class="optional">(optional)</span></label>
             <textarea id="plsComment" placeholder="Anything about location, safety, transit, or what would change your answer..."></textarea>
           </div>
 
@@ -349,8 +349,7 @@
           <div class="pls-actions">
             <button type="submit" class="btn btn-primary" id="plsSubmit">Submit my answers</button>
           </div>
-          <p class="pls-hint" style="margin-top:1rem;">By submitting, you'll also be added to our email updates. You can unsubscribe at any time.</p>
-        </div>
+
       </form>
 
       <!-- SUCCESS -->
@@ -596,10 +595,6 @@
       $('plsForm').addEventListener('submit', function (e) {
         e.preventDefault();
         if ($('plsHoney').value) return;
-        var req = $('plsStep1').querySelectorAll('input[required], select[required]');
-        for (var k = 0; k < req.length; k++) {
-          if (!req[k].checkValidity()) { req[k].scrollIntoView({ behavior: 'smooth', block: 'center' }); req[k].reportValidity(); return; }
-        }
         var a = answers(), missing = [];
         for (var i = 1; i <= 11; i++) if (!a[i]) missing.push(i);
         if (missing.length) {
@@ -607,6 +602,10 @@
           err('plsStep2Error', 'Please answer Yes or No for every district. ' + missing.length + ' left.');
           $('plsQ' + missing[0]).scrollIntoView({ behavior: 'smooth', block: 'center' });
           return;
+        }
+        var req = $('plsStep1').querySelectorAll('input[required], select[required]');
+        for (var k = 0; k < req.length; k++) {
+          if (!req[k].checkValidity()) { req[k].scrollIntoView({ behavior: 'smooth', block: 'center' }); req[k].reportValidity(); return; }
         }
         err('plsStep2Error', '');
 
