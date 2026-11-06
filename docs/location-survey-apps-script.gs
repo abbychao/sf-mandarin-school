@@ -19,9 +19,11 @@
  * 3. Redeploy: Deploy -> Manage deployments -> Edit -> New version -> Deploy.
  *
  * Language: the survey has English (en), Simplified (zh-Hans) and Traditional (zh-Hant) pages; each sends data.language.
- * It is appended as the LAST column so existing columns do not shift. On the live tab, add headers by hand:
- * "Language" in the column after "Already on Interest List?", then "Comment (English)" with
- * =IF(Comment="","",GOOGLETRANSLATE(Comment,"auto","en")) filled down (use the real cell reference for Comment).
+ * It is appended as the LAST column so existing columns do not shift. On the live tab, add two headers by hand,
+ * in this order, right after the last existing column: "Language", then "Comment (English)". The script finds
+ * columns by header name and writes a GOOGLETRANSLATE formula into "Comment (English)" for non-English comments.
+ * (Do not use one open-ended ARRAYFORMULA down the column: its blank results make getLastRow() jump to the
+ * bottom of the sheet and appendRow would write new responses far below the data.)
  *
  * The "Permanent Location Survey" tab is created on first submission. One row per response.
  * Join to the interest list by email (column B here = column C on the main sheet).
@@ -56,6 +58,15 @@ function handleLocationSurvey(data) {
   for (var n = 1; n <= 11; n++) row.push(data['d' + n]);
   row.push(data.comment, data.utm_source, onList, data.language || 'en');
   sheet.appendRow(row);
+
+  // Non-English comment: add an English translation formula in the "Comment (English)" column of the new row.
+  if (data.comment && data.language && data.language !== 'en') {
+    var hdr = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    var cIdx = hdr.indexOf('Comment') + 1, eIdx = hdr.indexOf('Comment (English)') + 1;
+    if (cIdx && eIdx) {
+      sheet.getRange(sheet.getLastRow(), eIdx).setFormulaR1C1('=GOOGLETRANSLATE(RC' + cIdx + ',"auto","en")');
+    }
+  }
 
   return ContentService.createTextOutput(JSON.stringify({ result: 'success' })).setMimeType(ContentService.MimeType.JSON);
 }
